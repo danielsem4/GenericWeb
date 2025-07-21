@@ -8,7 +8,6 @@ import {
 } from "../../components/ui/card";
 import { Button } from "../../components/ui/button";
 import LoginForm from "./components/LoginForm";
-import { use } from "react";
 import { useLogin } from "./hooks/useLogin";
 import { useLoginFormFields } from "./store/loginFormStore";
 
@@ -19,29 +18,45 @@ import { useLoginFormFields } from "./store/loginFormStore";
 
 function Login() {
   const { email, password } = useLoginFormFields();
+  const { login, data, isLoading, isError, error, isSuccess } = useLogin();
 
-  const { data, isLoading, isError } = useLogin({ email, password });
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email && password) {
+      login({ email, password });
+    }
+  };
 
-  console.log("Login isLoading:", isLoading);
-  console.log("Login password:", password);
+
 
   return (
     <div className="flex p-4 items-center justify-center min-h-screen bg-gray-100">
       <Card className="w-full p-0 h-full max-w-sm bg-white text-gray-900 rounded-2xl shadow-xl">
         <CardHeader className="p-6 bg-blue-600 text-white rounded-t-2xl">
           <CardTitle>Login to your account</CardTitle>
-
           <CardAction></CardAction>
         </CardHeader>
         <CardContent className="p-6">
-          <LoginForm />
+          <LoginForm onSubmit={handleSubmit} isLoading={isLoading} />
+          {isError && (
+            <div className="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
+              {error?.message || "Login failed. Please try again."}
+            </div>
+          )}
+          {isSuccess && (
+            <div className="mt-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded">
+              Login successful! Redirecting...
+            </div>
+          )}
         </CardContent>
         <CardFooter className="flex-col gap-2 p-6">
           <Button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+            form="login-form"
+            disabled={isLoading || !email || !password}
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white disabled:opacity-50"
           >
-            Login
+            {isLoading ? "Logging in..." : "Login"}
           </Button>
         </CardFooter>
       </Card>

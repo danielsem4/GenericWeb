@@ -11,4 +11,14 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://generic2dev.hitheal.org.il',
+        changeOrigin: true,
+        secure: true,
+        rewrite: (path) => path
+      }
+    }
+  }
 })

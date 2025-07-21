@@ -1,4 +1,4 @@
-import { useMutation, useQueries, useQuery } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 
 interface User {
@@ -39,7 +39,7 @@ interface LoginResponse {
 }
 
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: "",
   headers: {
     "Content-Type": "application/json",
   },
@@ -51,10 +51,9 @@ async function fetchUser(
 ): Promise<LoginResponse> {
   try {
     const response = await apiClient.post<LoginResponse>(
-      "/login/",
+      "/api/v1/login/",
       credentials
     );
-
     const data = response.data;
 
     if (data.token) {
@@ -67,6 +66,7 @@ async function fetchUser(
 
     return data;
   } catch (error) {
+    console.error(error);
     if (axios.isAxiosError(error)) {
       const errorMessage = error.response?.data?.message || error.message;
       throw new Error(`Login failed: ${errorMessage}`);
@@ -75,15 +75,25 @@ async function fetchUser(
   }
 }
 
-export const useLogin = (credentials: LoginCredentials) => {
-  const { data, error, isLoading } = useQuery({
-    queryFn: () => fetchUser(credentials),
-    queryKey: ["login"],
+export const useLogin = () => {
+  const mutation = useMutation({
+    mutationFn: (credentials: LoginCredentials) => fetchUser(credentials),
+    onSuccess: (data) => {
+      console.log("Login successful:", data);
+      // TODO: Implement success handling, like redirecting
+    },
+    onError: (error) => {
+      console.error("Login failed:", error.message);
+      // TODO: Implement error handling
+    },
   });
 
   return {
-    data: data,
-    isLoading,
-    isError: !!error,
+    login: mutation.mutate,
+    data: mutation.data,
+    isLoading: mutation.isPending,
+    isError: mutation.isError,
+    error: mutation.error,
+    isSuccess: mutation.isSuccess,
   };
 };
