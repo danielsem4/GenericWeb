@@ -1,20 +1,47 @@
+import { ThemeToggle } from "./ThemeToggle";
+import { useUserFullName, useClinicName, useUserActions } from "../common/store/UserStore";
+
 const Navbar: React.FC = () => {
+  const userFullName = useUserFullName();
+  const clinicName = useClinicName();
+  const { clearUser } = useUserActions();
+
+  const handleLogout = () => {
+    // Clear user data
+    clearUser();
+    
+    // Clear tokens from localStorage
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("refreshToken");
+    
+    // Redirect to login
+    window.location.href = "/";
+  };
+
   return (
-    <nav className="bg-gray-100 px-4 py-3 shadow-sm">
+    <nav className="bg-background border-b border-border px-4 py-3 shadow-sm">
       <div className="container mx-auto flex flex-wrap items-center justify-between">
-        <span className="text-xl font-bold text-black">Psychiatric</span>
-        <div className="flex items-center space-x-4 text-sm text-gray-800">
-          <a href="#" className="hover:underline">
+        <span className="text-xl font-bold text-foreground">
+          {clinicName}
+        </span>
+        <div className="flex items-center space-x-4 text-sm">
+          <a href="#" className="text-foreground hover:text-primary hover:underline">
             Patients
           </a>
-          <a href="#" className="hover:underline">
+          <a href="#" className="text-foreground hover:text-primary hover:underline">
             Medications
           </a>
-          <a href="#" className="hover:underline">
+          <a href="#" className="text-foreground hover:text-primary hover:underline">
             Activities
           </a>
-          <span className="hidden sm:inline">Doctor6 Test1</span>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white text-sm px-4 py-1 rounded">
+          <a href="#" className="text-foreground hover:text-primary hover:underline">
+            User Settings
+          </a>
+          <ThemeToggle />
+          <button 
+            onClick={handleLogout}
+            className="bg-primary hover:bg-primary/90 text-primary-foreground text-sm px-4 py-1 rounded transition-colors"
+          >
             Logout
           </button>
         </div>

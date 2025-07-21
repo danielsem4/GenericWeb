@@ -36,7 +36,7 @@ function LoginForm({ onSubmit, isLoading }: LoginFormProps) {
             required
             disabled={isLoading}
             onChange={handleEmailChange}
-            className="border-gray-300 focus:border-blue-500"
+            className="border-border focus:border-ring"
           />
         </div>
         <div className="grid gap-2">
@@ -44,7 +44,7 @@ function LoginForm({ onSubmit, isLoading }: LoginFormProps) {
             <Label htmlFor="password">Password</Label>
             <a
               href="#"
-              className="ml-auto text-sm underline-offset-4 hover:underline text-blue-600"
+              className="ml-auto text-sm underline-offset-4 hover:underline text-primary"
             >
               Forgot your password?
             </a>
@@ -56,13 +56,13 @@ function LoginForm({ onSubmit, isLoading }: LoginFormProps) {
               required
               disabled={isLoading}
               onChange={handlePasswordChange}
-              className="border-gray-300 focus:border-blue-500 pr-10"
+              className="border-border focus:border-ring pr-10"
             />
             <button
               type="button"
               onClick={togglePasswordVisibility}
               disabled={isLoading}
-              className="absolute inset-y-0 right-0 flex items-center px-3 text-gray-400 hover:text-gray-600 disabled:opacity-50"
+              className="absolute inset-y-0 right-0 flex items-center px-3 text-muted-foreground hover:text-foreground disabled:opacity-50"
               aria-label={showPassword ? "Hide password" : "Show password"}
             >
               {showPassword ? (

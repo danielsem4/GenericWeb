@@ -30,21 +30,21 @@ function Login() {
 
 
   return (
-    <div className="flex p-4 items-center justify-center min-h-screen bg-gray-100">
-      <Card className="w-full p-0 h-full max-w-sm bg-white text-gray-900 rounded-2xl shadow-xl">
-        <CardHeader className="p-6 bg-blue-600 text-white rounded-t-2xl">
+    <div className="flex p-4 items-center justify-center min-h-screen bg-background">
+      <Card className="w-full p-0 h-full max-w-sm bg-card text-card-foreground rounded-2xl shadow-xl">
+        <CardHeader className="p-6 bg-primary text-primary-foreground rounded-t-2xl">
           <CardTitle>Login to your account</CardTitle>
           <CardAction></CardAction>
         </CardHeader>
         <CardContent className="p-6">
           <LoginForm onSubmit={handleSubmit} isLoading={isLoading} />
           {isError && (
-            <div className="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
+            <div className="mt-4 p-3 bg-destructive/10 border border-destructive/20 text-destructive rounded">
               {error?.message || "Login failed. Please try again."}
             </div>
           )}
           {isSuccess && (
-            <div className="mt-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded">
+            <div className="mt-4 p-3 bg-success/10 border border-success/20 text-success rounded">
               Login successful! Redirecting...
             </div>
           )}
@@ -54,7 +54,7 @@ function Login() {
             type="submit"
             form="login-form"
             disabled={isLoading || !email || !password}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white disabled:opacity-50"
+            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground disabled:opacity-50"
           >
             {isLoading ? "Logging in..." : "Login"}
           </Button>

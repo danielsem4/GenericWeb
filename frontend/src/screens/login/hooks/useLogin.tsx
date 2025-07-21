@@ -1,5 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
+import { useUserActions } from "../../../common/store/UserStore";
 
 interface User {
   id: number;
@@ -76,11 +77,18 @@ async function fetchUser(
 }
 
 export const useLogin = () => {
+  const { setUser } = useUserActions();
+  
   const mutation = useMutation({
     mutationFn: (credentials: LoginCredentials) => fetchUser(credentials),
     onSuccess: (data) => {
       console.log("Login successful:", data);
-      // TODO: Implement success handling, like redirecting
+      
+      // Store user data in the store
+      setUser(data.user);
+            
+      // Redirect to home
+      window.location.href = "/home";
     },
     onError: (error) => {
       console.error("Login failed:", error.message);

@@ -3,6 +3,70 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Automatically apply dark mode based on system preference */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    /* Dark mode backgrounds */
+    --background: oklch(0.18 0.022 248.306); /* #1a1a2e - Dark background */
+    --foreground: oklch(0.921 0.008 247.858); /* #e4e6ea - Light text */
+    --card: oklch(0.216 0.032 248.306); /* #16213e - Dark card */
+    --card-foreground: oklch(0.921 0.008 247.858); /* #e4e6ea - Card text */
+    --popover: oklch(0.216 0.032 248.306); /* #16213e - Dark popover */
+    --popover-foreground: oklch(0.921 0.008 247.858); /* #e4e6ea - Popover text */
+
+    /* Primary medical blue (lighter for dark mode) */
+    --primary: oklch(0.681 0.125 248.306); /* #5aa3f0 - Lighter medical blue */
+    --primary-foreground: oklch(
+      0.216 0.032 248.306
+    ); /* #16213e - Dark text on primary */
+
+    /* Secondary colors for dark mode */
+    --secondary: oklch(0.298 0.042 248.306); /* #233463 - Dark secondary */
+    --secondary-foreground: oklch(0.921 0.008 247.858); /* #e4e6ea - Light text */
+    --muted: oklch(0.298 0.042 248.306); /* #233463 - Dark muted */
+    --muted-foreground: oklch(0.741 0.02 247.858); /* #a8b2c8 - Muted text */
+    --accent: oklch(0.298 0.042 248.306); /* #233463 - Dark accent */
+    --accent-foreground: oklch(0.921 0.008 247.858); /* #e4e6ea - Accent text */
+
+    /* Status colors (adjusted for dark mode) */
+    --destructive: oklch(0.707 0.176 19.373); /* #ff6b6b - Lighter critical red */
+    --success: oklch(0.668 0.135 154.449); /* #2ecc71 - Lighter success green */
+    --warning: oklch(0.814 0.134 64.106); /* #f1c40f - Lighter warning yellow */
+
+    /* Borders and inputs for dark mode */
+    --border: oklch(0.921 0.008 247.858 / 10%); /* Semi-transparent border */
+    --input: oklch(0.921 0.008 247.858 / 15%); /* Semi-transparent input */
+    --ring: oklch(0.681 0.125 248.306); /* #5aa3f0 - Focus ring */
+
+    /* Chart colors for dark mode */
+    --chart-1: oklch(0.681 0.125 248.306); /* #5aa3f0 - Lighter medical blue */
+    --chart-2: oklch(0.668 0.135 154.449); /* #2ecc71 - Lighter success green */
+    --chart-3: oklch(0.814 0.134 64.106); /* #f1c40f - Lighter warning yellow */
+    --chart-4: oklch(0.707 0.176 19.373); /* #ff6b6b - Lighter critical red */
+    --chart-5: oklch(0.789 0.153 310.357); /* #bb7ddb - Lighter medical purple */
+
+    /* Sidebar colors for dark mode */
+    --sidebar: oklch(0.216 0.032 248.306); /* #16213e - Dark sidebar */
+    --sidebar-foreground: oklch(
+      0.921 0.008 247.858
+    ); /* #e4e6ea - Light sidebar text */
+    --sidebar-primary: oklch(0.681 0.125 248.306); /* #5aa3f0 - Sidebar primary */
+    --sidebar-primary-foreground: oklch(
+      0.216 0.032 248.306
+    ); /* #16213e - Dark text on primary */
+    --sidebar-accent: oklch(
+      0.298 0.042 248.306
+    ); /* #233463 - Dark sidebar accent */
+    --sidebar-accent-foreground: oklch(
+      0.921 0.008 247.858
+    ); /* #e4e6ea - Light accent text */
+    --sidebar-border: oklch(
+      0.921 0.008 247.858 / 10%
+    ); /* Semi-transparent border */
+    --sidebar-ring: oklch(0.681 0.125 248.306); /* #5aa3f0 - Sidebar focus ring */
+  }
+}
+
 :root {
   --radius: 0.625rem;
   /* Main backgrounds and surfaces */
