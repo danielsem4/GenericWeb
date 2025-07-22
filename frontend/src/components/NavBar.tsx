@@ -1,10 +1,11 @@
 import { ThemeToggle } from "./ThemeToggle";
-import { useUserFullName, useClinicName, useUserActions } from "../common/store/UserStore";
+import { useClinicName, useUserActions } from "../common/store/UserStore";
+import { useNavigate } from "react-router";
 
 const Navbar: React.FC = () => {
-  const userFullName = useUserFullName();
   const clinicName = useClinicName();
   const { clearUser } = useUserActions();
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     // Clear user data
@@ -14,8 +15,8 @@ const Navbar: React.FC = () => {
     localStorage.removeItem("authToken");
     localStorage.removeItem("refreshToken");
     
-    // Redirect to login
-    window.location.href = "/";
+    // Navigate to login with replace to prevent back navigation
+    navigate("/", { replace: true });
   };
 
   return (

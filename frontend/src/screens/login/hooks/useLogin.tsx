@@ -1,6 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useUserActions } from "../../../common/store/UserStore";
+import { useNavigate, useLocation } from "react-router";
 
 interface User {
   id: number;
@@ -78,6 +79,8 @@ async function fetchUser(
 
 export const useLogin = () => {
   const { setUser } = useUserActions();
+  const navigate = useNavigate();
+  const location = useLocation();
   
   const mutation = useMutation({
     mutationFn: (credentials: LoginCredentials) => fetchUser(credentials),
@@ -86,9 +89,12 @@ export const useLogin = () => {
       
       // Store user data in the store
       setUser(data.user);
-            
-      // Redirect to home
-      window.location.href = "/home";
+      
+      // Get to home
+      const from = location.state?.from?.pathname;
+      
+      // Navigate to intended destination with replace to prevent back to login
+      navigate(from, { replace: true });
     },
     onError: (error) => {
       console.error("Login failed:", error.message);
