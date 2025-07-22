@@ -8,9 +8,9 @@ import {
 } from "../../components/ui/card";
 import { Button } from "../../components/ui/button";
 import LoginForm from "./components/LoginForm";
-import { use } from "react";
-import { useLogin } from "./hooks/useLogin";
+import { useLogin, type LoginCredentials } from "./hooks/useLogin";
 import { useLoginFormFields } from "./store/loginFormStore";
+import { useNavigate } from "react-router";
 
 /**
  * Login component provides a centered login form using Tailwind CSS and shadcn/ui components
@@ -19,11 +19,15 @@ import { useLoginFormFields } from "./store/loginFormStore";
 
 function Login() {
   const { email, password } = useLoginFormFields();
+  const { mutateAsync, isPending, error } = useLogin();
+  const navigate = useNavigate();
 
-  const { data, isLoading, isError } = useLogin({ email, password });
-
-  console.log("Login isLoading:", isLoading);
-  console.log("Login password:", password);
+  const handleLogin = async (values: LoginCredentials) => {
+    try {
+      await mutateAsync(values);
+      navigate("/home");
+    } catch (e) {}
+  };
 
   return (
     <div className="flex p-4 items-center justify-center min-h-screen bg-gray-100">
@@ -39,9 +43,11 @@ function Login() {
         <CardFooter className="flex-col gap-2 p-6">
           <Button
             type="submit"
+            onClick={() => handleLogin({ email, password })}
+            disabled={isPending || !email || !password}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white"
           >
-            Login
+            {isPending ? "Logging in..." : "Login"}
           </Button>
         </CardFooter>
       </Card>
