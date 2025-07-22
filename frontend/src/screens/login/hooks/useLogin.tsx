@@ -1,5 +1,6 @@
 import { useMutation, useQueries, useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import { useUserActions } from "../../../common/store/UserStore";
 
 interface User {
   id: number;
@@ -27,7 +28,7 @@ interface User {
   server_url: string;
 }
 
-interface LoginCredentials {
+export interface LoginCredentials {
   email: string;
   password: string;
 }
@@ -38,20 +39,12 @@ interface LoginResponse {
   refreshToken?: string;
 }
 
-const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
-  headers: {
-    "Content-Type": "application/json",
-  },
-  timeout: 5000,
-});
-
-async function fetchUser(
+async function loginUser(
   credentials: LoginCredentials
 ): Promise<LoginResponse> {
   try {
-    const response = await apiClient.post<LoginResponse>(
-      "/login/",
+    const response = await axios.post<LoginResponse>(
+      `${import.meta.env.VITE_API_URL}/login/`,
       credentials
     );
 
@@ -75,15 +68,23 @@ async function fetchUser(
   }
 }
 
-export const useLogin = (credentials: LoginCredentials) => {
-  const { data, error, isLoading } = useQuery({
-    queryFn: () => fetchUser(credentials),
-    queryKey: ["login"],
+export const useLogin = () => {
+  const { setUser } = useUserActions();
+
+  const mutation = useMutation({
+    mutationFn: loginUser,
+    onSuccess: (data) => {
+      setUser({
+        id: data.user.id,
+        email: data.user.email,
+        name: `${data.user.first_name} ${data.user.last_name}`,
+        token: data.token,
+      });
+    },
+    onError: (error) => {
+      console.error("Login failed:", error);
+    },
   });
 
-  return {
-    data: data,
-    isLoading,
-    isError: !!error,
-  };
+  return mutation;
 };
