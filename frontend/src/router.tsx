@@ -1,21 +1,30 @@
 import { createBrowserRouter } from "react-router";
 import Login from "./screens/login/Login";
 import MainLayout from "./layouts/MainLayout";
-import Navbar from "./components/NavBar";
-import Home from "./screens/home/components/Home";
+import Home from "./screens/home/Home";
+import ProtectedRoute from "./components/ProtectedRoute";
+import SettingsPage from "./screens/settings/Settings";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/login",
     element: <Login />,
   },
   {
-    path: "/home",
-    element: <MainLayout />,
+    path: "/",
+    element: (
+      <ProtectedRoute>
+        <MainLayout />
+      </ProtectedRoute>
+    ),
     children: [
       {
         path: "/home",
         element: <Home />,
+      },
+      {
+        path: "/settings",
+        element: <SettingsPage />,
       },
     ],
   },

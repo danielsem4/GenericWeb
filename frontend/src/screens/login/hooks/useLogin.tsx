@@ -44,20 +44,11 @@ async function loginUser(
 ): Promise<LoginResponse> {
   try {
     const response = await axios.post<LoginResponse>(
-      `${import.meta.env.VITE_API_URL}/login/`,
+      `${import.meta.env.VITE_API_URL}login/`,
       credentials
     );
 
     const data = response.data;
-
-    if (data.token) {
-      localStorage.setItem("authToken", data.token);
-    }
-
-    if (data.refreshToken) {
-      localStorage.setItem("refreshToken", data.refreshToken);
-    }
-
     return data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
@@ -79,6 +70,7 @@ export const useLogin = () => {
         email: data.user.email,
         name: `${data.user.first_name} ${data.user.last_name}`,
         token: data.token,
+        modules: data.user.modules,
       });
     },
     onError: (error) => {
@@ -87,4 +79,9 @@ export const useLogin = () => {
   });
 
   return mutation;
+};
+
+export const logOut = () => {
+  const { setUser } = useUserActions();
+  setUser(null);
 };

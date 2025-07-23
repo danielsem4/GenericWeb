@@ -11,6 +11,7 @@ import LoginForm from "./components/LoginForm";
 import { useLogin, type LoginCredentials } from "./hooks/useLogin";
 import { useLoginFormFields } from "./store/loginFormStore";
 import { useNavigate } from "react-router";
+import { toast } from "sonner";
 
 /**
  * Login component provides a centered login form using Tailwind CSS and shadcn/ui components
@@ -25,8 +26,20 @@ function Login() {
   const handleLogin = async (values: LoginCredentials) => {
     try {
       await mutateAsync(values);
+
+      toast.success("Login successful!", {
+        description: "Redirecting to home...",
+        duration: 2000,
+      });
+
       navigate("/home");
-    } catch (e) {}
+    } catch (e) {
+      console.log("Login error:", e);
+
+      toast.error("Login failed", {
+        description: "Please check your credentials.",
+      });
+    }
   };
 
   return (
