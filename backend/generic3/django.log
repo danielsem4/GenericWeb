@@ -1457,3 +1457,8 @@ Not Found: /api/v1/login/
 Not Found: /firebase-messaging-sw.js
 "GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
 "POST /admin/users/user/4/change/ HTTP/1.1" 302 0
+"GET /admin/users/user/ HTTP/1.1" 200 27377
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13020
+"POST /api/v1/login/ HTTP/1.1" 200 666
