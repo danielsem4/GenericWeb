@@ -2,3 +2,1458 @@ Watching for file changes with StatReloader
 Watching for file changes with StatReloader
 Watching for file changes with StatReloader
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /
+"GET / HTTP/1.1" 404 11711
+"GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+"GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13578
+"GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+"GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 11772
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 11824
+"GET /admin HTTP/1.1" 301 0
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/admin/ HTTP/1.1" 404 11814
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 11824
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\urls.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/admin/ HTTP/1.1" 404 11686
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 11696
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\urls.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /accounts/login/?next=/admin/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 11825
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 11825
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 302 0
+"GET /admin/login/ HTTP/1.1" 302 0
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 11825
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /
+"GET / HTTP/1.1" 404 11583
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 11696
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/admin/ HTTP/1.1" 404 11686
+"GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+"GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13578
+"GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+"GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 11644
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /
+"GET / HTTP/1.1" 404 11582
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 11696
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/admin/ HTTP/1.1" 404 11686
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 11696
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/admin/ HTTP/1.1" 404 11686
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/admin/ HTTP/1.1" 404 11686
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 11696
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/admin/ HTTP/1.1" 404 11686
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 11696
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/admin/ HTTP/1.1" 404 13009
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/admin/ HTTP/1.1" 404 13009
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/admin/ HTTP/1.1" 404 13009
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/admin/ HTTP/1.1" 404 13009
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/admin/ HTTP/1.1" 404 13009
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+Not Found: /
+"GET / HTTP/1.1" 404 12905
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+"GET /account/login/?next=/admin/ HTTP/1.1" 200 10927
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"POST /account/login/?next=/admin/ HTTP/1.1" 302 0
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+"GET /account/two_factor/setup/ HTTP/1.1" 200 10623
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"POST /account/two_factor/setup/ HTTP/1.1" 200 11458
+"GET /account/two_factor/qrcode/ HTTP/1.1" 200 16531
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"POST /account/two_factor/setup/ HTTP/1.1" 200 11536
+"GET /account/two_factor/qrcode/ HTTP/1.1" 200 16531
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"POST /account/two_factor/setup/ HTTP/1.1" 302 0
+"GET /account/two_factor/setup/complete/ HTTP/1.1" 200 10143
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /account/two_factor/ HTTP/1.1" 200 10461
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin HTTP/1.1" 301 0
+"GET /admin/ HTTP/1.1" 200 20132
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2929
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2694
+"GET /static/admin/css/base.css HTTP/1.1" 200 21207
+"GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+"GET /static/admin/css/responsive.css HTTP/1.1" 200 18557
+"GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/users/user/ HTTP/1.1" 200 23648
+"GET /static/admin/css/changelists.css HTTP/1.1" 200 6584
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+"GET /static/admin/js/core.js HTTP/1.1" 200 5682
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 8943
+"GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+"GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+"GET /static/admin/img/search.svg HTTP/1.1" 200 458
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+"GET /static/admin/js/filters.js HTTP/1.1" 200 978
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+"GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/users/user/add/ HTTP/1.1" 200 22904
+"GET /static/admin/css/forms.css HTTP/1.1" 200 8953
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+"GET /static/admin/css/widgets.css HTTP/1.1" 200 11952
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/users/user/ HTTP/1.1" 200 23647
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/users/patient/ HTTP/1.1" 200 20147
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/patient/add/ HTTP/1.1" 200 21876
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/users/patient/ HTTP/1.1" 200 20147
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/users/user/ HTTP/1.1" 200 23647
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/user/add/ HTTP/1.1" 200 22903
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/users/user/add/ HTTP/1.1" 200 24772
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"POST /admin/users/user/add/ HTTP/1.1" 302 0
+Internal Server Error: /admin/users/user/2/change/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 809, in get_form
+    return modelform_factory(self.model, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\forms\models.py", line 642, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\forms\models.py", line 321, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (is_research_patient) specified for User
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 1889, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 1782, in _changeform_view
+    ModelForm = self.get_form(
+                ^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\auth\admin.py", line 98, in get_form
+    return super().get_form(request, obj, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 811, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: Unknown field(s) (is_research_patient) specified for User. Check fields/fieldsets/exclude attributes of class UserAdmin.
+"GET /admin/users/user/2/change/ HTTP/1.1" 500 163645
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /admin/users/user/add/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 809, in get_form
+    return modelform_factory(self.model, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\forms\models.py", line 642, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\forms\models.py", line 321, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (is_research_patient) specified for User
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\debug.py", line 92, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\auth\admin.py", line 119, in add_view
+    return self._add_view(request, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\auth\admin.py", line 147, in _add_view
+    return super().add_view(request, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 1782, in _changeform_view
+    ModelForm = self.get_form(
+                ^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\auth\admin.py", line 98, in get_form
+    return super().get_form(request, obj, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 811, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: Unknown field(s) (is_research_patient) specified for User. Check fields/fieldsets/exclude attributes of class UserAdmin.
+"GET /admin/users/user/add/ HTTP/1.1" 500 193043
+"GET /admin/users/user/ HTTP/1.1" 200 24290
+"GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"POST /admin/users/user/ HTTP/1.1" 200 20207
+"GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"POST /admin/users/user/ HTTP/1.1" 302 0
+"GET /admin/users/user/ HTTP/1.1" 200 23781
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Internal Server Error: /admin/users/user/add/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 809, in get_form
+    return modelform_factory(self.model, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\forms\models.py", line 642, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\forms\models.py", line 321, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (is_research_patient) specified for User
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\debug.py", line 92, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\auth\admin.py", line 119, in add_view
+    return self._add_view(request, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\auth\admin.py", line 147, in _add_view
+    return super().add_view(request, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 1782, in _changeform_view
+    ModelForm = self.get_form(
+                ^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\auth\admin.py", line 98, in get_form
+    return super().get_form(request, obj, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 811, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: Unknown field(s) (is_research_patient) specified for User. Check fields/fieldsets/exclude attributes of class UserAdmin.
+"GET /admin/users/user/add/ HTTP/1.1" 500 192669
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+Internal Server Error: /admin/users/user/add/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 809, in get_form
+    return modelform_factory(self.model, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\forms\models.py", line 642, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\forms\models.py", line 321, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (is_research_patient) specified for User
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\debug.py", line 92, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\auth\admin.py", line 119, in add_view
+    return self._add_view(request, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\auth\admin.py", line 147, in _add_view
+    return super().add_view(request, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 1782, in _changeform_view
+    ModelForm = self.get_form(
+                ^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\auth\admin.py", line 98, in get_form
+    return super().get_form(request, obj, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 811, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: Unknown field(s) (is_research_patient) specified for User. Check fields/fieldsets/exclude attributes of class UserAdmin.
+"GET /admin/users/user/add/ HTTP/1.1" 500 192806
+"GET /admin/users/user/ HTTP/1.1" 200 23647
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/ HTTP/1.1" 200 20705
+"GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/users/user/ HTTP/1.1" 200 23647
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Internal Server Error: /admin/users/user/add/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 809, in get_form
+    return modelform_factory(self.model, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\forms\models.py", line 642, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\forms\models.py", line 321, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (is_research_patient) specified for User
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\debug.py", line 92, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\auth\admin.py", line 119, in add_view
+    return self._add_view(request, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\auth\admin.py", line 147, in _add_view
+    return super().add_view(request, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 1782, in _changeform_view
+    ModelForm = self.get_form(
+                ^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\auth\admin.py", line 98, in get_form
+    return super().get_form(request, obj, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 811, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: Unknown field(s) (is_research_patient) specified for User. Check fields/fieldsets/exclude attributes of class UserAdmin.
+"GET /admin/users/user/add/ HTTP/1.1" 500 192669
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/users/user/ HTTP/1.1" 200 23647
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /admin/users/user/ HTTP/1.1" 200 23648
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/users/user/add/ HTTP/1.1" 200 29241
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"POST /admin/users/user/add/ HTTP/1.1" 302 0
+"GET /admin/users/user/3/change/ HTTP/1.1" 200 30926
+"GET /static/admin/js/calendar.js HTTP/1.1" 200 8466
+"GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+"GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\clinics\admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/users/user/3/change/ HTTP/1.1" 200 32791
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/clinics/clinic/ HTTP/1.1" 200 22249
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13063
+"GET /admin/clinics/clinic/add/ HTTP/1.1" 200 24253
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"POST /admin/clinics/clinic/add/ HTTP/1.1" 200 24452
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"POST /admin/clinics/clinic/add/ HTTP/1.1" 200 24452
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"POST /admin/clinics/clinic/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/clinic/ HTTP/1.1" 200 23597
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/clinics/managerclinic/ HTTP/1.1" 200 22311
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/clinics/managerclinic/add/ HTTP/1.1" 200 25699
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/users/clinicmanager/ HTTP/1.1" 200 22301
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/users/clinicmanager/add/ HTTP/1.1" 200 24084
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/users/user/ HTTP/1.1" 200 26160
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/users/user/add/ HTTP/1.1" 200 31342
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+Internal Server Error: /admin/users/user/add/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: UNIQUE constraint failed: users_user.username
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\debug.py", line 92, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\auth\admin.py", line 119, in add_view
+    return self._add_view(request, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\auth\admin.py", line 147, in _add_view
+    return super().add_view(request, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 1798, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\options.py", line 1227, in save_model
+    obj.save()
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\auth\base_user.py", line 76, in save
+    super().save(*args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1820, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 235, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 160, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: UNIQUE constraint failed: users_user.username
+"POST /admin/users/user/add/ HTTP/1.1" 500 277969
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\forms.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/users/user/add/ HTTP/1.1" 200 31342
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"POST /admin/users/user/add/ HTTP/1.1" 302 0
+"GET /admin/users/user/4/change/ HTTP/1.1" 200 33068
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/users/clinicmanager/ HTTP/1.1" 200 22300
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13063
+"GET /admin/users/clinicmanager/add/ HTTP/1.1" 200 24141
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"POST /admin/users/clinicmanager/add/ HTTP/1.1" 302 0
+"GET /admin/users/clinicmanager/ HTTP/1.1" 200 23721
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/users/doctor/ HTTP/1.1" 200 22239
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/doctor/add/ HTTP/1.1" 200 24073
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"POST /admin/users/doctor/add/ HTTP/1.1" 302 0
+"GET /admin/users/doctor/ HTTP/1.1" 200 23607
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/clinics/managerclinic/ HTTP/1.1" 200 22310
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/managerclinic/add/ HTTP/1.1" 200 25756
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"POST /admin/clinics/managerclinic/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/managerclinic/ HTTP/1.1" 200 23755
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/clinics/doctorclinic/ HTTP/1.1" 200 22302
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/doctorclinic/add/ HTTP/1.1" 200 25679
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"POST /admin/clinics/doctorclinic/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/doctorclinic/ HTTP/1.1" 200 23724
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"GET /admin/clinics/clinic/ HTTP/1.1" 200 23398
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/login/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 35, in login
+    token = Token.objects.get_or_create(user=user)
+            ^^^^^^^^^^^^^
+AttributeError: type object 'Token' has no attribute 'objects'
+"POST /api/v1/login/ HTTP/1.1" 500 116376
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/login/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 35, in login
+    token = Token.objects.get_or_create(user=user)
+            ^^^^^^^^^^^^^
+AttributeError: type object 'Token' has no attribute 'objects'
+"POST /api/v1/login/ HTTP/1.1" 500 116377
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/login/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 37, in login
+    clinics_id = get_clinic_id_for_user(user) # could be multiple clinics for a user
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\utils.py", line 6, in get_clinic_id_for_user
+    clinic_id = DoctorClinic.objects.filter(doctor=user).values_list('clinic_id', flat=True)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1498, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1529, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1417, in build_filter
+    self.check_related_objects(join_info.final_field, value, join_info.opts)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1228, in check_related_objects
+    self.check_query_object_type(value, opts, field)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1205, in check_query_object_type
+    raise ValueError(
+ValueError: Cannot query "doctor1@example.com": Must be "Doctor" instance.
+"POST /api/v1/login/ HTTP/1.1" 500 168125
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/login/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 37, in login
+    clinics_id = get_clinic_id_for_user(user) # could be multiple clinics for a user
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\utils.py", line 6, in get_clinic_id_for_user
+    clinic_id = DoctorClinic.objects.filter(doctor=user).values_list('clinic_id', flat=True)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1498, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1529, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1417, in build_filter
+    self.check_related_objects(join_info.final_field, value, join_info.opts)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1228, in check_related_objects
+    self.check_query_object_type(value, opts, field)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1205, in check_query_object_type
+    raise ValueError(
+ValueError: Cannot query "doctor1@example.com": Must be "Doctor" instance.
+"POST /api/v1/login/ HTTP/1.1" 500 168137
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\utils.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/login/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 36, in login
+    clinics_id = get_clinic_id_for_user(user) # could be multiple clinics for a user
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\utils.py", line 7, in get_clinic_id_for_user
+    clinic_id = DoctorClinic.objects.filter(doctor=user).values_list('clinic_id', flat=True)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1498, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1529, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1417, in build_filter
+    self.check_related_objects(join_info.final_field, value, join_info.opts)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1228, in check_related_objects
+    self.check_query_object_type(value, opts, field)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1205, in check_query_object_type
+    raise ValueError(
+ValueError: Cannot query "doctor1@example.com": Must be "Doctor" instance.
+"POST /api/v1/login/ HTTP/1.1" 500 168273
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\utils.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/login/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 48, in login
+    clinics_data = Clinic.objects.get(id=clinic_id).values_list('id','clinic_url','clinic_name')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Clinic' object has no attribute 'values_list'
+"POST /api/v1/login/ HTTP/1.1" 500 119839
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/login/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 54, in login
+    clinic_modules = ClinicModules.objects.filter(clinic_id=clinic_id).exclude(Q(module_id__in=[1, 2]) | Q(module_type="dashboard")).values_list('module_id', flat=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1444, in exclude
+    return self._filter_or_exclude(True, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1459, in _filter_or_exclude_inplace
+    self._query.add_q(~Q(*args, **kwargs))
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1498, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1529, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1357, in build_filter
+    return self._add_q(
+           ^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1529, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1379, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1189, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1677, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'module_type' into field. Choices are: clinic, clinic_id, id, module, module_id
+"POST /api/v1/login/ HTTP/1.1" 500 174071
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/login/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 67, in login
+    return Response({"token":token.key,"user":data})
+                            ^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'key'
+"POST /api/v1/login/ HTTP/1.1" 500 120421
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 633
+Not Found: /
+"GET / HTTP/1.1" 404 12906
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+Internal Server Error: /api/v1/login/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 54, in login
+    clinic_modules = ClinicModules.objects.filter(clinic_id=clinic_id).exclude(Q(module_id__in=[1, 2])).values_list('module_id', flat=True)
+                                                            ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'clinic_id' where it is not associated with a value
+"POST /api/v1/login/ HTTP/1.1" 500 120695
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/login/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 55, in login
+    clinic_modules = ClinicModules.objects.filter(clinic_id=clinic_id).exclude(Q(module_id__in=[1, 2])).values_list('module_id', flat=True)
+                                                            ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'clinic_id' where it is not associated with a value
+"POST /api/v1/login/ HTTP/1.1" 500 120697
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/login/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 40, in login
+    if clinics_id.count() == 0:
+       ^^^^^^^^^^^^^^^^^^
+TypeError: list.count() takes exactly one argument (0 given)
+"POST /api/v1/login/ HTTP/1.1" 500 119347
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /api/v1/login/
+"POST /api/v1/login/ HTTP/1.1" 404 29
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 654
+Not Found: /api/v1/login/
+"POST /api/v1/login/ HTTP/1.1" 404 23
+"GET /admin/users/user/ HTTP/1.1" 200 27162
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+Not Found: /api/v1/login/
+"POST /api/v1/login/ HTTP/1.1" 404 23
+"GET /admin/users/user/4/change/ HTTP/1.1" 200 33375
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"POST /admin/users/user/4/change/ HTTP/1.1" 302 0

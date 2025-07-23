@@ -54,13 +54,15 @@ INSTALLED_APPS = [
     'django_otp.plugins.otp_totp',
     'django_otp.plugins.otp_static',
     'two_factor',
+    'rest_framework.authtoken',
     'rest_framework_simplejwt',
     'push_notifications',
     'django_extensions',
     
-    # Local apps (add your apps here)
-    # 'apps.users',
-    # 'apps.api',
+    # Local apps 
+    'api', 
+    'users',
+    'clinics',
 ]
 
 MIDDLEWARE = [
@@ -179,6 +181,11 @@ REST_FRAMEWORK = {
         'rest_framework.filters.OrderingFilter',
     ],
 }
+
+AUTH_USER_MODEL = 'users.User'
+LOGIN_URL = '/account/login/'
+LOGIN_REDIRECT_URL = '/'
+
 
 # JWT Settings
 from datetime import timedelta
