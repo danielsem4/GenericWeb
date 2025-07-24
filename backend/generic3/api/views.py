@@ -4,12 +4,17 @@ from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework import status
-from django.db.models import Q
+from django.conf import settings
+from django.contrib.staticfiles import finders
+import logging
+import os
 
 from clinics.models import Clinic, ClinicModules, Modules
 from generic3.utils import get_clinic_id_for_user
 from users.models import User
 from users.serializers import UserSerializer
+
+logger = logging.getLogger(__name__)
 
 
 
@@ -19,49 +24,91 @@ from users.serializers import UserSerializer
 def login(request):
     
     default_url = "https://generic2dev.hitheal.org.il"
-    site = "https://{}".format(request.get_host())
+    site = f"http://{request.get_host()}"
 
     email = request.data.get('email')
     password = request.data.get('password')
-    
+    print(f"Login attempt for email: {email} at site: {site}")
     if not email or not password:
         return Response({"detail": "Email and password are required"}, status=status.HTTP_400_BAD_REQUEST)
     
-    user = get_object_or_404(User, email=email)
-    if not user.check_password(password):
-        return Response({"detail":"Invalid user or password"}, status=status.HTTP_404_NOT_FOUND)
+    try:
+        user = User.objects.get(email=email)
+        if not user.check_password(password):
+            raise User.DoesNotExist()
+    except User.DoesNotExist:
+        return Response({"detail": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
     
-    token,created = Token.objects.get_or_create(user=user)
+    token, created = Token.objects.get_or_create(user=user)
     serializer = UserSerializer(instance=user)
-    clinics_id = get_clinic_id_for_user(user) # could be multiple clinics for a user
-    print("Clinics ID:", clinics_id)
+    clinics_id = get_clinic_id_for_user(user)
+    clinic_data = None
+    clinic_image = f'{site}/static/images/default.png'
     modules = []
-    clinic_data = {}
 
-    if len(clinics_id) == 0:
-        return Response({"detail":"No clinics found for this user"}, status=status.HTTP_404_NOT_FOUND)
+    logger.info(f"User {user.email} login attempt - Clinics: {clinics_id}")
+    
+    if not clinics_id:
+        return Response({"detail": "No clinics found for this user"}, status=status.HTTP_403_FORBIDDEN)
+    
+    # Handle multiple clinics case
     if len(clinics_id) > 1:
-        user_clinics_urls = Clinic.objects.filter(id__in=clinics_id).values_list('clinic_url' , flat=True)
+        user_clinics_urls = Clinic.objects.filter(id__in=clinics_id).values_list('clinic_url', flat=True)
         if site not in user_clinics_urls:
-            return Response({"detail":"Multiple clinics found for this user", "clinics": list(user_clinics_urls)}, status=status.HTTP_202_ACCEPTED)
+            return Response({
+                "detail": "Multiple clinics found for this user", 
+                "clinics": list(user_clinics_urls)
+            }, status=status.HTTP_202_ACCEPTED)
+        # If site matches one of the clinics, find the corresponding clinic_id
+        clinic_id = Clinic.objects.filter(clinic_url=site, id__in=clinics_id).first().id
     else:
         clinic_id = clinics_id[0]
-        
-    clinics_data = Clinic.objects.filter(id=clinic_id).values_list('id','clinic_url','clinic_name')
     
-    clinic_modules = ClinicModules.objects.filter(clinic_id=clinic_id).exclude(Q(module_id__in=[1, 2])).values_list('module_id', flat=True)
-    if clinic_modules:
-        modules = Modules.objects.filter(id__in=clinic_modules).values_list('module_name', 'id')
+    if not user.is_staff:
+        # Get clinic data more efficiently
+        try:
+            clinic = Clinic.objects.get(id=clinic_id)
+            clinic_data = {
+                'id': clinic.id,
+                'url': clinic.clinic_url,
+                'name': clinic.clinic_name
+            }
+        except Clinic.DoesNotExist:
+            return Response({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
+        
+        # Get modules for the clinic
+        clinic_modules = ClinicModules.objects.filter(
+            clinic_id=clinic_id
+        ).values_list('module_id', flat=True)
+        
+        if clinic_modules:
+            modules = list(Modules.objects.filter(
+                id__in=clinic_modules
+            ).values_list('module_name', 'id'))
+            
+        clinic_name = clinic_data['name']
+        try:
+            # Check if static file exists
+            static_file_path = f'images/{clinic_name}.png'
+            file_exists = finders.find(static_file_path) is not None
+        except Exception as e:
+            print("Error checking file existence:", e)
+            file_exists = False
+        
+        if file_exists:
+            clinic_image = f'{site}/static/images/{clinic_name}.png'
 
     data = serializer.data
-
     user_data = {
-        'clinicId': clinic_id,
-        'clinicName': clinics_data[0][2] if clinics_data else None,
-        'modules': modules,
+        'clinicId': clinic_id if clinic_id else None,
+        'clinicName': clinic_data['name'] if clinic_data else None,
+        'clinic_image' : clinic_image,
+        'modules': [{'name': module[0], 'id': module[1]} for module in modules] if modules else [],
         'status': 'Success',
-        'server_url': clinics_data[0][1] if clinics_data else default_url
+        'server_url': clinic_data['url'] if clinic_data else default_url
     }
     data.update(user_data)
-    return Response({"token":token.key,"user":data}) 
+    
+    return Response({"token": token.key, "user": data}) 
+
 

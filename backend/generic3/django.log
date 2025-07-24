@@ -1462,3 +1462,532 @@ Not Found: /firebase-messaging-sw.js
 Not Found: /firebase-messaging-sw.js
 "GET /firebase-messaging-sw.js HTTP/1.1" 404 13020
 "POST /api/v1/login/ HTTP/1.1" 200 666
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 666
+"POST /api/v1/login/ HTTP/1.1" 200 633
+"POST /api/v1/login/ HTTP/1.1" 200 633
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 633
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /admin HTTP/1.1" 301 0
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+"GET /account/login/?next=/admin/ HTTP/1.1" 200 10927
+"GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+"GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+"GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+"GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 12968
+"POST /account/login/?next=/admin/ HTTP/1.1" 200 10805
+"POST /account/login/?next=/admin/ HTTP/1.1" 302 0
+"GET /admin/ HTTP/1.1" 200 26748
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2929
+"GET /static/admin/css/base.css HTTP/1.1" 200 21207
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2694
+"GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+"GET /static/admin/css/responsive.css HTTP/1.1" 200 18557
+"GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+"GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+"GET /admin/clinics/modules/ HTTP/1.1" 200 22807
+"GET /static/admin/css/changelists.css HTTP/1.1" 200 6584
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+"GET /static/admin/js/core.js HTTP/1.1" 200 5682
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 8943
+"GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+"GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+"GET /static/admin/js/filters.js HTTP/1.1" 200 978
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+"GET /admin/clinics/modules/add/ HTTP/1.1" 200 23576
+"GET /static/admin/css/forms.css HTTP/1.1" 200 8953
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+"GET /static/admin/css/widgets.css HTTP/1.1" 200 11952
+"GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/clinics/modules/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/modules/ HTTP/1.1" 200 24174
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+"GET /admin/clinics/modules/add/ HTTP/1.1" 200 23576
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/clinics/modules/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/modules/ HTTP/1.1" 200 24385
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/modules/add/ HTTP/1.1" 200 23576
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/clinics/modules/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/modules/ HTTP/1.1" 200 24588
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/modules/add/ HTTP/1.1" 200 23576
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/clinics/modules/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/modules/ HTTP/1.1" 200 24804
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/modules/add/ HTTP/1.1" 200 23576
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/clinics/modules/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/modules/ HTTP/1.1" 200 25016
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/modules/add/ HTTP/1.1" 200 23576
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/clinics/modules/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/modules/ HTTP/1.1" 200 25236
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/modules/add/ HTTP/1.1" 200 23576
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/clinics/modules/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/modules/ HTTP/1.1" 200 25432
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/modules/add/ HTTP/1.1" 200 23576
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/clinics/modules/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/modules/ HTTP/1.1" 200 25650
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/clinicmodules/ HTTP/1.1" 200 22860
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/clinicmodules/add/ HTTP/1.1" 200 26521
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/clinics/clinicmodules/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/clinicmodules/ HTTP/1.1" 200 24276
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/clinicmodules/add/ HTTP/1.1" 200 26521
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/clinics/clinicmodules/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/clinicmodules/ HTTP/1.1" 200 24502
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/clinicmodules/add/ HTTP/1.1" 200 26521
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/clinics/clinicmodules/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/clinicmodules/ HTTP/1.1" 200 24719
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/clinicmodules/add/ HTTP/1.1" 200 26521
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/clinics/clinicmodules/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/clinicmodules/ HTTP/1.1" 200 24949
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/clinicmodules/add/ HTTP/1.1" 200 26520
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/clinics/clinicmodules/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/clinicmodules/ HTTP/1.1" 200 25175
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/clinicmodules/add/ HTTP/1.1" 200 26520
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/clinics/clinicmodules/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/clinicmodules/ HTTP/1.1" 200 25409
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /api/v1/login/ HTTP/1.1" 200 700
+"GET /admin/clinics/clinicmodules/add/ HTTP/1.1" 200 26520
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/clinics/clinicmodules/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/clinicmodules/ HTTP/1.1" 200 25619
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/clinicmodules/add/ HTTP/1.1" 200 26520
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/clinics/clinicmodules/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/clinicmodules/ HTTP/1.1" 200 25851
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /api/v1/login/ HTTP/1.1" 200 728
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 767
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 751
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 863
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/clinics/clinicmodules/ HTTP/1.1" 200 25625
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Forbidden: /api/v1/login/
+"POST /api/v1/login/ HTTP/1.1" 403 108
+"POST /api/v1/login/ HTTP/1.1" 200 863
+Forbidden: /api/v1/login/
+"POST /api/v1/login/ HTTP/1.1" 403 108
+Forbidden: /api/v1/login/
+"POST /api/v1/login/ HTTP/1.1" 403 108
+"GET /admin/clinics/doctorclinic/ HTTP/1.1" 200 24039
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/doctorclinic/1/change/ HTTP/1.1" 200 26506
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Forbidden: /api/v1/login/
+"POST /api/v1/login/ HTTP/1.1" 403 108
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Forbidden: /api/v1/login/
+"POST /api/v1/login/ HTTP/1.1" 403 108
+Forbidden: /api/v1/login/
+"POST /api/v1/login/ HTTP/1.1" 403 45
+Forbidden: /api/v1/login/
+"POST /api/v1/login/ HTTP/1.1" 403 108
+"POST /api/v1/login/ HTTP/1.1" 200 863
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"OPTIONS /api/v1/login/ HTTP/1.1" 200 0
+"POST /api/v1/login/ HTTP/1.1" 200 863
+Invalid HTTP_HOST header: '10.16.38.127:8001'. You may need to add '10.16.38.127' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\http\request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '10.16.38.127:8001'. You may need to add '10.16.38.127' to ALLOWED_HOSTS.
+Bad Request: /api/v1/login/
+"POST /api/v1/login/ HTTP/1.1" 400 78913
+Invalid HTTP_HOST header: '10.16.38.127:8001'. You may need to add '10.16.38.127' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\http\request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '10.16.38.127:8001'. You may need to add '10.16.38.127' to ALLOWED_HOSTS.
+Bad Request: /api/v1/login/
+"POST /api/v1/login/ HTTP/1.1" 400 78913
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Invalid HTTP_HOST header: '10.16.38.127:8001'. You may need to add '10.16.38.127' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\http\request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '10.16.38.127:8001'. You may need to add '10.16.38.127' to ALLOWED_HOSTS.
+Bad Request: /api/v1/login/
+"POST /api/v1/login/ HTTP/1.1" 400 78913
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 863
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 863
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /api/v1/login/
+"POST /api/v1/login/ HTTP/1.1" 404 29
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/login/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 89, in login
+    'clinicId': clinic_id if clinic_id else None,
+                             ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'clinic_id' where it is not associated with a value
+"POST /api/v1/login/ HTTP/1.1" 500 119865
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/login/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 90, in login
+    'clinicName': clinic_data['name'] if clinic_data else None,
+                                         ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'clinic_data' where it is not associated with a value
+"POST /api/v1/login/ HTTP/1.1" 500 120048
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/login/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 93, in login
+    'modules': [{'name': module[0], 'id': module[1]} for module in modules] if modules else [],
+                                                                               ^^^^^^^
+UnboundLocalError: cannot access local variable 'modules' where it is not associated with a value
+"POST /api/v1/login/ HTTP/1.1" 500 120314
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/login/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 96, in login
+    'server_url': clinic_data['url'] or default_url
+                  ~~~~~~~~~~~^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+"POST /api/v1/login/ HTTP/1.1" 500 120009
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 657
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/login/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 104, in login
+    'clinic_image' : clinic_image if clinic_image else None,
+                                     ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'clinic_image' where it is not associated with a value
+"POST /api/v1/login/ HTTP/1.1" 500 120392
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 677
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+The joined path (C:\static\images\clinic1.png) is located outside of the base path component (C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\media)
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 91, in login
+    file_exists = default_storage.exists(f'/static/images/{clinic_name}.png')
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\files\storage\filesystem.py", line 165, in exists
+    return os.path.lexists(self.path(name))
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\files\storage\filesystem.py", line 179, in path
+    return safe_join(self.location, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\_os.py", line 31, in safe_join
+    raise SuspiciousFileOperation(
+django.core.exceptions.SuspiciousFileOperation: The joined path (C:\static\images\clinic1.png) is located outside of the base path component (C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\media)
+Bad Request: /api/v1/login/
+"POST /api/v1/login/ HTTP/1.1" 400 133571
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 907
+"POST /api/v1/login/ HTTP/1.1" 200 907
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 907
+"POST /api/v1/login/ HTTP/1.1" 200 940
+"POST /api/v1/login/ HTTP/1.1" 200 701
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 720
+"POST /api/v1/login/ HTTP/1.1" 200 928
+Not Found: /
+"GET / HTTP/1.1" 404 12905
+"GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+"GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+"GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+"GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 12967
+Not Found: /firebase-messaging-sw.js
+"GET /firebase-messaging-sw.js HTTP/1.1" 404 13019
+"POST /api/v1/login/ HTTP/1.1" 200 722
+"GET /static/images/default.png HTTP/1.1" 200 9685
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 12967
+"POST /api/v1/login/ HTTP/1.1" 200 928
+"GET /static/images/clinic1.png HTTP/1.1" 200 29087

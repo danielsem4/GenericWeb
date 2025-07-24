@@ -41,6 +41,7 @@ urlpatterns = [
     path('', include("api.urls")),
     path('', include("users.urls")),
     path('', include("clinics.urls")),
+    path('', include("medications.urls")),
     path('', include(tf_urls)),
 
 ]
