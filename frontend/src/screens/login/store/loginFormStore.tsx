@@ -9,7 +9,7 @@ interface LoginFormState {
   };
 }
 
-const useLoginFormStore = create<LoginFormState>((set) => ({
+const useLoginFormStore = create<LoginFormState>((set) => ({ 
   email: "",
   password: "",
   actions: {

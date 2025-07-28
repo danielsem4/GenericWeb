@@ -1,18 +1,12 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import type { IUser, IUserResponse } from "../types/User";
 
-interface User {
-  id: number;
-  email: string;
-  name: string;
-  token: string;
-  modules: any[];
-}
 
 interface UserState {
-  user: User | null;
+  user: IUserResponse | null;
   actions: {
-    setUser: (user: User | null) => void;
+    setUser: (user: IUserResponse | null) => void;
     logout: () => void;
   };
 }

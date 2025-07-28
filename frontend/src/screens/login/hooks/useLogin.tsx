@@ -1,43 +1,7 @@
 import { useMutation, useQueries, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useUserActions } from "../../../common/store/UserStore";
-
-interface User {
-  id: number;
-  password?: string;
-  last_login: string | null;
-  is_superuser: boolean;
-  is_staff: boolean;
-  is_active: boolean;
-  date_joined: string;
-  email: string;
-  phone_number: string;
-  first_name: string;
-  last_name: string;
-  is_clinic_manager: boolean;
-  is_doctor: boolean;
-  is_patient: boolean;
-  is_research_patient: boolean;
-  groups: any[];
-  user_permissions: any[];
-  clinicId: number;
-  clinicName: string;
-  modules: any[];
-  research_patient: boolean;
-  status: string;
-  server_url: string;
-}
-
-export interface LoginCredentials {
-  email: string;
-  password: string;
-}
-
-interface LoginResponse {
-  user: User;
-  token: string;
-  refreshToken?: string;
-}
+import type { LoginCredentials, LoginResponse } from "../LoginCredentials";
 
 async function loginUser(
   credentials: LoginCredentials
@@ -66,11 +30,10 @@ export const useLogin = () => {
     mutationFn: loginUser,
     onSuccess: (data) => {
       setUser({
-        id: data.user.id,
-        email: data.user.email,
-        name: `${data.user.first_name} ${data.user.last_name}`,
+        user: {
+          ...data.user
+        },
         token: data.token,
-        modules: data.user.modules,
       });
     },
     onError: (error) => {
