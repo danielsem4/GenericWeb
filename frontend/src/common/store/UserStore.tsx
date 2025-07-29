@@ -1,37 +1,54 @@
 import { create } from "zustand";
-import type { IUserResponse } from "../types/User";
-import { useLocation } from "react-router";
+import { persist } from "zustand/middleware";
+import type { IUser, IUserResponse } from "../types/User";
+import axios from "axios";
 
 interface UserState {
-  user: IUserResponse | null;
+  user: IUser | null;
+  token: string | null;
   actions: {
-    setUser: (user: IUserResponse | null) => void;
+    setUser: (user: IUser, token: string) => void;
     logout: () => void;
+    hydrate: () => void;
   };
 }
 
 export const useUserStore = create<UserState>()(
+  persist(
     (set) => ({
       user: null,
+      token: null,
       actions: {
-        setUser: (user) => set({ user }),
+        setUser: (user, token) => {
+          set({ user, token });
+        },
         logout: () => {
-          set({ user: null })
+          set({ user: null, token: null });
           localStorage.removeItem("auth_token");
+        },
+        hydrate: async () => {
+          const token = localStorage.getItem("auth_token");
+          if (token) {
+            try {
+              const response = await axios.get<IUserResponse>(
+                `${import.meta.env.VITE_API_URL}login/`,
+                { headers: { Authorization: `Bearer ${token}` } }
+              );
+              set({ user: response.data.user, token });
+            } catch {
+              localStorage.removeItem("auth_token");
+            }
+          }
         },
       },
     }),
+    {
+      name: "user-storage",
+      partialize: (state) => ({ user: state.user, token: state.token }),
+    }
+  )
 );
 
-export const useUser = () => {
-  return useUserStore((state) => state.user);
-};
-
-export const useUserActions = () => {
-  return useUserStore((state) => state.actions);
-};
-
 export const useIsAuthenticated = () => {
-  const token = localStorage.getItem("auth_token");
-  return token
+  return useUserStore((state) => !!state.token);
 };

@@ -4,6 +4,7 @@ import { useIsAuthenticated } from "../common/store/UserStore";
 
 function ProtectedRoute() {
   const isAuthenticated = useIsAuthenticated();
+  console.log("ProtectedRoute isAuthenticated:", isAuthenticated);
 
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;

@@ -13,24 +13,20 @@ import {
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router";
 import NavMain from "./NavMain";
-import { useUser, useUserActions } from "@/common/store/UserStore";
 import sidebarData from "@/common/data/sidebarData";
 import { useEffect, useState } from "react";
+import { useUserStore } from "@/common/store/UserStore";
 
 
 function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const navigate = useNavigate();
   const { state } = useSidebar();
-  const user = useUser();
-  const { logout } = useUserActions();
-  
+  const { actions, user } = useUserStore();
 
   const [sidebarItems, setSidebarItems] = useState(sidebarData.navMain);
 
   useEffect(() => {
-    console.log(user);
-    
-    if (!user?.user) return;
+    if (!user) return;
 
     const updatedNavMain = sidebarData.navMain.map((navItem) => {
       if (navItem.title === "Modules") {
@@ -38,7 +34,7 @@ function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           ...navItem,
           items: [
             ...(navItem.items || []),
-            ...(user.user.modules?.map((module) => ({
+            ...(user.modules?.map((module) => ({
               title: module.name,
               url: `modules/${module.id}`,
             })) || []),
@@ -50,10 +46,22 @@ function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
     setSidebarItems(updatedNavMain);
   }, [user]);
+
   const handleLogout = () => {
-    logout();
+    actions.logout();
     navigate("/login");
   };
+  console.log("AppSidebar user:", user);
+  
+  if (!user) {
+    return (
+      <Sidebar collapsible="icon" {...props}>
+        <SidebarContent>
+          <div className="p-4">Loading sidebar...</div>
+        </SidebarContent>
+      </Sidebar>
+    );
+  }
 
   return (
     <Sidebar collapsible="icon" {...props}>
@@ -61,7 +69,7 @@ function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <div className="flex items-center justify-between">
           {state === "expanded" && (
             <div className="text-shadow-md font-semibold">
-              Welcome, {user?.user?.firstName || "User"}
+              Welcome, {user?.firstName || "User"}
             </div>
           )}
           <SidebarTrigger className="p-2" />
@@ -69,8 +77,7 @@ function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
 
       <SidebarContent>
-
-        <NavMain items={sidebarData.navMain} />
+        <NavMain items={sidebarItems} />
       </SidebarContent>
 
       <SidebarFooter>
@@ -93,5 +100,6 @@ function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     </Sidebar>
   );
 }
+
 
 export default AppSidebar;
