@@ -1,4 +1,4 @@
-import type { IUser } from "@/common/types/User";
+import type { IAuthUser } from "@/common/types/User";
 
 export interface LoginCredentials {
     email: string;
@@ -6,6 +6,6 @@ export interface LoginCredentials {
   }
   
 export interface LoginResponse {
-    user: IUser;
+    user: IAuthUser;
     token: string;
   }

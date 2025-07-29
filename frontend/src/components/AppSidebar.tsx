@@ -51,7 +51,6 @@ function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     actions.logout();
     navigate("/login");
   };
-  console.log("AppSidebar user:", user);
   
   if (!user) {
     return (

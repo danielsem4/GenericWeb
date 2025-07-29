@@ -1,9 +1,9 @@
-export interface IUserResponse {
+export interface IAuthUserResponse {
     token: string;
-    user: IUser;
+    user: IAuthUser;
   }
   
-  export interface IUser {
+  export interface IAuthUser {
     id: string;
     password: string;
     lastLogin: string | null;

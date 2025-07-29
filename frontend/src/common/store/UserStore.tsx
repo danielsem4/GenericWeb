@@ -1,13 +1,13 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import type { IUser, IUserResponse } from "../types/User";
+import type { IAuthUser, IAuthUserResponse } from "../types/User";
 import axios from "axios";
 
 interface UserState {
-  user: IUser | null;
+  user: IAuthUser | null;
   token: string | null;
   actions: {
-    setUser: (user: IUser, token: string) => void;
+    setUser: (user: IAuthUser, token: string) => void;
     logout: () => void;
     hydrate: () => void;
   };
@@ -30,7 +30,7 @@ export const useUserStore = create<UserState>()(
           const token = localStorage.getItem("auth_token");
           if (token) {
             try {
-              const response = await axios.get<IUserResponse>(
+              const response = await axios.get<IAuthUserResponse>(
                 `${import.meta.env.VITE_API_URL}login/`,
                 { headers: { Authorization: `Bearer ${token}` } }
               );
