@@ -1991,3 +1991,1209 @@ Not Found: /favicon.ico
 "GET /favicon.ico HTTP/1.1" 404 12967
 "POST /api/v1/login/ HTTP/1.1" 200 928
 "GET /static/images/clinic1.png HTTP/1.1" 200 29087
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 928
+"POST /api/v1/login/ HTTP/1.1" 200 931
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+Not Found: /
+"GET / HTTP/1.1" 404 12919
+Watching for file changes with StatReloader
+"OPTIONS /api/v1/login/ HTTP/1.1" 200 0
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"GET /static/images/default.png HTTP/1.1" 200 9685
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 12980
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"OPTIONS /api/v1/login/ HTTP/1.1" 200 0
+"POST /api/v1/login/ HTTP/1.1" 200 928
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 928
+"POST /api/v1/login/ HTTP/1.1" 200 941
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/getUsers/1/2/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\response.py", line 111, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\response.py", line 55, in rendered_content
+    assert renderer, ".accepted_renderer not set on Response"
+           ^^^^^^^^
+AssertionError: .accepted_renderer not set on Response
+"GET /api/v1/getUsers/1/2/ HTTP/1.1" 500 88217
+Internal Server Error: /api/v1/getUsers/1/2/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\response.py", line 111, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\response.py", line 55, in rendered_content
+    assert renderer, ".accepted_renderer not set on Response"
+           ^^^^^^^^
+AssertionError: .accepted_renderer not set on Response
+"GET /api/v1/getUsers/1/2/ HTTP/1.1" 500 90713
+"GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+"GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+"GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13578
+"GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 13207
+"GET /admin HTTP/1.1" 301 0
+"GET /admin/ HTTP/1.1" 200 26836
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+"GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+"GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+"GET /static/admin/js/theme.js HTTP/1.1" 304 0
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+"GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 13194
+"GET /admin/clinics/clinic/ HTTP/1.1" 200 23947
+"GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+"GET /static/admin/js/filters.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+"GET /admin/clinics/clinic/1/change/ HTTP/1.1" 200 25174
+"GET /static/admin/css/forms.css HTTP/1.1" 304 0
+"GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+"GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/user/ HTTP/1.1" 200 27162
+"GET /static/admin/img/search.svg HTTP/1.1" 200 458
+"GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+"GET /admin/users/user/add/ HTTP/1.1" 200 31891
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/users/user/add/ HTTP/1.1" 302 0
+"GET /admin/users/user/5/change/ HTTP/1.1" 200 33581
+"GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+"GET /static/admin/js/calendar.js HTTP/1.1" 200 8466
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+"GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+"POST /admin/users/user/5/change/ HTTP/1.1" 302 0
+"GET /admin/users/user/add/ HTTP/1.1" 200 32131
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/users/user/add/ HTTP/1.1" 200 32123
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/users/user/add/ HTTP/1.1" 200 32189
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/users/user/add/ HTTP/1.1" 302 0
+"GET /admin/users/user/add/ HTTP/1.1" 200 32130
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/users/user/add/ HTTP/1.1" 302 0
+"GET /admin/users/user/7/change/ HTTP/1.1" 200 33581
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/patientdoctor/ HTTP/1.1" 200 22849
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/patientdoctor/add/ HTTP/1.1" 200 26204
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/patient/ HTTP/1.1" 200 22796
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/patient/add/ HTTP/1.1" 200 24784
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/users/patient/add/ HTTP/1.1" 302 0
+"GET /admin/users/patient/add/ HTTP/1.1" 200 25032
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/users/patient/add/ HTTP/1.1" 302 0
+"GET /admin/users/patient/add/ HTTP/1.1" 200 25032
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/users/patient/add/ HTTP/1.1" 302 0
+"GET /admin/users/patient/add/ HTTP/1.1" 200 25032
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/patientdoctor/ HTTP/1.1" 200 22849
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/patientdoctor/add/ HTTP/1.1" 200 26358
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/users/patientdoctor/add/ HTTP/1.1" 302 0
+"GET /admin/users/patientdoctor/add/ HTTP/1.1" 200 26648
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/users/patientdoctor/add/ HTTP/1.1" 302 0
+"GET /admin/users/patientdoctor/add/ HTTP/1.1" 200 26648
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/users/patientdoctor/add/ HTTP/1.1" 302 0
+"GET /admin/users/patientdoctor/add/ HTTP/1.1" 200 26648
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/users/patientdoctor/add/ HTTP/1.1" 200 26568
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/patientclinic/ HTTP/1.1" 200 22859
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/patientclinic/add/ HTTP/1.1" 200 26356
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/clinics/patientclinic/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/patientclinic/add/ HTTP/1.1" 200 26632
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/clinics/patientclinic/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/patientclinic/add/ HTTP/1.1" 200 26633
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/clinics/patientclinic/add/ HTTP/1.1" 302 0
+"GET /admin/clinics/patientclinic/ HTTP/1.1" 200 24762
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/clinic/ HTTP/1.1" 200 23946
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/doctorclinic/ HTTP/1.1" 200 24040
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/patientclinic/ HTTP/1.1" 200 24526
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/patientdoctor/ HTTP/1.1" 200 24552
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/doctor/ HTTP/1.1" 200 23946
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/clinicmanager/ HTTP/1.1" 200 24038
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/user/ HTTP/1.1" 200 28463
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Method Not Allowed: /api/v1/getUsers/1/2/
+"GET /api/v1/getUsers/1/2/ HTTP/1.1" 405 40
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /api/v1/getUsers/1/2/
+"GET /api/v1/getUsers/1/2/ HTTP/1.1" 404 27
+"GET /admin/ HTTP/1.1" 200 26923
+"GET /admin/clinics/doctorclinic/ HTTP/1.1" 200 24040
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/doctorclinic/1/change/ HTTP/1.1" 200 26506
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/doctor/ HTTP/1.1" 200 23946
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/doctor/3/change/ HTTP/1.1" 200 25025
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/user/ HTTP/1.1" 200 28464
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/user/1/change/ HTTP/1.1" 200 33336
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/user/ HTTP/1.1" 200 28463
+"GET /admin/users/user/1/change/ HTTP/1.1" 200 33336
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/user/ HTTP/1.1" 200 28463
+"GET /admin/users/user/4/change/ HTTP/1.1" 200 33374
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/user/ HTTP/1.1" 200 28463
+"GET /admin/users/user/5/change/ HTTP/1.1" 200 33344
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/user/ HTTP/1.1" 200 28463
+"GET /admin/users/user/6/change/ HTTP/1.1" 200 33344
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/user/ HTTP/1.1" 200 28463
+"GET /admin/users/user/7/change/ HTTP/1.1" 200 33344
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/user/ HTTP/1.1" 200 28463
+"POST /api/v1/login/ HTTP/1.1" 200 941
+Internal Server Error: /api/v1/getUsers/1/3/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 138, in get_users
+    patients = Patient.objects.filter(id__in=clinicpatients)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1498, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1529, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1379, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1189, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1677, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'id' into field. Choices are: patientclinic, patientdoctor, patientmedicine, user, user_id
+"GET /api/v1/getUsers/1/3/ HTTP/1.1" 500 162309
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/getUsers/1/3/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 139, in get_users
+    patients = Patient.objects.filter(id__in=clinicpatients.values_list('user__id', flat=True))
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1345, in values_list
+    clone = self._values(*_fields, **expressions)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1308, in _values
+    clone.query.set_values(fields)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 2413, in set_values
+    self.add_fields(field_names, True)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 2114, in add_fields
+    join_info = self.setup_joins(
+                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1776, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1677, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'user' into field. Choices are: clinic, clinic_id, id, patient, patient_id
+"GET /api/v1/getUsers/1/3/ HTTP/1.1" 500 148188
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/v1/getUsers/1/3/ HTTP/1.1" 200 1467
+"POST /api/v1/login/ HTTP/1.1" 200 974
+"GET /api/v1/getUsers/1/4/ HTTP/1.1" 200 470
+"GET /api/v1/getUsers/1/1/ HTTP/1.1" 200 503
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/getUsers/1/3/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\fields.py", line 94, in get_attribute
+    instance = instance[attr]
+               ~~~~~~~~^^^^^^
+KeyError: 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 145, in get_users
+    return Response(serializer.data, status=status.HTTP_200_OK)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+           ^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `password` on serializer `UserSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'password'."
+"GET /api/v1/getUsers/1/3/ HTTP/1.1" 500 174827
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/v1/getUsers/1/3/ HTTP/1.1" 200 604
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 13208
+"GET /admin/users/user/ HTTP/1.1" 200 28421
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 13194
+"GET /admin/users/user/ HTTP/1.1" 200 28464
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Watching for file changes with StatReloader
+"GET /api/v1/getUsers/1/3/ HTTP/1.1" 200 604
+"OPTIONS /api/v1/login/ HTTP/1.1" 200 0
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+Internal Server Error: /api/v1/login
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to e9eebf62425d.ngrok-free.app/api/v1/login/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+"POST /api/v1/login HTTP/1.1" 500 80560
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/v1/getUsers/1/3/ HTTP/1.1" 200 654
+"GET /api/v1/getUsers/1/3/ HTTP/1.1" 200 654
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+"OPTIONS /api/v1/login/ HTTP/1.1" 200 0
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"OPTIONS /api/v1/getUsers/1/3/ HTTP/1.1" 200 0
+"POST /api/v1/login/ HTTP/1.1" 200 941
+Unauthorized: /api/v1/getUsers/1/3/
+"GET /api/v1/getUsers/1/3/ HTTP/1.1" 401 58
+Unauthorized: /api/v1/getUsers/1/3/
+"GET /api/v1/getUsers/1/3/ HTTP/1.1" 401 58
+"GET /api/v1/getUsers/1/3/ HTTP/1.1" 200 654
+"GET /api/v1/getUsers/1/3/ HTTP/1.1" 200 654
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Unauthorized: /api/v1/getUsers/1/3/
+"GET /api/v1/getUsers/1/3/ HTTP/1.1" 401 58
+"GET /api/v1/getUsers/1/3/ HTTP/1.1" 200 604
+"GET /api/v1/getUsers/1/4/ HTTP/1.1" 200 200
+"GET /api/v1/getUsers/1/1/ HTTP/1.1" 200 214
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/v1/getUsers/0/1/ HTTP/1.1" 200 214
+Not Found: /api/v1/getUsers/0/3/
+"GET /api/v1/getUsers/0/3/ HTTP/1.1" 404 29
+"GET /api/v1/getUsers/1/1/ HTTP/1.1" 200 214
+"GET /api/v1/getUsers/1/3/ HTTP/1.1" 200 604
+Internal Server Error: /api/v1/getUsers/1/5/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 147, in get_users
+    user_details = {}
+    ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'users' where it is not associated with a value
+"GET /api/v1/getUsers/1/5/ HTTP/1.1" 500 117237
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /api/v1/getUsers/1/5/
+"GET /api/v1/getUsers/1/5/ HTTP/1.1" 404 43
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /api/v1/getUsers/6/5/
+"GET /api/v1/getUsers/6/5/ HTTP/1.1" 404 29
+Not Found: /api/v1/getUsers/6/3/
+"GET /api/v1/getUsers/6/3/ HTTP/1.1" 404 29
+"GET /api/v1/getUsers/1/3/ HTTP/1.1" 200 604
+Watching for file changes with StatReloader
+Not Found: /
+"GET / HTTP/1.1" 404 13146
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"GET /api/v1/getUsers/1/3/ HTTP/1.1" 200 604
+"GET /api/v1/getUsers/1/3/ HTTP/1.1" 200 604
+"GET /api/v1/getUsers/1/4/ HTTP/1.1" 200 200
+"GET /api/v1/getUsers/1/1/ HTTP/1.1" 200 214
+Not Found: /api/v1/getUsers/1/6/
+"GET /api/v1/getUsers/1/6/ HTTP/1.1" 404 56
+Not Found: /api/v1/getUsers/1/5/
+"GET /api/v1/getUsers/1/5/ HTTP/1.1" 404 56
+Not Found: /api/v1/getUsers/1/7/
+"GET /api/v1/getUsers/1/7/ HTTP/1.1" 404 56
+Not Found: /api/v1/getUsers/1/2/
+"GET /api/v1/getUsers/1/2/ HTTP/1.1" 404 27
+Not Found: /api/v1/getUsers/2/3/
+"GET /api/v1/getUsers/2/3/ HTTP/1.1" 404 29
+"GET /api/v1/getUsers/0/1/ HTTP/1.1" 200 214
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/ HTTP/1.1" 200 28579
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+"GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+"GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+"GET /static/admin/js/theme.js HTTP/1.1" 304 0
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+"GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 13194
+"GET /admin/medications/medicines/ HTTP/1.1" 200 24073
+"GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+"GET /static/admin/js/filters.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+"GET /admin/medications/medicines/add/ HTTP/1.1" 200 26789
+"GET /static/admin/css/forms.css HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+"GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+"GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/medicines/ HTTP/1.1" 200 24073
+"GET /admin/medications/clinicmedicine/ HTTP/1.1" 200 24118
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/clinicmedicine/add/ HTTP/1.1" 200 27495
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/clinicmedicine/ HTTP/1.1" 200 24118
+"GET /admin/medications/patientmedicine/ HTTP/1.1" 200 24126
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/patientmedicine/add/ HTTP/1.1" 200 34749
+"GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+"GET /admin/medications/patientmedicine/ HTTP/1.1" 200 24126
+"OPTIONS /api/v1/login/ HTTP/1.1" 200 0
+"POST /api/v1/login/ HTTP/1.1" 200 941
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"GET /admin/ HTTP/1.1" 200 28578
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 13194
+"GET /admin/medications/medicines/ HTTP/1.1" 200 51038
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/medicines/1999022181/change/ HTTP/1.1" 200 27196
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/medicines/ HTTP/1.1" 200 51038
+"OPTIONS /api/v1/login/ HTTP/1.1" 200 0
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"GET /admin/medications/clinicmedicine/ HTTP/1.1" 200 24117
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/clinicmedicine/add/ HTTP/1.1" 200 394369
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/medications/clinicmedicine/add/ HTTP/1.1" 302 0
+"GET /admin/medications/clinicmedicine/ HTTP/1.1" 200 25552
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+"GET /admin/medications/clinicmedicine/add/ HTTP/1.1" 200 394369
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/medications/clinicmedicine/add/ HTTP/1.1" 302 0
+"GET /admin/medications/clinicmedicine/ HTTP/1.1" 200 25792
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/clinicmedicine/add/ HTTP/1.1" 200 394369
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/medications/clinicmedicine/add/ HTTP/1.1" 302 0
+"GET /admin/medications/clinicmedicine/add/ HTTP/1.1" 200 394651
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/medications/clinicmedicine/add/ HTTP/1.1" 302 0
+"GET /admin/medications/clinicmedicine/ HTTP/1.1" 200 26267
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/clinicmedicine/add/ HTTP/1.1" 200 394369
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/medications/clinicmedicine/add/ HTTP/1.1" 302 0
+"GET /admin/medications/clinicmedicine/ HTTP/1.1" 200 26506
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/clinicmedicine/5/change/ HTTP/1.1" 200 394648
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/clinicmedicine/ HTTP/1.1" 200 26266
+"GET /admin/medications/clinicmedicine/4/change/ HTTP/1.1" 200 394648
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/clinicmedicine/ HTTP/1.1" 200 26267
+"GET /admin/medications/clinicmedicine/add/ HTTP/1.1" 200 394369
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/medications/clinicmedicine/add/ HTTP/1.1" 302 0
+"GET /admin/medications/clinicmedicine/ HTTP/1.1" 200 26744
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/patientmedicine/ HTTP/1.1" 200 24126
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/patientmedicine/add/ HTTP/1.1" 200 401622
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/medications/patientmedicine/add/ HTTP/1.1" 302 0
+"GET /admin/medications/patientmedicine/add/ HTTP/1.1" 200 401908
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/medications/patientmedicine/add/ HTTP/1.1" 302 0
+"GET /admin/medications/patientmedicine/ HTTP/1.1" 200 25809
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/v1/getClinicMedications/1/ HTTP/1.1" 200 647
+Not Found: /api/v1/getClinicMedications/0/
+"GET /api/v1/getClinicMedications/0/ HTTP/1.1" 404 30
+Unauthorized: /api/v1/getClinicMedications/1/
+"GET /api/v1/getClinicMedications/1/ HTTP/1.1" 401 27
+"GET /api/v1/getClinicMedications/1/ HTTP/1.1" 200 647
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Forbidden: /api/v1/getPatientMedications/1/3/
+"GET /api/v1/getPatientMedications/1/3/ HTTP/1.1" 403 35
+Forbidden: /api/v1/getPatientMedications/1/5/
+"GET /api/v1/getPatientMedications/1/5/ HTTP/1.1" 403 35
+Forbidden: /api/v1/getPatientMedications/1/6/
+"GET /api/v1/getPatientMedications/1/6/ HTTP/1.1" 403 35
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Forbidden: /api/v1/getPatientMedications/1/6/
+"GET /api/v1/getPatientMedications/1/6/ HTTP/1.1" 403 35
+"GET /api/v1/getClinicMedications/1/ HTTP/1.1" 200 647
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Forbidden: /api/v1/getPatientMedications/1/5/
+"GET /api/v1/getPatientMedications/1/5/ HTTP/1.1" 403 35
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Forbidden: /api/v1/getPatientMedications/1/5/
+"GET /api/v1/getPatientMedications/1/5/ HTTP/1.1" 403 35
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/getPatientMedications/1/5/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py", line 217, in get_patient_medications
+    patient = Patient.objects.get(id=user.id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1498, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1529, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1379, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1189, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1677, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'id' into field. Choices are: patientclinic, patientdoctor, patientmedicine, user, user_id
+"GET /api/v1/getPatientMedications/1/5/ HTTP/1.1" 500 166727
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/v1/getPatientMedications/1/5/ HTTP/1.1" 200 532
+Not Found: /api/v1/getPatientMedications/1/6/
+"GET /api/v1/getPatientMedications/1/6/ HTTP/1.1" 404 66
+Not Found: /api/v1/getPatientMedications/1/8/
+"GET /api/v1/getPatientMedications/1/8/ HTTP/1.1" 404 28
+Not Found: /api/v1/getPatientMedications/0/8/
+"GET /api/v1/getPatientMedications/0/8/ HTTP/1.1" 404 30
+Not Found: /api/v1/getPatientMedications/0/5/
+"GET /api/v1/getPatientMedications/0/5/ HTTP/1.1" 404 30
+Forbidden: /api/v1/getPatientMedications/1/3/
+"GET /api/v1/getPatientMedications/1/3/ HTTP/1.1" 403 35
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\urls.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/medications/patientmedicine/ HTTP/1.1" 200 25567
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/patientmedicine/ HTTP/1.1" 200 25566
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 604
+Not Found: /api/v1/medications/getClinicMedications/1/
+"GET /api/v1/medications/getClinicMedications/1/ HTTP/1.1" 404 13797
+Not Found: /api/v1/medications/getPatientMedications/1/3/
+"GET /api/v1/medications/getPatientMedications/1/3/ HTTP/1.1" 404 13809
+"GET /api/v1/medications/clinic/1/ HTTP/1.1" 200 647
+Forbidden: /api/v1/medications/patient/1/3/
+"GET /api/v1/medications/patient/1/3/ HTTP/1.1" 403 35
+"GET /api/v1/medications/patient/1/5/ HTTP/1.1" 200 532
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\urls.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/medications/medicines/ HTTP/1.1" 200 51039
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/medicines/1999022181/change/ HTTP/1.1" 200 27196
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /api/v1/medications/clinic/1/add/ HTTP/1.1" 201 43
+"GET /admin/medications/clinicmedicine/ HTTP/1.1" 200 26743
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/clinicmedicine/7/change/ HTTP/1.1" 200 394648
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/clinicmedicine/ HTTP/1.1" 200 26743
+"GET /admin/medications/clinicmedicine/6/change/ HTTP/1.1" 200 394648
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/clinicmedicine/ HTTP/1.1" 200 26742
+Unauthorized: /api/v1/medications/clinic/1/delete/1999022181/
+"DELETE /api/v1/medications/clinic/1/delete/1999022181/ HTTP/1.1" 401 58
+"DELETE /api/v1/medications/clinic/1/delete/1999022181/ HTTP/1.1" 204 45
+"GET /admin/medications/clinicmedicine/ HTTP/1.1" 200 26504
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"DELETE /api/v1/medications/clinic/1/delete/1999022181/ HTTP/1.1" 204 45
+"GET /admin/medications/clinicmedicine/ HTTP/1.1" 200 26504
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /api/v1/medications/clinic/1/delete/1999022181/
+"DELETE /api/v1/medications/clinic/1/delete/1999022181/ HTTP/1.1" 404 49
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\models.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/medications/clinicmedicine/ HTTP/1.1" 200 26505
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/patientdoctor/ HTTP/1.1" 200 25782
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/patientdoctor/3/change/ HTTP/1.1" 200 29489
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/users/patientdoctor/3/change/ HTTP/1.1" 302 0
+"GET /admin/users/patientdoctor/add/ HTTP/1.1" 200 29463
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/patientdoctor/3/change/ HTTP/1.1" 200 29489
+"POST /admin/users/patientdoctor/3/change/ HTTP/1.1" 302 0
+"GET /admin/users/patientdoctor/ HTTP/1.1" 200 26032
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/patientdoctor/2/change/ HTTP/1.1" 200 29489
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/users/patientdoctor/2/change/ HTTP/1.1" 302 0
+"GET /admin/users/patientdoctor/ HTTP/1.1" 200 26032
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/patientdoctor/1/change/ HTTP/1.1" 200 29489
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/users/patientdoctor/1/change/ HTTP/1.1" 302 0
+"GET /admin/users/patientdoctor/ HTTP/1.1" 200 26032
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/users/patientdoctor/ HTTP/1.1" 200 25782
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"GET /admin/medications/patientmedicine/ HTTP/1.1" 200 25567
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/patientmedicine/2/change/ HTTP/1.1" 200 401903
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/patientmedicine/ HTTP/1.1" 200 25566
+"GET /admin/medications/patientmedicine/1/change/ HTTP/1.1" 200 401903
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/patientmedicine/ HTTP/1.1" 200 25566
+Bad Request: /api/v1/medications/patient/1/5/add/
+"POST /api/v1/medications/patient/1/5/add/ HTTP/1.1" 400 110
+Not Found: /api/v1/medications/patient/1/5/add/
+"POST /api/v1/medications/patient/1/5/add/ HTTP/1.1" 404 53
+"POST /api/v1/medications/clinic/1/add/ HTTP/1.1" 201 43
+"POST /api/v1/medications/patient/1/5/add/ HTTP/1.1" 201 43
+"GET /admin/medications/patientmedicine/ HTTP/1.1" 200 25806
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/patientmedicine/3/change/ HTTP/1.1" 200 402189
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/patientmedicine/ HTTP/1.1" 200 25806
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+Method Not Allowed: /api/v1/medications/patient/1/5/update/
+"POST /api/v1/medications/patient/1/5/update/ HTTP/1.1" 405 41
+"PUT /api/v1/medications/patient/1/5/update/ HTTP/1.1" 200 45
+"GET /admin/medications/patientmedicine/ HTTP/1.1" 200 25807
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/patientmedicine/3/change/ HTTP/1.1" 200 402188
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+"DELETE /api/v1/medications/patient/1/5/delete/1999022181/ HTTP/1.1" 204 45
+"GET /admin/medications/patientmedicine/ HTTP/1.1" 200 25567
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"OPTIONS /api/v1/login/ HTTP/1.1" 200 0
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"OPTIONS /api/v1/login/ HTTP/1.1" 200 0
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"OPTIONS /api/v1/login/ HTTP/1.1" 200 0
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/ HTTP/1.1" 200 29211
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+"GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+"GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+"GET /static/admin/js/theme.js HTTP/1.1" 304 0
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+"GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 15377
+"GET /admin/medications/patientmedicine/ HTTP/1.1" 200 25908
+"GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+"GET /static/admin/js/filters.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+"GET /admin/medications/patientmedicine/2/change/ HTTP/1.1" 200 402246
+"GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+"GET /static/admin/css/forms.css HTTP/1.1" 304 0
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+"GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+"GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+"GET /admin/medications/patientmedicine/ HTTP/1.1" 200 25909
+"GET /admin/medications/patientmedicine/1/change/ HTTP/1.1" 200 402246
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/patientmedicine/ HTTP/1.1" 200 25908
+"POST /api/v1/medications/patient/1/5/add/ HTTP/1.1" 201 43
+"GET /admin/medications/patientmedicine/ HTTP/1.1" 200 26148
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Bad Request: /api/v1/medications/report/
+"POST /api/v1/medications/report/ HTTP/1.1" 400 70
+"POST /api/v1/medications/report/ HTTP/1.1" 201 54
+"GET /admin/medications/medicationreport/ HTTP/1.1" 200 25679
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/medicationreport/1/change/ HTTP/1.1" 200 397804
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\utils.py changed, reloading.
+Watching for file changes with StatReloader
+"OPTIONS /api/v1/login/ HTTP/1.1" 200 0
+"POST /api/v1/login/ HTTP/1.1" 200 941
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\utils.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\utils.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/medications/report/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py", line 327, in patient_medication_report
+    timestamp = format_timestamp(timestamp)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\utils.py", line 25, in format_timestamp
+    return timestamp.strftime('%Y-%m-%d %H:%M:%S.%f')
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'strftime'
+"POST /api/v1/medications/report/ HTTP/1.1" 500 120660
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\utils.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\utils.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/medications/report/ HTTP/1.1" 201 54
+"POST /api/v1/login/ HTTP/1.1" 200 941
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\utils.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\utils.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\utils.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/medications/report/ HTTP/1.1" 201 54
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\utils.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/medications/report/ HTTP/1.1" 201 54
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\utils.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/medications/medicationreport/ HTTP/1.1" 200 26406
+"GET /admin/medications/medicationreport/ HTTP/1.1" 200 26406
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/medicationreport/4/change/ HTTP/1.1" 200 397804
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /api/v1/medications/report/ HTTP/1.1" 201 54
+"GET /admin/medications/medicationreport/ HTTP/1.1" 200 26647
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\models.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 941
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Bad Request: /api/v1/medications/patient/1/5/add/
+"POST /api/v1/medications/patient/1/5/add/ HTTP/1.1" 400 72
+"DELETE /api/v1/medications/patient/1/5/delete/1999022181/ HTTP/1.1" 204 45
+"GET /admin/medications/medicationreport/ HTTP/1.1" 200 26648
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/patientmedicine/ HTTP/1.1" 200 25908
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /api/v1/medications/patient/1/5/add/ HTTP/1.1" 201 43
+"GET /admin/medications/patientmedicine/ HTTP/1.1" 200 26147
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/patientmedicine/5/change/ HTTP/1.1" 200 402572
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/patientmedicine/ HTTP/1.1" 200 26147
+"GET /admin/medications/patientmedicine/2/change/ HTTP/1.1" 200 402244
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Bad Request: /api/v1/medications/patient/1/5/add/
+"POST /api/v1/medications/patient/1/5/add/ HTTP/1.1" 400 72
+"PUT /api/v1/medications/patient/1/5/update/ HTTP/1.1" 200 45
+"GET /admin/medications/patientmedicine/2/change/ HTTP/1.1" 200 402592
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/medications/set/notification/ HTTP/1.1" 201 54
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/medications/patientmedicine/2/change/ HTTP/1.1" 200 402990
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/medicationnotificationsettings/ HTTP/1.1" 200 26252
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/medicationnotificationsettings/1/change/ HTTP/1.1" 200 400994
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /api/v1/medications/set/notification/ HTTP/1.1" 201 54
+"GET /admin/medications/medicationnotificationsettings/1/change/ HTTP/1.1" 200 400994
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/medicationnotificationsettings/ HTTP/1.1" 200 26523
+"GET /admin/medications/medicationnotificationsettings/2/change/ HTTP/1.1" 200 401003
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/medicationnotificationsettings/ HTTP/1.1" 200 26522
+"POST /api/v1/medications/set/notification/ HTTP/1.1" 201 54
+"GET /admin/medications/medicationnotificationsettings/ HTTP/1.1" 200 26792
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/medicationnotificationsettings/3/change/ HTTP/1.1" 200 401003
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/medicationnotificationsettings/ HTTP/1.1" 200 26792
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/medications/medicationnotificationsettings/ HTTP/1.1" 200 26794
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/medications/medicationnotificationsettings/ HTTP/1.1" 200 25326
+"GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+"POST /admin/medications/medicationnotificationsettings/ HTTP/1.1" 302 0
+"GET /admin/medications/medicationnotificationsettings/ HTTP/1.1" 200 26414
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+"GET /admin/medications/medicationnotificationsettings/ HTTP/1.1" 200 26251
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /api/v1/medications/set/notification/ HTTP/1.1" 201 54
+"GET /admin/medications/medicationnotificationsettings/ HTTP/1.1" 200 26251
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/medications/medicationnotificationsettings/1/change/ HTTP/1.1" 200 401003
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941

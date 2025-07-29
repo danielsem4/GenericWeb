@@ -36,12 +36,16 @@ venv\Scripts\activate
 source venv/bin/activate
 
 pip install -r requirements.txt
-cp .env.example .env
-# Edit .env with your configuration
+cp  .env
 python manage.py migrate
-python manage.py runserver
+
+## in another terminal: 
+in backend/generic3:
+ngrok http 8001
+
+python manage.py runserver 0.0.0.0:8001
 ```
-The backend will be available at http://localhost:8000
+The backend will be available at http://localhost:8001
 
 ### Full Development Setup
 You can run both frontend and backend simultaneously:

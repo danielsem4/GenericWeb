@@ -39,6 +39,7 @@ class Patient(models.Model):
 class PatientDoctor(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
+    clinic = models.ForeignKey('clinics.Clinic', on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return f"{self.patient} - {self.doctor}"

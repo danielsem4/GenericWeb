@@ -1,4 +1,4 @@
-POST http://localhost:8001/api/v1/login/
+POST  https://d635da5ce870.ngrok-free.app/api/v1/login/
 Content-Type: application/json
 
 # {
@@ -15,3 +15,141 @@ Content-Type: application/json
 #     "email": "ozeriyarin@gmail.com",
 #     "password": "a123456!"
 # }
+
+###
+
+GET https://d635da5ce870.ngrok-free.app/api/v1/users/1/3/
+Content-Type: application/json
+Authorization: Token 5eb65ebc949c894ef65548360820548b553f5010
+
+###
+
+GET https://d635da5ce870.ngrok-free.app/api/v1/medications/clinic/1/
+Content-Type: application/json
+Authorization: Token 5eb65ebc949c894ef65548360820548b553f5010
+
+###
+
+POST https://d635da5ce870.ngrok-free.app/api/v1/medications/clinic/1/add/
+Content-Type: application/json
+Authorization: Token 5eb65ebc949c894ef65548360820548b553f5010
+
+{
+    "med_id": "1999022181"
+}
+
+###
+
+DELETE https://d635da5ce870.ngrok-free.app/api/v1/medications/clinic/1/delete/1999022181/
+Content-Type: application/json
+Authorization: Token 5eb65ebc949c894ef65548360820548b553f5010
+
+### 
+
+GET https://d635da5ce870.ngrok-free.app/api/v1/medications/patient/1/5/
+Content-Type: application/json
+Authorization: Token 5eb65ebc949c894ef65548360820548b553f5010
+
+###
+
+POST https://d635da5ce870.ngrok-free.app/api/v1/medications/patient/1/5/add/
+Content-Type: application/json
+Authorization: Token 5eb65ebc949c894ef65548360820548b553f5010
+
+# {
+#     "med_id": "1999022181",
+#     "frequency" : "weekly",
+#     "frequency_data": {
+#         "dates": [],
+#         "days": ["monday", "wednesday", "friday"],
+#         "time": ["10:00", "14:00"]
+#     },
+#     "start_date": "2025-07-01",
+#     "end_date": "2025-07-31",
+#     "dosage": "pill"
+# }
+
+{
+    "med_id": "1000000809",
+    "frequency" : "monthly",
+    "frequency_data": {
+        "dates": ["2025-07-01", "2025-07-08", "2025-07-15"],
+        "days": [],
+        "time": ["10:00", "14:00"]
+    },
+    "start_date": "2025-07-01",
+    "end_date": "2025-07-31",
+    "dosage": "pill"
+}
+
+###
+
+PUT https://d635da5ce870.ngrok-free.app/api/v1/medications/patient/1/5/update/
+Content-Type: application/json
+Authorization: Token 5eb65ebc949c894ef65548360820548b553f5010
+
+# {
+#     "med_id": "1999022181",
+#     "frequency" : "weekly",
+#     "frequency_data": {
+#         "dates": [],
+#         "days": ["monday", "wednesday", "friday"],
+#         "time": "11:00"
+#     },
+#     "start_date": "2025-07-01",
+#     "end_date": "2025-07-31",
+#     "dosage": "TAB"
+# }
+
+{
+    "med_id": "1000000809",
+    "frequency" : "monthly",
+    "frequency_data": {
+        "dates": ["2025-07-01", "2025-07-08", "2025-07-15"],
+        "days": [],
+        "time": ["10:00", "14:00"]
+    },
+    "start_date": "2025-07-01",
+    "end_date": "2025-07-31",
+    "dosage": "pill"
+}
+
+###
+
+DELETE https://d635da5ce870.ngrok-free.app/api/v1/medications/patient/1/5/delete/1999022181/
+Content-Type: application/json
+Authorization: Token 5eb65ebc949c894ef65548360820548b553f5010
+
+###
+
+POST https://d635da5ce870.ngrok-free.app/api/v1/medications/report/
+Content-Type: application/json
+Authorization: Token 5eb65ebc949c894ef65548360820548b553f5010
+
+{
+  "clinic_id": 1,
+  "patient_id": 5,
+  "medication_id": "1999022181",
+  "timestamp": "2025-07-15 13:00:00"
+}
+
+###
+
+POST https://d635da5ce870.ngrok-free.app/api/v1/medications/set/notification/
+Content-Type: application/json
+Authorization: Token 5eb65ebc949c894ef65548360820548b553f5010
+
+{
+  "clinic_id": 1,
+  "patient_id": 5,
+  "medication_id": "1000000809",
+  "frequency": "monthly",
+    "frequency_data": {
+        "dates": ["2025-07-01", "2025-07-15"],
+        "days": [],
+        "time": ["08:30", "12:00"]
+    },
+  "start_date_time": "2025-07-01 08:00:00",
+  "end_date_time": "2025-09-01 08:00:00"
+}
+

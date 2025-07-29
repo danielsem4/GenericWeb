@@ -164,6 +164,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # Vite dev server
     "http://127.0.0.1:5173",
+    "https://*.ngrok-free.app",  # Allow any ngrok subdomain
+    "https://*.ngrok.io", # Legacy ngrok domains
 ]
 CORS_ALLOW_ALL_ORIGINS = True  # Only for development!
 CORS_ALLOW_CREDENTIALS = True

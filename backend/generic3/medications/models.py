@@ -51,3 +51,19 @@ class PatientMedicine(models.Model):
     dosage          = models.CharField(max_length=255, null=True, blank=True)
 
 
+class MedicationReport(models.Model):
+    clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE, null=True, blank=True)
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, null=True, blank=True)
+    medication = models.ForeignKey(Medicines, on_delete=models.CASCADE, null=True, blank=True)
+    timestamp = models.DateTimeField(default=timezone.now)
+
+
+class MedicationNotificationSettings(models.Model):
+    clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE, null=True, blank=True)
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, null=True, blank=True)
+    medication = models.ForeignKey(Medicines, on_delete=models.CASCADE, null=True, blank=True)
+    frequency = models.CharField(max_length=30,choices=medicinesRepeatPeriods,null=True, blank=True)
+    frequency_data = models.JSONField(default=list, null=True, blank=True)
+    start_date_time = models.DateTimeField(default=timezone.now,null=True, blank=True)
+    end_date_time = models.DateTimeField(null=True, blank=True)
+

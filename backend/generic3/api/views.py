@@ -1,4 +1,3 @@
-from django.shortcuts import get_object_or_404, render
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view, permission_classes
@@ -7,7 +6,6 @@ from rest_framework import status
 from django.conf import settings
 from django.contrib.staticfiles import finders
 import logging
-import os
 
 from clinics.models import Clinic, ClinicModules, Modules
 from generic3.utils import get_clinic_id_for_user
@@ -16,9 +14,8 @@ from users.serializers import UserSerializer
 
 logger = logging.getLogger(__name__)
 
-
-
 #### Login through the REST_API_JWT
+# This function handles user login, checks credentials, and returns a token and user details if successful.
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def login(request):
@@ -108,7 +105,9 @@ def login(request):
         'server_url': clinic_data['url'] if clinic_data else default_url
     }
     data.update(user_data)
-    
+    logger.info(f"User {user.email} logged in successfully with clinic {clinic_data['name'] if clinic_data else 'N/A'}")
     return Response({"token": token.key, "user": data}) 
+
+
 
 
