@@ -8,10 +8,11 @@ import {
 } from "../../components/ui/card";
 import { Button } from "../../components/ui/button";
 import LoginForm from "./components/LoginForm";
-import { useLogin, type LoginCredentials } from "./hooks/useLogin";
+import { useLogin } from "./hooks/useLogin";
 import { useLoginFormFields } from "./store/loginFormStore";
 import { useNavigate } from "react-router";
 import { toast } from "sonner";
+import type { LoginCredentials } from "./LoginCredentials";
 
 /**
  * Login component provides a centered login form using Tailwind CSS and shadcn/ui components
@@ -31,7 +32,6 @@ function Login() {
         description: "Redirecting to home...",
         duration: 2000,
       });
-
       navigate("/home");
     } catch (e) {
       console.log("Login error:", e);

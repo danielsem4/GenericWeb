@@ -1,18 +1,15 @@
-import { Navigate } from "react-router";
+// src/routes/ProtectedRoute.tsx
+import { Navigate, Outlet } from "react-router-dom";
 import { useIsAuthenticated } from "../common/store/UserStore";
 
-interface ProtectedRouteProps {
-  children: React.ReactNode;
-}
-
-function ProtectedRoute({ children }: ProtectedRouteProps) {
+function ProtectedRoute() {
   const isAuthenticated = useIsAuthenticated();
 
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
   }
 
-  return <>{children}</>;
+  return <Outlet />;
 }
 
 export default ProtectedRoute;

@@ -1,36 +1,26 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
-
-interface User {
-  id: number;
-  email: string;
-  name: string;
-  token: string;
-  modules: any[];
-}
+import type { IUserResponse } from "../types/User";
+import { useLocation } from "react-router";
 
 interface UserState {
-  user: User | null;
+  user: IUserResponse | null;
   actions: {
-    setUser: (user: User | null) => void;
+    setUser: (user: IUserResponse | null) => void;
     logout: () => void;
   };
 }
 
 export const useUserStore = create<UserState>()(
-  persist(
     (set) => ({
       user: null,
       actions: {
         setUser: (user) => set({ user }),
-        logout: () => set({ user: null }),
+        logout: () => {
+          set({ user: null })
+          localStorage.removeItem("auth_token");
+        },
       },
     }),
-    {
-      name: "user-storage",
-      partialize: (state) => ({ user: state.user }),
-    }
-  )
 );
 
 export const useUser = () => {
@@ -42,6 +32,6 @@ export const useUserActions = () => {
 };
 
 export const useIsAuthenticated = () => {
-  const user = useUser();
-  return user !== null && user.token !== "";
+  const token = localStorage.getItem("auth_token");
+  return token
 };
