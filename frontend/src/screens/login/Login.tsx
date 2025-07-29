@@ -32,7 +32,6 @@ function Login() {
         description: "Redirecting to home...",
         duration: 2000,
       });
-
       navigate("/home");
     } catch (e) {
       console.log("Login error:", e);

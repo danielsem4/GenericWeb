@@ -1,9 +1,6 @@
-"use client";
-
 import type * as React from "react";
-import { Bot, LogOut, Settings2, SquareTerminal } from "lucide-react";
+import { LogOut } from "lucide-react";
 import { cn } from "@/lib/utils";
-
 import {
   Sidebar,
   SidebarContent,
@@ -17,71 +14,45 @@ import { Button } from "./ui/button";
 import { useNavigate } from "react-router";
 import NavMain from "./NavMain";
 import { useUser, useUserActions } from "@/common/store/UserStore";
+import sidebarData from "@/common/data/sidebarData";
+import { useEffect, useState } from "react";
 
-const data = {
-  navMain: [
-    {
-      title: "Dashboards",
-      url: "dashboards",
-      icon: SquareTerminal,
-      isActive: true,
-      items: [
-        {
-          title: "Patients",
-          url: "",
-        },
-        {
-          title: "Modules",
-          url: "",
-        },
-        {
-          title: "Graphs",
-          url: "",
-        },
-      ],
-    },
-    {
-      title: "Modules",
-      url: "modules",
-      icon: Bot,
-      items: [
-        {
-          title: "All Modules",
-          url: "all-modules",
-        },
-      ],
-    },
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "settings",
-        },
-        {
-          title: "Clinic Settings",
-          url: "clinic-settings",
-        },
-        {
-          title: "Support",
-          url: "support",
-        },
-      ],
-    },
-  ],
-};
 
 function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const navigate = useNavigate();
   const { state } = useSidebar();
   const user = useUser();
   const { logout } = useUserActions();
+  
 
+  const [sidebarItems, setSidebarItems] = useState(sidebarData.navMain);
+
+  useEffect(() => {
+    console.log(user);
+    
+    if (!user?.user) return;
+
+    const updatedNavMain = sidebarData.navMain.map((navItem) => {
+      if (navItem.title === "Modules") {
+        return {
+          ...navItem,
+          items: [
+            ...(navItem.items || []),
+            ...(user.user.modules?.map((module) => ({
+              title: module.name,
+              url: `modules/${module.id}`,
+            })) || []),
+          ],
+        };
+      }
+      return navItem;
+    });
+
+    setSidebarItems(updatedNavMain);
+  }, [user]);
   const handleLogout = () => {
     logout();
-    navigate("/");
+    navigate("/login");
   };
 
   return (
@@ -90,7 +61,7 @@ function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <div className="flex items-center justify-between">
           {state === "expanded" && (
             <div className="text-shadow-md font-semibold">
-              Welcome, {user?.name || "User"}
+              Welcome, {user?.user?.firstName || "User"}
             </div>
           )}
           <SidebarTrigger className="p-2" />
@@ -98,7 +69,8 @@ function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
 
       <SidebarContent>
-        <NavMain items={data.navMain} />
+
+        <NavMain items={sidebarData.navMain} />
       </SidebarContent>
 
       <SidebarFooter>

@@ -1,7 +1,6 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
-import type { IUser, IUserResponse } from "../types/User";
-
+import type { IUserResponse } from "../types/User";
+import { useLocation } from "react-router";
 
 interface UserState {
   user: IUserResponse | null;
@@ -12,19 +11,16 @@ interface UserState {
 }
 
 export const useUserStore = create<UserState>()(
-  persist(
     (set) => ({
       user: null,
       actions: {
         setUser: (user) => set({ user }),
-        logout: () => set({ user: null }),
+        logout: () => {
+          set({ user: null })
+          localStorage.removeItem("auth_token");
+        },
       },
     }),
-    {
-      name: "user-storage",
-      partialize: (state) => ({ user: state.user }),
-    }
-  )
 );
 
 export const useUser = () => {
@@ -36,6 +32,6 @@ export const useUserActions = () => {
 };
 
 export const useIsAuthenticated = () => {
-  const user = useUser();
-  return user !== null && user.token !== "";
+  const token = localStorage.getItem("auth_token");
+  return token
 };

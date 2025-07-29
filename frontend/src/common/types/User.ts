@@ -31,8 +31,8 @@ export interface IUserResponse {
   }
   
   export interface IModule {
-    id: Number;
-    name: String;
+    id: number;
+    name: string;
   }
    
    

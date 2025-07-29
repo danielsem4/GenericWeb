@@ -13,6 +13,7 @@ async function loginUser(
     );
 
     const data = response.data;
+    localStorage.setItem("auth_token", data.token);
     return data;
   } catch (error) {
     if (axios.isAxiosError(error)) {

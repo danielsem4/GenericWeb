@@ -1,9 +1,11 @@
-import { createBrowserRouter } from "react-router";
+// src/router.tsx
+import { createBrowserRouter } from "react-router-dom";
 import Login from "./screens/login/Login";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./screens/home/Home";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SettingsPage from "./screens/settings/Settings";
+import Users from "./screens/users/Users";
 
 const router = createBrowserRouter([
   {
@@ -12,19 +14,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: (
-      <ProtectedRoute>
-        <MainLayout />
-      </ProtectedRoute>
-    ),
+    element: <ProtectedRoute />, 
     children: [
       {
-        path: "/home",
-        element: <Home />,
-      },
-      {
-        path: "/settings",
-        element: <SettingsPage />,
+        element: <MainLayout />, 
+        children: [
+          { path: "home", element: <Home /> },
+          { path: "settings", element: <SettingsPage /> },
+          { path: "users", element: <Users /> },
+        ],
       },
     ],
   },
