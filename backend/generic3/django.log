@@ -3197,3 +3197,524 @@ Watching for file changes with StatReloader
 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
 "POST /api/v1/login/ HTTP/1.1" 200 941
 "POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 941
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\urls.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/v1/activities/clinic/1/ HTTP/1.1" 200 2
+"GET /admin/medications/medicationnotificationsettings/1/change/ HTTP/1.1" 200 402219
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/activities/activity/ HTTP/1.1" 200 26015
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/activities/activity/add/ HTTP/1.1" 200 27441
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/activities/activity/add/ HTTP/1.1" 302 0
+"GET /admin/activities/activity/add/ HTTP/1.1" 200 27683
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/activities/activity/add/ HTTP/1.1" 302 0
+"GET /admin/activities/activity/add/ HTTP/1.1" 200 27683
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/activities/activity/add/ HTTP/1.1" 302 0
+"GET /admin/activities/activity/add/ HTTP/1.1" 200 27683
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/activities/activity/add/ HTTP/1.1" 302 0
+"GET /admin/activities/activity/4/change/ HTTP/1.1" 200 27946
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/activities/activity/4/change/ HTTP/1.1" 302 0
+"GET /admin/activities/activity/add/ HTTP/1.1" 200 27685
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/activities/activity/add/ HTTP/1.1" 302 0
+"GET /admin/activities/activity/add/ HTTP/1.1" 200 27686
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/activities/activity/add/ HTTP/1.1" 302 0
+"GET /admin/activities/activity/ HTTP/1.1" 200 28453
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /api/v1/activities/clinic/1/add/ HTTP/1.1" 201 41
+Internal Server Error: /admin/activities/clinicactivity/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\options.py", line 681, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: '__str__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\utils.py", line 272, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\utils.py", line 303, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\options.py", line 683, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: ClinicActivity has no field named '__str__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\response.py", line 111, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\response.py", line 89, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\templatetags\base.py", line 45, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\template\library.py", line 258, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 336, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 312, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 303, in __init__
+    super().__init__(*items)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 213, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\contrib\admin\utils.py", line 285, in lookup_field
+    value = attr()
+            ^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\models.py", line 18, in __str__
+    return f"{self.activity.name} at Clinic {self.clinic.name}"
+                                             ^^^^^^^^^^^^^^^^
+AttributeError: 'Clinic' object has no attribute 'name'
+"GET /admin/activities/clinicactivity/ HTTP/1.1" 500 466189
+"GET /admin/activities/activity/ HTTP/1.1" 200 28243
+"GET /admin/clinics/clinic/ HTTP/1.1" 200 27131
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/clinics/clinic/1/change/ HTTP/1.1" 200 28359
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\models.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/activities/clinic/1/add/ HTTP/1.1" 201 41
+"GET /admin/activities/clinicactivity/ HTTP/1.1" 200 27263
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/activities/clinicactivity/1/change/ HTTP/1.1" 200 29947
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/activities/clinicactivity/ HTTP/1.1" 200 27263
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\models.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/activities/clinicactivity/ HTTP/1.1" 200 27245
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/activities/clinicactivity/1/change/ HTTP/1.1" 200 29892
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/activities/clinicactivity/ HTTP/1.1" 200 27245
+"GET /api/v1/activities/clinic/1/ HTTP/1.1" 200 75
+"DELETE /api/v1/activities/clinic/1/delete/1/ HTTP/1.1" 204 43
+"GET /api/v1/activities/clinic/1/ HTTP/1.1" 200 2
+"POST /api/v1/activities/clinic/1/add/ HTTP/1.1" 201 41
+"GET /admin/activities/clinicactivity/ HTTP/1.1" 200 27244
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"OPTIONS /api/v1/login/ HTTP/1.1" 200 0
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+"POST /api/v1/login/ HTTP/1.1" 200 941
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/v1/activities/clinic/1/ HTTP/1.1" 200 75
+"POST /api/v1/activities/clinic/1/add/ HTTP/1.1" 201 41
+"GET /api/v1/activities/clinic/1/ HTTP/1.1" 200 145
+"POST /api/v1/activities/clinic/1/add/ HTTP/1.1" 201 41
+"GET /api/v1/activities/clinic/1/ HTTP/1.1" 200 212
+"GET /api/v1/activities/patient/1/5/ HTTP/1.1" 200 2
+"POST /api/v1/activities/patient/1/5/add/ HTTP/1.1" 201 41
+"POST /api/v1/activities/patient/1/5/add/ HTTP/1.1" 201 41
+"GET /api/v1/activities/patient/1/5/ HTTP/1.1" 200 266
+"GET /api/v1/activities/clinic/1/ HTTP/1.1" 200 212
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/v1/activities/patient/1/5/ HTTP/1.1" 200 266
+"GET /api/v1/activities/clinic/1/ HTTP/1.1" 200 212
+Not Found: /api/v1/activities/patient/1/5/add/
+"POST /api/v1/activities/patient/1/5/add/ HTTP/1.1" 404 47
+"GET /admin/ HTTP/1.1" 200 31104
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+"GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+"GET /static/admin/js/theme.js HTTP/1.1" 304 0
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+"GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+"GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 16864
+"GET /admin/activities/activity/ HTTP/1.1" 200 28244
+"GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /static/admin/js/filters.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+"GET /admin/activities/clinicactivity/ HTTP/1.1" 200 27684
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/activities/clinicactivity/4/change/ HTTP/1.1" 200 29892
+"GET /static/admin/css/forms.css HTTP/1.1" 304 0
+"GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+"GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/activities/clinicactivity/ HTTP/1.1" 200 27684
+"GET /admin/activities/clinicactivity/3/change/ HTTP/1.1" 200 29892
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/activities/clinicactivity/ HTTP/1.1" 200 27684
+"GET /admin/activities/patientactivity/ HTTP/1.1" 200 27537
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/activities/patientactivity/2/change/ HTTP/1.1" 200 33350
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/activities/patientactivity/ HTTP/1.1" 200 27537
+"GET /admin/activities/activity/ HTTP/1.1" 200 28244
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/activities/activity/3/change/ HTTP/1.1" 200 27699
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/activities/activity/ HTTP/1.1" 200 28244
+"GET /api/v1/activities/patient/1/5/ HTTP/1.1" 200 266
+"GET /api/v1/activities/clinic/1/ HTTP/1.1" 200 212
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/v1/activities/clinic/1/ HTTP/1.1" 200 212
+"DELETE /api/v1/activities/patient/1/5/delete/1/ HTTP/1.1" 204 43
+"GET /admin/activities/patientactivity/ HTTP/1.1" 200 27285
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /api/v1/activities/report/
+"POST /api/v1/activities/report/ HTTP/1.1" 404 64
+Internal Server Error: /api/v1/activities/report/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: activities_activityreport
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py", line 261, in patient_activity_report
+    ActivityReport.objects.create(
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1820, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 235, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 160, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: activities_activityreport
+"POST /api/v1/activities/report/ HTTP/1.1" 500 222911
+Watching for file changes with StatReloader
+"POST /api/v1/activities/report/ HTTP/1.1" 201 52
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/activities/patientactivity/ HTTP/1.1" 200 27617
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/activities/activityreport/ HTTP/1.1" 200 27594
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/activities/activityreport/1/change/ HTTP/1.1" 200 32018
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/activities/activityreport/ HTTP/1.1" 200 27594
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /admin/medications/medicationnotificationsettings/
+"GET /admin/medications/medicationnotificationsettings/ HTTP/1.1" 404 18052
+"GET /admin/activities/activityreport/ HTTP/1.1" 200 27196
+Watching for file changes with StatReloader
+"GET /admin/activities/activityreport/ HTTP/1.1" 200 27196
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\notifications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\notifications\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /admin/activities/activityreport/ HTTP/1.1" 200 27835
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/notifications/eventnotificationsettings/ HTTP/1.1" 200 26747
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/notifications/eventnotificationsettings/add/ HTTP/1.1" 200 35003
+"GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+"GET /admin/notifications/eventnotificationsettings/ HTTP/1.1" 200 26748
+"POST /api/v1/notifications/set/notification/ HTTP/1.1" 201 56
+"GET /admin/notifications/eventnotificationsettings/ HTTP/1.1" 200 27991
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/notifications/eventnotificationsettings/1/change/ HTTP/1.1" 200 35666
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/notifications/eventnotificationsettings/ HTTP/1.1" 200 27991
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\notifications\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/v1/activities/patient/1/5/ HTTP/1.1" 200 129
+"POST /api/v1/activities/patient/1/5/add/ HTTP/1.1" 201 41
+"GET /api/v1/activities/patient/1/5/ HTTP/1.1" 200 266
+"POST /api/v1/notifications/set/notification/ HTTP/1.1" 201 52
+"GET /admin/notifications/eventnotificationsettings/ HTTP/1.1" 200 28254
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/notifications/eventnotificationsettings/2/change/ HTTP/1.1" 200 35687
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\notifications\models.py changed, reloading.
+Watching for file changes with StatReloader
+"OPTIONS /api/v1/login/ HTTP/1.1" 200 0

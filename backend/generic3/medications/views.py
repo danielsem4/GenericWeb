@@ -1,12 +1,11 @@
 from django.shortcuts import render
-from django.utils import timezone
 from django.http import JsonResponse
 from rest_framework.decorators import api_view, authentication_classes
 from rest_framework.authentication import TokenAuthentication
 from rest_framework import status
 from clinics.models import Clinic
 from users.models import PatientDoctor, User, Patient
-from medications.models import MedicationNotificationSettings, MedicationReport, Medicines, PatientMedicine , ClinicMedicine
+from medications.models import MedicationReport, Medicines, PatientMedicine , ClinicMedicine
 from generic3.utils import format_timestamp
 
 ########## clinic medications management ##############################################
@@ -93,7 +92,7 @@ def delete_clinic_medication(request, clinic_id, medication_id):
 @authentication_classes([TokenAuthentication])
 def get_patient_medications(request, clinic_id, patient_id):
     """
-    Get medications for a specific patient in a clinic.
+    Get all medications for a specific patient in a clinic.
     """
     try:
         clinic = Clinic.objects.get(id=clinic_id)
@@ -112,7 +111,6 @@ def get_patient_medications(request, clinic_id, patient_id):
         return JsonResponse({"detail": "Patient not found"}, status=status.HTTP_404_NOT_FOUND)
 
     patient_medications = PatientMedicine.objects.filter(patient=patient, clinic=clinic)
-    print(f"Patient Medications: {patient_medications}")
 
     if not patient_medications:
         return JsonResponse({"detail": "No medications found for this patient in this clinic"}, status=status.HTTP_404_NOT_FOUND)
@@ -338,85 +336,8 @@ def patient_medication_report(request):
         medication=medication,
         timestamp=timestamp
     )
+    
+    # notification logic will be implemented here in the future
 
     return JsonResponse({"detail": "Medication report generated successfully"}, status=status.HTTP_201_CREATED)
 
-@api_view(['POST'])
-@authentication_classes([TokenAuthentication])
-def set_medication_notification(request):
-    """
-    Set medication notification for a patient.
-    """
-    clinic_id = request.data.get('clinic_id')
-    patient_id = request.data.get('patient_id')
-    medication_id = request.data.get('medication_id')
-
-    if not clinic_id or not patient_id or not medication_id:
-        return JsonResponse({"detail": "Missing required fields"}, status=status.HTTP_400_BAD_REQUEST)
-
-    try:
-        clinic = Clinic.objects.get(id=clinic_id)
-    except Clinic.DoesNotExist:
-        return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    try:
-        user = User.objects.get(id=patient_id)
-        if not user.is_patient and not user.is_research_patient:
-            return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
-    except User.DoesNotExist:
-        return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    try:
-        patient = Patient.objects.get(user=user)
-    except Patient.DoesNotExist:
-        return JsonResponse({"detail": "Patient not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    try:
-        medication = Medicines.objects.get(id=medication_id)
-    except Medicines.DoesNotExist:
-        return JsonResponse({"detail": "Medication not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    if not PatientMedicine.objects.filter(patient=patient, clinic=clinic, medicine=medication).exists():
-        return JsonResponse({"detail": "Medication not assigned to this patient in this clinic"}, status=status.HTTP_404_NOT_FOUND)
-
-    frequency = request.data.get('frequency')
-    frequency_data = request.data.get('frequency_data')
-    start_date_time = request.data.get('start_date_time')
-    end_date_time = request.data.get('end_date_time')
-    if not frequency or not frequency_data:
-        frequency = 'once'
-        frequency_data = []
-    if not start_date_time:
-        start_date_time = timezone.now()
-    if not end_date_time:
-        end_date_time = timezone.now() + timezone.timedelta(days=1)
-
-    if MedicationNotificationSettings.objects.filter(clinic=clinic,patient=patient,medication=medication).exists():
-        # update existing notification
-        medication_notification = MedicationNotificationSettings.objects.filter(
-            clinic=clinic,
-            patient=patient,
-            medication=medication
-        ).update(
-            frequency=frequency,
-            frequency_data=frequency_data,
-            start_date_time=format_timestamp(start_date_time),
-            end_date_time=format_timestamp(end_date_time)
-        )
-    else:
-        # create new notification
-        medication_notification = MedicationNotificationSettings.objects.create(
-            clinic=clinic,
-            patient=patient,
-            medication=medication,
-            frequency=frequency,
-            frequency_data=frequency_data,
-            start_date_time=format_timestamp(start_date_time),
-            end_date_time=format_timestamp(end_date_time)
-        )
-        if not medication_notification:
-            return JsonResponse({"detail": "Failed to set medication notification"}, status=status.HTTP_400_BAD_REQUEST)
-        
-    # Notification logic would go here
-
-    return JsonResponse({"detail": "Medication notification set successfully"}, status=status.HTTP_201_CREATED)

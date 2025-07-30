@@ -42,6 +42,8 @@ urlpatterns = [
     path('', include("users.urls")),
     path('', include("clinics.urls")),
     path('', include("medications.urls")),
+    path('', include("activities.urls")),
+    path('',include("notifications.urls")),
     path('', include(tf_urls)),
 
 ]

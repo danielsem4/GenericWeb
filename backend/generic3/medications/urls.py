@@ -16,7 +16,5 @@ urlpatterns = [
     
     # patient side 
     path('api/v1/medications/report/', views.patient_medication_report, name='patient_medication_report'),
-    path('api/v1/medications/set/notification/', views.set_medication_notification, name='set_medication_notification'),
-
 ]
 
