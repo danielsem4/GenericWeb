@@ -12,7 +12,6 @@ from clinics.models import Clinic
 ############ clinic activities management ############
 
 @api_view(['GET'])
-@authentication_classes([TokenAuthentication])
 def get_clinic_activities(request, clinic_id):
     """
     Get all activities for a specific clinic.
@@ -30,7 +29,6 @@ def get_clinic_activities(request, clinic_id):
     return JsonResponse(activity_list, safe=False, status=status.HTTP_200_OK)
 
 @api_view(['POST'])
-@authentication_classes([TokenAuthentication])
 def add_clinic_activity(request, clinic_id):
     """
     Add a new activity to a specific clinic.
@@ -57,7 +55,6 @@ def add_clinic_activity(request, clinic_id):
     return JsonResponse({"detail": "Activity added successfully"}, status=status.HTTP_201_CREATED)
 
 @api_view(['DELETE'])
-@authentication_classes([TokenAuthentication])
 def delete_clinic_activity(request, clinic_id, activity_id):
     """
     Delete a specific activity from a clinic.
@@ -82,7 +79,6 @@ def delete_clinic_activity(request, clinic_id, activity_id):
 ############ patient activities management ############
 
 @api_view(['GET'])
-@authentication_classes([TokenAuthentication])
 def get_patient_activities(request, clinic_id, patient_id):
     """
     Get all activities for a specific patient in a clinic.
@@ -122,7 +118,6 @@ def get_patient_activities(request, clinic_id, patient_id):
 
 
 @api_view(['POST'])
-@authentication_classes([TokenAuthentication])
 def add_patient_activity(request, clinic_id, patient_id):
     """
     Add a new activity for a specific patient in a clinic.
@@ -178,7 +173,6 @@ def add_patient_activity(request, clinic_id, patient_id):
     return JsonResponse({"detail": "Activity added successfully"}, status=status.HTTP_201_CREATED)
 
 @api_view(['DELETE'])
-@authentication_classes([TokenAuthentication])
 def delete_patient_activity(request, clinic_id, patient_id, activity_id):
     """
     Delete a specific activity for a patient in a clinic.
@@ -219,7 +213,6 @@ def delete_patient_activity(request, clinic_id, patient_id, activity_id):
 ############ patient side  ###########################################
 
 @api_view(['POST'])
-@authentication_classes([TokenAuthentication])
 def patient_activity_report(request):
     """
     Generate an activity report for a patient.
@@ -268,15 +261,3 @@ def patient_activity_report(request):
     # notification logic will be implemented here in the future
     
     return JsonResponse({"detail": "Activity report generated successfully"}, status=status.HTTP_201_CREATED)
-
-
-# @api_view(['POST'])
-# @authentication_classes([TokenAuthentication])
-# def patient_activity_notification(request):
-#     """
-#     Set notification settings for the authenticated patient's activities.
-#     """
-#     patient = request.user.patient
-#     # Implement notification settings logic here
-#     return JsonResponse({"detail": "Notification settings updated successfully"}, status=status.HTTP_200_OK)
-

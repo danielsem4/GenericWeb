@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from rest_framework.decorators import api_view, authentication_classes
+from rest_framework.decorators import api_view
 from rest_framework.authentication import TokenAuthentication
 from rest_framework import status
 from clinics.models import Clinic
@@ -11,7 +11,6 @@ from generic3.utils import format_timestamp
 ########## clinic medications management ##############################################
 
 @api_view(['GET'])
-@authentication_classes([TokenAuthentication])
 def get_clinic_medications(request, clinic_id):
     """
     Get medications for a specific clinic.
@@ -39,7 +38,6 @@ def get_clinic_medications(request, clinic_id):
     return JsonResponse(medications_data, safe=False, status=status.HTTP_200_OK)
 
 @api_view(['POST'])
-@authentication_classes([TokenAuthentication])
 def add_clinic_medication(request, clinic_id):
     """
     Add a medication to a specific clinic.
@@ -65,7 +63,6 @@ def add_clinic_medication(request, clinic_id):
 
 
 @api_view(['DELETE'])
-@authentication_classes([TokenAuthentication])
 def delete_clinic_medication(request, clinic_id, medication_id):
     """
     Delete a medication from a specific clinic.
@@ -89,7 +86,6 @@ def delete_clinic_medication(request, clinic_id, medication_id):
 ############ patient medications management ###########################################
 
 @api_view(['GET'])
-@authentication_classes([TokenAuthentication])
 def get_patient_medications(request, clinic_id, patient_id):
     """
     Get all medications for a specific patient in a clinic.
@@ -134,7 +130,6 @@ def get_patient_medications(request, clinic_id, patient_id):
     return JsonResponse(medications_data, safe=False, status=status.HTTP_200_OK)
 
 @api_view(['POST'])
-@authentication_classes([TokenAuthentication])
 def add_patient_medication(request, clinic_id, patient_id):
     """
     Add a medication for a specific patient in a clinic.
@@ -197,7 +192,6 @@ def add_patient_medication(request, clinic_id, patient_id):
 
 
 @api_view(['PUT'])
-@authentication_classes([TokenAuthentication])
 def update_patient_medication(request, clinic_id, patient_id):
     """
     Update a medication for a specific patient in a clinic.
@@ -252,7 +246,6 @@ def update_patient_medication(request, clinic_id, patient_id):
     return JsonResponse({"detail": "Medication updated successfully"}, status=status.HTTP_200_OK)
 
 @api_view(['DELETE'])
-@authentication_classes([TokenAuthentication])
 def delete_patient_medication(request, clinic_id, patient_id , medication_id):
     """
     Delete a medication for a specific patient in a clinic.
@@ -293,7 +286,6 @@ def delete_patient_medication(request, clinic_id, patient_id , medication_id):
 ############ patient side  ###########################################
 
 @api_view(['POST'])
-@authentication_classes([TokenAuthentication])
 def patient_medication_report(request):
     """
     Generate a medication report for a patient.

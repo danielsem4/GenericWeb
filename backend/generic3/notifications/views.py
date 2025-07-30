@@ -1,6 +1,6 @@
 from django.utils import timezone
 from django.http import JsonResponse
-from rest_framework.decorators import api_view, authentication_classes
+from rest_framework.decorators import api_view
 from rest_framework.authentication import TokenAuthentication
 from rest_framework import status
 from activities.models import Activity, PatientActivity
@@ -13,7 +13,6 @@ from generic3.utils import format_timestamp
 ############ patient side  ###########################################
 
 @api_view(['POST'])
-@authentication_classes([TokenAuthentication])
 def set_event_notification(request):
     """
     Set event notification for a patient.

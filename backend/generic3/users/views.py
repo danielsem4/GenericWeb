@@ -8,7 +8,6 @@ from clinics.models import Clinic , DoctorClinic, PatientClinic
 
 #### Get users for a specific clinic depending on the user type
 @api_view(['GET'])
-@authentication_classes([TokenAuthentication])
 def get_users(request, clinic_id, user_id):
     """
     Get users for a specific clinic.

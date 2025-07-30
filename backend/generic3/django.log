@@ -3719,3 +3719,46 @@ C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3
 Watching for file changes with StatReloader
 "OPTIONS /api/v1/login/ HTTP/1.1" 200 0
 "POST /api/v1/login/ HTTP/1.1" 200 941
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"POST /api/v1/login/ HTTP/1.1" 200 946
+"POST /api/v1/login/ HTTP/1.1" 200 959
+"POST /api/v1/logout/ HTTP/1.1" 200 38
+"POST /api/v1/login/ HTTP/1.1" 200 959
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/v1/activities/clinic/1/ HTTP/1.1" 200 212
+"POST /api/v1/logout/ HTTP/1.1" 200 38
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\activities\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Forbidden: /api/v1/logout/
+"POST /api/v1/logout/ HTTP/1.1" 403 58
+Forbidden: /api/v1/users/1/3/
+"GET /api/v1/users/1/3/ HTTP/1.1" 403 58
+"POST /api/v1/login/ HTTP/1.1" 200 959
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 604
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\medications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\notifications\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\notifications\views.py changed, reloading.
+Watching for file changes with StatReloader

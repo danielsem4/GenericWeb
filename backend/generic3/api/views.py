@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view, permission_classes
@@ -105,9 +106,15 @@ def login(request):
         'server_url': clinic_data['url'] if clinic_data else default_url
     }
     data.update(user_data)
+    response = JsonResponse(data)
+    response.set_cookie('auth_token', token.key, max_age=86400 * 7, httponly=True, secure=settings.SECURE_COOKIES, samesite='Lax')
     logger.info(f"User {user.email} logged in successfully with clinic {clinic_data['name'] if clinic_data else 'N/A'}")
-    return Response({"token": token.key, "user": data}) 
+    return response
 
 
-
+@api_view(['POST'])
+def logout(request):
+    response = JsonResponse({'message': 'Logged out successfully'})
+    response.delete_cookie('auth_token')
+    return response
 

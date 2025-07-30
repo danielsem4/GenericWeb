@@ -4,4 +4,5 @@ from . import views
 urlpatterns = [
     #### Shared API endpoints
     path('api/v1/login/', views.login, name='login'),
+    path('api/v1/logout/', views.logout, name='logout'),
 ]

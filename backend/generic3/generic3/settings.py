@@ -175,6 +175,8 @@ CORS_ALLOW_CREDENTIALS = True
 # Django REST Framework settings
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
+        'generic3.authentication.CookieTokenAuthentication',  
+        'rest_framework.authentication.TokenAuthentication',  
         'rest_framework_simplejwt.authentication.JWTAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ],
@@ -189,6 +191,9 @@ REST_FRAMEWORK = {
         'rest_framework.filters.OrderingFilter',
     ],
 }
+
+SECURE_COOKIES = False  # Set to True in production with HTTPS
+
 
 AUTH_USER_MODEL = 'users.User'
 LOGIN_URL = '/account/login/'
