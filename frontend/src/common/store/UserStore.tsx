@@ -1,15 +1,12 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import type { IAuthUser, IAuthUserResponse } from "../types/User";
-import axios from "axios";
+import type { IAuthUser } from "../types/User";
 
 interface UserState {
   user: IAuthUser | null;
-  token: string | null;
   actions: {
-    setUser: (user: IAuthUser, token: string) => void;
+    setUser: (user: IAuthUser) => void;
     logout: () => void;
-    hydrate: () => void;
   };
 }
 
@@ -19,36 +16,25 @@ export const useUserStore = create<UserState>()(
       user: null,
       token: null,
       actions: {
-        setUser: (user, token) => {
-          set({ user, token });
+        setUser: (user) => {
+          set({ user });
         },
         logout: () => {
-          set({ user: null, token: null });
-          localStorage.removeItem("auth_token");
-        },
-        hydrate: async () => {
-          const token = localStorage.getItem("auth_token");
-          if (token) {
-            try {
-              const response = await axios.get<IAuthUserResponse>(
-                `${import.meta.env.VITE_API_URL}login/`,
-                { headers: { Authorization: `Bearer ${token}` } }
-              );
-              set({ user: response.data.user, token });
-            } catch {
-              localStorage.removeItem("auth_token");
-            }
-          }
-        },
+          set({ user: null });
+        }
       },
     }),
     {
       name: "user-storage",
-      partialize: (state) => ({ user: state.user, token: state.token }),
+      partialize: (state) => ({ user: state.user }),
     }
   )
 );
 
 export const useIsAuthenticated = () => {
-  return useUserStore((state) => !!state.token);
+  console.log("Checking authentication status...");
+  const user = useUserStore((state) => state.user);
+  console.log("Current user:", user);
+  
+  return useUserStore((state) => !!state.user);
 };

@@ -5,10 +5,15 @@ import { Badge } from "@/components/ui/badge";
 import { PaginatedTable } from "@/components/table/PainationTable";
 import { sampleUsers } from "@/common/data/mocData";
 import type { IUser } from "@/common/types/Users";
+import { useUserStore } from "@/common/store/UserStore";
+import { useGetUsers } from "./hooks/useGetUsers";
 
 function UsersPage() {
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
+
+  // const { actions, user } = useUserStore();
+  // const users = useGetUsers(user!!.clinicId.toString(), user!!.id.toString());
 
   const filteredUsers = sampleUsers.filter((user) =>
     `${user.name} ${user.email}`.toLowerCase().includes(search.toLowerCase())

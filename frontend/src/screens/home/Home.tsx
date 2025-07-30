@@ -3,6 +3,8 @@ import { Users, CalendarCheck, Building2, Package } from "lucide-react";
 import { UserTable } from "@/components/UserTable";
 import { sampleUsers } from "@/common/data/mocData";
 import { useNavigate } from "react-router";
+import { useGetUsers } from "../users/hooks/useGetUsers";
+import { useUserStore } from "@/common/store/UserStore";
 
 function Home() {
 
@@ -13,7 +15,7 @@ function Home() {
     { title: "Clinics", icon: Building2, value: "12" },
     { title: "Modules", icon: Package, value: "5" },
     { title: "Appointments", icon: CalendarCheck, value: "328" },
-  ];
+  ];  
 
   const handleSeeAllUsers = () => {
     console.log("Redirect to full Users page...");

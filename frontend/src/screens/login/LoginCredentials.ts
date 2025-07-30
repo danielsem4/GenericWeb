@@ -7,5 +7,4 @@ export interface LoginCredentials {
   
 export interface LoginResponse {
     user: IAuthUser;
-    token: string;
   }
