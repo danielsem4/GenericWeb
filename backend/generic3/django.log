@@ -3718,3 +3718,4 @@ Watching for file changes with StatReloader
 C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\notifications\models.py changed, reloading.
 Watching for file changes with StatReloader
 "OPTIONS /api/v1/login/ HTTP/1.1" 200 0
+"POST /api/v1/login/ HTTP/1.1" 200 941
