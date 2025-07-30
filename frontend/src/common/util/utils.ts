@@ -1,5 +1,7 @@
 // Takes the fileds from snake_case or kebab-case and converts them to camelCase
 
+import type { IUser } from "../types/Users";
+
 export function recursiveFactorSnakeCaseToCamelCase<T = any>(obj: T): T | T[] {
     if (Array.isArray(obj)) {
       return obj.map((item) => recursiveFactorSnakeCaseToCamelCase(item));
@@ -30,4 +32,8 @@ export function recursiveFactorSnakeCaseToCamelCase<T = any>(obj: T): T | T[] {
   }
   function isSnakeCase(str: string): boolean {
     return str.includes("_") && /^[a-z0-9]+$/i.test(str);
+  }
+
+  function usersTableColumns(data: IUser) {
+     
   }

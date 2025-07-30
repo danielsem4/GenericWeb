@@ -1,37 +1,40 @@
 import { create } from "zustand";
-import type { IUserResponse } from "../types/User";
-import { useLocation } from "react-router";
+import { persist } from "zustand/middleware";
+import type { IAuthUser } from "../types/User";
 
 interface UserState {
-  user: IUserResponse | null;
+  user: IAuthUser | null;
   actions: {
-    setUser: (user: IUserResponse | null) => void;
+    setUser: (user: IAuthUser) => void;
     logout: () => void;
   };
 }
 
 export const useUserStore = create<UserState>()(
+  persist(
     (set) => ({
       user: null,
+      token: null,
       actions: {
-        setUser: (user) => set({ user }),
-        logout: () => {
-          set({ user: null })
-          localStorage.removeItem("auth_token");
+        setUser: (user) => {
+          set({ user });
         },
+        logout: () => {
+          set({ user: null });
+        }
       },
     }),
+    {
+      name: "user-storage",
+      partialize: (state) => ({ user: state.user }),
+    }
+  )
 );
 
-export const useUser = () => {
-  return useUserStore((state) => state.user);
-};
-
-export const useUserActions = () => {
-  return useUserStore((state) => state.actions);
-};
-
 export const useIsAuthenticated = () => {
-  const token = localStorage.getItem("auth_token");
-  return token
+  console.log("Checking authentication status...");
+  const user = useUserStore((state) => state.user);
+  console.log("Current user:", user);
+  
+  return useUserStore((state) => !!state.user);
 };
