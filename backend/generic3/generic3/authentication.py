@@ -10,7 +10,6 @@ class CookieTokenAuthentication(BaseAuthentication):
     def authenticate(self, request):
         # First try to get token from cookie
         token_key = request.COOKIES.get('auth_token')
-        
         # If no cookie, try Authorization header as fallback
         if not token_key:
             auth_header = request.META.get('HTTP_AUTHORIZATION')

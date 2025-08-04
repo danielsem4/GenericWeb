@@ -107,8 +107,21 @@ def login(request):
     }
     data.update(user_data)
     response = JsonResponse(data)
-    response.set_cookie('auth_token', token.key, max_age=86400 * 7, httponly=True, secure=settings.SECURE_COOKIES, samesite='Lax')
-    logger.info(f"User {user.email} logged in successfully with clinic {clinic_data['name'] if clinic_data else 'N/A'}")
+    
+    # Set cookie with appropriate settings for development/production
+    cookie_secure = settings.SECURE_COOKIES and not settings.DEBUG
+    cookie_samesite = 'None' if cookie_secure else 'Lax'
+    
+    response.set_cookie(
+        'auth_token', 
+        token.key, 
+        max_age=86400 * 7, 
+        httponly=True, 
+        secure=cookie_secure, 
+        samesite=cookie_samesite
+    )
+    print(f"User {user.email} logged in successfully with token {token.key}")
+    print(f"User {user.email} logged in successfully with clinic {clinic_data['name'] if clinic_data else 'N/A'}")
     return response
 
 

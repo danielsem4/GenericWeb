@@ -43,7 +43,8 @@ urlpatterns = [
     path('', include("clinics.urls")),
     path('', include("medications.urls")),
     path('', include("activities.urls")),
-    path('',include("notifications.urls")),
+    path('', include("notifications.urls")),
+    path('', include("fileshare.urls")),
     path('', include(tf_urls)),
 
 ]

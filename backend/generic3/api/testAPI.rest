@@ -1,6 +1,6 @@
 ######################## general API calls ########################
 
-POST https://d291ffbbf342.ngrok-free.app/api/v1/login/
+POST https://7448f0a387d5.ngrok-free.app/api/v1/login/
 Content-Type: application/json
 
 # {
@@ -8,37 +8,36 @@ Content-Type: application/json
 #     "password": "a123456!"
 # }
 
-{
-    "email": "doctor1@example.com",
-    "password": "a123456!"
-}
-
 # {
-#     "email": "ozeriyarin@gmail.com",
+#     "email": "doctor1@example.com",
 #     "password": "a123456!"
 # }
 
+{
+    "email": "ozeriyarin@gmail.com",
+    "password": "a123456!"
+}
+
 ###
 
-POST https://d291ffbbf342.ngrok-free.app/api/v1/logout/
+POST https://7448f0a387d5.ngrok-free.app/api/v1/logout/
 Content-Type: application/json
 
 ############################ users api calls ############################
 
-GET https://d291ffbbf342.ngrok-free.app/api/v1/users/1/3/
-Content-Type: application/json
+GET https://7448f0a387d5.ngrok-free.app/api/v1/users/1/3/
 
 ###
 
 
 ############################ medications api calls ############################
 
-GET https://d291ffbbf342.ngrok-free.app/api/v1/medications/clinic/1/
+GET https://7448f0a387d5.ngrok-free.app/api/v1/medications/clinic/1/
 Content-Type: application/json
 
 ###
 
-POST https://d291ffbbf342.ngrok-free.app/api/v1/medications/clinic/1/add/
+POST https://7448f0a387d5.ngrok-free.app/api/v1/medications/clinic/1/add/
 Content-Type: application/json
 
 {
@@ -48,16 +47,16 @@ Content-Type: application/json
 
 ###
 
-DELETE https://d291ffbbf342.ngrok-free.app/api/v1/medications/clinic/1/delete/1999022181/
+DELETE https://7448f0a387d5.ngrok-free.app/api/v1/medications/clinic/1/delete/1999022181/
 Content-Type: application/json
 
 ### 
 
-GET https://d291ffbbf342.ngrok-free.app/api/v1/medications/patient/1/5/
+GET https://7448f0a387d5.ngrok-free.app/api/v1/medications/patient/1/5/
 Content-Type: application/json
 ###
 
-POST https://d291ffbbf342.ngrok-free.app/api/v1/medications/patient/1/5/add/
+POST https://7448f0a387d5.ngrok-free.app/api/v1/medications/patient/1/5/add/
 Content-Type: application/json
 
 # {
@@ -88,7 +87,7 @@ Content-Type: application/json
 
 ###
 
-PUT https://d291ffbbf342.ngrok-free.app/api/v1/medications/patient/1/5/update/
+PUT https://7448f0a387d5.ngrok-free.app/api/v1/medications/patient/1/5/update/
 Content-Type: application/json
 
 # {
@@ -119,12 +118,12 @@ Content-Type: application/json
 
 ###
 
-DELETE https://d291ffbbf342.ngrok-free.app/api/v1/medications/patient/1/5/delete/1999022181/
+DELETE https://7448f0a387d5.ngrok-free.app/api/v1/medications/patient/1/5/delete/1999022181/
 Content-Type: application/json
 
 ###
 
-POST https://d291ffbbf342.ngrok-free.app/api/v1/medications/report/
+POST https://7448f0a387d5.ngrok-free.app/api/v1/medications/report/
 Content-Type: application/json
 
 {
@@ -138,11 +137,11 @@ Content-Type: application/json
 
 ########################### activities api calls ###########################
 
-GET https://d291ffbbf342.ngrok-free.app/api/v1/activities/clinic/1/
+GET https://7448f0a387d5.ngrok-free.app/api/v1/activities/clinic/1/
 Content-Type: application/json
 ###
 
-POST https://d291ffbbf342.ngrok-free.app/api/v1/activities/clinic/1/add/
+POST https://7448f0a387d5.ngrok-free.app/api/v1/activities/clinic/1/add/
 Content-Type: application/json
 Authorization: Token 5eb65ebc949c894ef65548360820548b553f5010
 
@@ -152,16 +151,16 @@ Authorization: Token 5eb65ebc949c894ef65548360820548b553f5010
 
 ###
 
-DELETE https://d291ffbbf342.ngrok-free.app/api/v1/activities/clinic/1/delete/1/
+DELETE https://7448f0a387d5.ngrok-free.app/api/v1/activities/clinic/1/delete/1/
 Content-Type: application/json
 
 ### 
 
-GET https://d291ffbbf342.ngrok-free.app/api/v1/activities/patient/1/5/
+GET https://7448f0a387d5.ngrok-free.app/api/v1/activities/patient/1/5/
 Content-Type: application/json
 
 ###
-POST https://d291ffbbf342.ngrok-free.app/api/v1/activities/patient/1/5/add/
+POST https://7448f0a387d5.ngrok-free.app/api/v1/activities/patient/1/5/add/
 Content-Type: application/json
 
 {
@@ -170,12 +169,12 @@ Content-Type: application/json
 
 ### 
 
-DELETE https://d291ffbbf342.ngrok-free.app/api/v1/activities/patient/1/5/delete/1/
+DELETE https://7448f0a387d5.ngrok-free.app/api/v1/activities/patient/1/5/delete/1/
 Content-Type: application/json
 
 ### 
 
-POST https://d291ffbbf342.ngrok-free.app/api/v1/activities/report/
+POST https://7448f0a387d5.ngrok-free.app/api/v1/activities/report/
 Content-Type: application/json
 Authorization: Token 5eb65ebc949c894ef65548360820548b553f5010
 
@@ -190,7 +189,7 @@ Authorization: Token 5eb65ebc949c894ef65548360820548b553f5010
 
 ############################# notifications API calls ##############################
 
-POST https://d291ffbbf342.ngrok-free.app/api/v1/notifications/set/notification/
+POST https://7448f0a387d5.ngrok-free.app/api/v1/notifications/set/notification/
 Content-Type: application/json
 
 {
@@ -207,3 +206,21 @@ Content-Type: application/json
   "start_date_time": "2025-07-01 08:00:00",
   "end_date_time": "2025-08-01 08:00:00"
 }
+
+############################ fileshare api calls ############################
+
+GET https://7448f0a387d5.ngrok-free.app/api/v1/fileshare/files/1/5/
+
+###
+
+POST https://7448f0a387d5.ngrok-free.app/api/v1/fileshare/files/1/5/add/
+Content-Type: application/json
+
+{
+    "doctor_id": 1,
+    "file": "file_content"
+}
+
+###
+DELETE https://7448f0a387d5.ngrok-free.app/api/v1/fileshare/files/1/5/delete/1/
+Content-Type: application/json

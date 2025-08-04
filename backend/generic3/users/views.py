@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework.decorators import api_view, authentication_classes
+from rest_framework.decorators import api_view, authentication_classes , permission_classes
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.authentication import TokenAuthentication
@@ -8,6 +8,7 @@ from clinics.models import Clinic , DoctorClinic, PatientClinic
 
 #### Get users for a specific clinic depending on the user type
 @api_view(['GET'])
+# @authentication_classes([TokenAuthentication])
 def get_users(request, clinic_id, user_id):
     """
     Get users for a specific clinic.

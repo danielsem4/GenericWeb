@@ -64,7 +64,8 @@ INSTALLED_APPS = [
     'clinics',
     'medications',
     'activities',
-    'notifications'
+    'notifications',
+    'fileshare',
 ]
 
 MIDDLEWARE = [
@@ -172,6 +173,23 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ALLOW_ALL_ORIGINS = True  # Only for development!
 CORS_ALLOW_CREDENTIALS = True
 
+# Additional CORS headers for cookie authentication
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+
+CORS_EXPOSE_HEADERS = [
+    'set-cookie',
+]
+
 # Django REST Framework settings
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -192,7 +210,8 @@ REST_FRAMEWORK = {
     ],
 }
 
-SECURE_COOKIES = False  # Set to True in production with HTTPS
+# Cookie security settings
+SECURE_COOKIES = not DEBUG  # Only use secure cookies in production with HTTPS
 
 
 AUTH_USER_MODEL = 'users.User'
