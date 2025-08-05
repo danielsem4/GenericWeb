@@ -4,6 +4,7 @@ from users.models import ClinicManager, Doctor, Patient
 class Clinic(models.Model):
     clinic_name = models.CharField(max_length=255, unique=True)
     clinic_url = models.URLField(max_length=200, unique=True)
+    clinic_image_url = models.URLField(max_length=200, blank=True, null=True)
     is_research_clinic = models.BooleanField(default=False)
 
     def __str__(self):
