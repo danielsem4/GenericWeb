@@ -10,4 +10,13 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://3988d71a582f.ngrok-free.app/",
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
 });

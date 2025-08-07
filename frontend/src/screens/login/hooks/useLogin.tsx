@@ -6,15 +6,16 @@ import type { IAuthUser } from "@/common/types/User";
 
 async function loginUser(credentials: LoginCredentials): Promise<IAuthUser> {
   const response = await axios.post<IAuthUser>(
-    `${import.meta.env.VITE_API_URL}login/`,
-    credentials
+    `${import.meta.env.VITE_API_URL_DEV}auth/login/`,
+    credentials,
+    { withCredentials: true }
   );
   return response.data;
 }
 
 export const useLogin = () => {
   const { actions } = useUserStore();
-  
+
   return useMutation({
     mutationFn: loginUser,
     onSuccess: (data) => {
@@ -29,7 +30,7 @@ export const useLogin = () => {
 
 export const useLogout = () => {
   const { actions } = useUserStore();
-  
+
   return () => {
     actions.logout();
   };

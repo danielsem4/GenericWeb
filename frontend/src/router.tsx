@@ -8,6 +8,8 @@ import SettingsPage from "./screens/settings/Settings";
 import Users from "./screens/users/Users";
 import User from "./screens/users/User";
 import UserDashboard from "./screens/users/UserDashboard";
+import Medications from "./screens/modules/medications/Medications";
+import { SettingsProvider } from "./context/SettingsContext";
 
 const router = createBrowserRouter([
   {
@@ -16,16 +18,20 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <ProtectedRoute />, 
+    element: <ProtectedRoute />,
     children: [
       {
-        element: <MainLayout />, 
+        element: <MainLayout />,
         children: [
           { path: "home", element: <Home /> },
-          { path: "settings", element: <SettingsPage /> },
+          {
+            path: "settings",
+            element: <SettingsPage />,
+          },
           { path: "users", element: <Users /> },
-          { path: "user/:userId", element: <User />}, 
-          { path: "userDashboard", element: <UserDashboard />}
+          { path: "user/:userId", element: <User /> },
+          { path: "userDashboard", element: <UserDashboard /> },
+          { path: "medications", element: <Medications /> },
         ],
       },
     ],

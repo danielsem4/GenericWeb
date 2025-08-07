@@ -12,13 +12,12 @@ function UsersPage() {
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
 
-  // const { actions, user } = useUserStore();
-  // const users = useGetUsers(user!!.clinicId.toString(), user!!.id.toString());
+  const { actions, user } = useUserStore();
+  const users = useGetUsers(user!!.clinicId.toString(), user!!.id);
 
   const filteredUsers = sampleUsers.filter((user) =>
     `${user.name} ${user.email}`.toLowerCase().includes(search.toLowerCase())
   );
-
 
   const getStatusBadge = (status: IUser["status"]) => {
     const variant =
@@ -46,7 +45,7 @@ function UsersPage() {
         className="max-w-sm"
       />
 
-<PaginatedTable<IUser>
+      <PaginatedTable<IUser>
         title="User List"
         description="Browse and manage your user accounts."
         data={filteredUsers}
