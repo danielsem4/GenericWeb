@@ -20,7 +20,6 @@ export const useLogin = () => {
     mutationFn: loginUser,
     onSuccess: (data) => {
       actions.setUser(data);
-      console.log("Login successful:", data);
     },
     onError: (error) => {
       console.error("Login failed:", error);

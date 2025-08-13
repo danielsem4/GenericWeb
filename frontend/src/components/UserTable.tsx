@@ -1,4 +1,11 @@
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { MoreHorizontal } from "lucide-react";
@@ -26,9 +33,7 @@ export function UserTable({
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = startIndex + pageSize;
 
-  const paginatedData = data.slice(startIndex, endIndex)
-  ;
-
+  const paginatedData = data.slice(startIndex, endIndex);
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
       case "active":
@@ -44,7 +49,8 @@ export function UserTable({
 
   const handleFirstPage = () => setCurrentPage(1);
   const handlePreviousPage = () => setCurrentPage((p) => Math.max(1, p - 1));
-  const handleNextPage = () => setCurrentPage((p) => Math.min(totalPages, p + 1));
+  const handleNextPage = () =>
+    setCurrentPage((p) => Math.min(totalPages, p + 1));
   const handleLastPage = () => setCurrentPage(totalPages);
   const handlePageSizeChange = (size: number) => {
     setPageSize(size);
@@ -73,12 +79,16 @@ export function UserTable({
               className="cursor-pointer hover:bg-muted/50 transition-colors border-b border-gray-200"
               onClick={() => navigate(`/user/${user.id}`)}
             >
-              <TableCell className="font-semibold text-base">{user.name}</TableCell>
+              <TableCell className="font-semibold text-base">
+                {user.name}
+              </TableCell>
               <TableCell className="text-base">{user.email}</TableCell>
               <TableCell className="text-base">{user.role}</TableCell>
               <TableCell>
                 <Badge
-                  className={`${getStatusColor(user.status)} text-xs font-medium px-2 py-1 rounded-full`}
+                  className={`${getStatusColor(
+                    user.status
+                  )} text-xs font-medium px-2 py-1 rounded-full`}
                 >
                   {user.status}
                 </Badge>
@@ -103,7 +113,6 @@ export function UserTable({
         </TableBody>
       </Table>
 
-      {/* ✅ Clean JSX now */}
       <PaginationControls
         currentPage={currentPage}
         totalPages={totalPages}

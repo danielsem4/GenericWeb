@@ -7,51 +7,62 @@ import {
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
-  SidebarTrigger,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { useNavigate } from "react-router";
 import NavMain from "./NavMain";
-import sidebarData from "@/common/data/sidebarData";
+import {
+  doctorSidebarData,
+  clinicManagerSidebarData,
+  adminSidebarData,
+} from "@/common/data/sidebarData";
 import { useEffect, useState } from "react";
-import { useUserStore } from "@/common/store/UserStore";
-
+import { useIsAuthenticated, useUserStore } from "@/common/store/UserStore";
+import { NavProjects } from "./SIdeBarSimpleItem";
 
 function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const navigate = useNavigate();
   const { state } = useSidebar();
-  const { actions, user } = useUserStore();
-
-  const [sidebarItems, setSidebarItems] = useState(sidebarData.navMain);
+  const { actions } = useUserStore();
+  const user = useIsAuthenticated();
+  const [sidebarItems, setSidebarItems] = useState(doctorSidebarData);
 
   useEffect(() => {
     if (!user) return;
+    const base = user.isDoctor
+      ? doctorSidebarData
+      : user.isClinicManager
+      ? clinicManagerSidebarData
+      : adminSidebarData;
 
-    const updatedNavMain = sidebarData.navMain.map((navItem) => {
-      if (navItem.title === "Modules") {
-        return {
-          ...navItem,
-          items: [
-            ...(navItem.items || []),
-            ...(user.modules?.map((module) => ({
-              title: module.name,
-              url: `modules/${module.id}`,
-            })) || []),
-          ],
-        };
-      }
-      return navItem;
+    const userModuleItems =
+      user.modules?.map((m) => ({
+        title: m.name,
+        url: `/modules/${m.name}`,
+      })) ?? [];
+
+    const navMain = base.navMain.map((navItem) => {
+      if (navItem.title !== "Modules") return navItem;
+      const merged = [...(navItem.items ?? []), ...userModuleItems];
+
+      // de-dupe by title
+      const seen = new Set<string>();
+      const deduped = merged.filter((i) =>
+        seen.has(i.title) ? false : (seen.add(i.title), true)
+      );
+
+      return { ...navItem, items: deduped };
     });
 
-    setSidebarItems(updatedNavMain);
-  }, [user]);
+    setSidebarItems({ ...base, navMain });
+  }, [user?.isDoctor, user?.isClinicManager, user?.modules]);
 
   const handleLogout = () => {
     actions.logout();
     navigate("/login");
   };
-  
+
   if (!user) {
     return (
       <Sidebar collapsible="icon" {...props}>
@@ -71,16 +82,16 @@ function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               Welcome, {user?.firstName || "User"}
             </div>
           )}
-          <SidebarTrigger className="p-2" />
         </div>
       </SidebarHeader>
 
       <SidebarContent>
-        <NavMain items={sidebarItems} />
+        <NavProjects items={sidebarItems.navRoutes} />
+        <NavMain items={sidebarItems.navMain} />
       </SidebarContent>
 
       <SidebarFooter>
-        <div className="p-2 w-full">
+        <div className="flex items-center justify-between p-2 w-full">
           <Button
             variant="ghost"
             className={cn(
@@ -99,6 +110,5 @@ function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     </Sidebar>
   );
 }
-
 
 export default AppSidebar;

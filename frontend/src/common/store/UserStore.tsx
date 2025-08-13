@@ -21,20 +21,16 @@ export const useUserStore = create<UserState>()(
         },
         logout: () => {
           set({ user: null });
-        }
+        },
       },
     }),
     {
       name: "user-storage",
-      partialize: (state) => ({ user: state.user }),
+      partialize: (state) => state.user,
     }
   )
 );
 
 export const useIsAuthenticated = () => {
-  console.log("Checking authentication status...");
-  const user = useUserStore((state) => state.user);
-  console.log("Current user:", user);
-  
-  return useUserStore((state) => !!state.user);
+  return useUserStore((state) => state.user);
 };

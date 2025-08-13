@@ -143,40 +143,38 @@ function Medications() {
   );
 
   const handleDelete = (id: string) => {
-    // TODO: Implement delete functionality
     console.log("Delete medication with id:", id);
   };
 
   const handleSend = (id: string) => {
-    // TODO: Implement send functionality
     console.log("Send medication with id:", id);
   };
 
-  // if (isLoading) {
-  //   return (
-  //     <div className="flex items-center justify-center min-h-[400px]">
-  //       <Loader2 className="h-8 w-8 animate-spin" />
-  //       <span className="ml-2">Loading medications...</span>
-  //     </div>
-  //   );
-  // }
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-[400px]">
+        <Loader2 className="h-8 w-8 animate-spin" />
+        <span className="ml-2">Loading medications...</span>
+      </div>
+    );
+  }
 
-  // if (error) {
-  //   return (
-  //     <div className="flex items-center justify-center min-h-[400px]">
-  //       <div className="text-center">
-  //         <h2 className="text-lg font-semibold text-destructive">
-  //           Error loading medications
-  //         </h2>
-  //         <p className="text-muted-foreground">{error.message}</p>
-  //       </div>
-  //     </div>
-  //   );
-  // }
+  if (error) {
+    return (
+      <div className="flex items-center justify-center min-h-[400px]">
+        <div className="text-center">
+          <h2 className="text-lg font-semibold text-destructive">
+            Error loading medications
+          </h2>
+          <p className="text-muted-foreground">{error.message}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto p-6 space-y-6">
-      <h1 className="text-3xl font-bold">Medications</h1>
+      <h1 className="text-3xl font-bold">Clinic Medications</h1>
       <div className="relative max-w-md">
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         <Input
