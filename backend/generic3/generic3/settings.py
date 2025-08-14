@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+from corsheaders.defaults import default_headers
 
 # Load environment variables from .env file
 load_dotenv(os.path.join(Path(__file__).resolve().parent.parent.parent, '.env'))
@@ -30,7 +31,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-qvgkr+$ditgy1nin0(u0p4=@(1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'True').lower() == 'true'
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1,0.0.0.0,*').split(',')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1,0.0.0.0').split(',')
 
 
 # Application definition
@@ -66,6 +67,7 @@ INSTALLED_APPS = [
     'activities',
     'notifications',
     'fileshare',
+    'questionnaires',
 ]
 
 MIDDLEWARE = [
@@ -163,40 +165,63 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+CORS_ALLOW_ALL_ORIGINS = False 
+CORS_ALLOW_CREDENTIALS = True  # Required for session cookies
+
+# Cookies must be sent cross-domain
+CSRF_COOKIE_SAMESITE   = "None"
+CSRF_COOKIE_SECURE     = True
+SESSION_COOKIE_SAMESITE = "None"
+SESSION_COOKIE_SECURE   = True
+
 # CORS settings for frontend communication
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # Vite dev server
     "http://127.0.0.1:5173",
-    "https://*.ngrok-free.app",  # Allow any ngrok subdomain
-    "https://*.ngrok.io", # Legacy ngrok domains
-]
-CORS_ALLOW_ALL_ORIGINS = True  # Only for development!
-CORS_ALLOW_CREDENTIALS = True
-
-# Additional CORS headers for cookie authentication
-CORS_ALLOW_HEADERS = [
-    'accept',
-    'accept-encoding',
-    'authorization',
-    'content-type',
-    'dnt',
-    'origin',
-    'user-agent',
-    'x-csrftoken',
-    'x-requested-with',
 ]
 
-CORS_EXPOSE_HEADERS = [
-    'set-cookie',
+ngrok_url = os.getenv("NGROK_URL", "")
+if ngrok_url:
+    CORS_ALLOWED_ORIGINS.append(ngrok_url)
+    
+# # Allowed methods for CORS
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
 ]
+
+CORS_ALLOW_HEADERS = list(default_headers) + [ 'ngrok-skip-browser-warning', ]
+
+# CSRF_TRUSTED_ORIGINS = [
+#     "http://localhost:5173",
+#     "http://127.0.0.1:5173",
+# ]
+
+# # CSRF settings for session authentication
+# CSRF_COOKIE_SECURE = False  # Set to True in production with HTTPS
+# CSRF_COOKIE_HTTPONLY = False  # Allow JS access to CSRF token for forms
+# CSRF_COOKIE_SAMESITE = 'Lax'  # CSRF protection
+# CSRF_COOKIE_DOMAIN = None  # Allow cross-domain cookies
+
+# # Session cookie settings for web authentication
+# SESSION_COOKIE_SECURE = False  # Set to True in production with HTTPS
+# SESSION_COOKIE_HTTPONLY = True  # Prevent XSS attacks
+# SESSION_COOKIE_SAMESITE = 'Lax'  # CSRF protection
+# SESSION_COOKIE_AGE = 1209600  # 2 weeks
+# SESSION_COOKIE_DOMAIN = None  # Allow cross-domain cookies if needed
 
 # Django REST Framework settings
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'generic3.authentication.CookieTokenAuthentication',  
-        'rest_framework.authentication.TokenAuthentication',  
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
+        'generic3.auth.CookieJWTAuthentication', 
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+        # 'rest_framework.authentication.TokenAuthentication',   
+        # 'rest_framework.authentication.SessionAuthentication',  # For web authentication
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
@@ -209,9 +234,6 @@ REST_FRAMEWORK = {
         'rest_framework.filters.OrderingFilter',
     ],
 }
-
-# Cookie security settings
-SECURE_COOKIES = not DEBUG  # Only use secure cookies in production with HTTPS
 
 
 AUTH_USER_MODEL = 'users.User'

@@ -6,5 +6,5 @@ urlpatterns = [
     path('api/v1/clinics/<int:clinic_id>/', views.get_clinic_details, name='get_clinic_details'),
     path('api/v1/clinics/add/', views.add_clinic, name='add_clinic'),
     path('api/v1/clinics/<int:clinic_id>/update/', views.update_clinic, name='update_clinic'),
-    
+    path('api/v1/clinics/<int:clinic_id>/delete/', views.delete_clinic, name='delete_clinic'),
 ]

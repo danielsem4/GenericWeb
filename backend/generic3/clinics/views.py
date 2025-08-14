@@ -3,11 +3,12 @@ from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.authentication import TokenAuthentication
 from rest_framework import status
+from medications.models import ClinicMedicine
 from generic3.utils import create_clinic_manager
-from clinics.models import Clinic, ClinicModules, ManagerClinic, Modules
+from clinics.models import Clinic, ClinicModules, DoctorClinic, ManagerClinic, Modules, PatientClinic
 from django.db import transaction
 
-from users.models import User
+from users.models import ClinicManager, User
 
 @api_view(['GET'])
 def get_all_clinics(request):
@@ -163,7 +164,7 @@ def update_clinic(request, clinic_id):
     user = request.user
     if not user.is_authenticated:
         return JsonResponse({"error": "Authentication required"}, status=status.HTTP_401_UNAUTHORIZED)
-    if not user.is_staff and not user.is_clinic_manager:
+    if not user.is_staff and not user.role == 'CLINIC_MANAGER':
         return JsonResponse({"error": "Permission denied , user is not staff or clinic manager"}, status=status.HTTP_403_FORBIDDEN)
 
     try:
@@ -221,3 +222,43 @@ def update_clinic(request, clinic_id):
         return JsonResponse({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     return JsonResponse({"message": "Clinic updated successfully"}, status=status.HTTP_200_OK)
+
+@api_view(['DELETE'])
+def delete_clinic(request, clinic_id):
+    """
+    Delete a clinic.
+    """
+    user = request.user
+    if not user.is_authenticated:
+        return JsonResponse({"error": "Authentication required"}, status=status.HTTP_401_UNAUTHORIZED)
+    if not user.is_staff:
+        return JsonResponse({"error": "Permission denied , user is not staff"}, status=status.HTTP_403_FORBIDDEN)
+
+    if not Clinic.objects.filter(id=clinic_id).exists():
+        return JsonResponse({"error": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
+    
+    
+    try:
+        # Delete the clinic and its related modules
+        with transaction.atomic():
+            clinic = Clinic.objects.get(id=clinic_id)
+            # delete clinic medications
+            ClinicMedicine.objects.filter(clinic=clinic).delete()
+            # delete the clinic modules
+            ClinicModules.objects.filter(clinic=clinic).delete()
+            # delete associations with doctors and patients
+            DoctorClinic.objects.filter(clinic=clinic).delete()
+            PatientClinic.objects.filter(clinic=clinic).delete()
+            # delete the clinic manager
+            if ManagerClinic.objects.filter(clinic=clinic).exists():
+                manager_clinic = ManagerClinic.objects.get(clinic=clinic)
+                clinic_manager = manager_clinic.manager
+                ClinicManager.objects.filter(user=clinic_manager.user).delete()
+                # also delete the user
+                User.objects.filter(id=clinic_manager.user.id).delete()
+                manager_clinic.delete()
+            # finally delete the clinic itself
+            clinic.delete()
+        return JsonResponse({"message": "Clinic deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
+    except Exception as e:
+        return JsonResponse({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

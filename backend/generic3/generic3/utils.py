@@ -34,23 +34,18 @@ def send_temporary_password_email(email, temporary_password , clinic_url='https:
     )
     userMessage.save()
     msg = {'to_email':email,'from_email':"admin@hitheal.org.il",'subject':subject,'message':message , 'CHARSET':'UTF-8'}
-    try:
-        status = sendEmailMessage(msg)   
-    except Exception as e:
-        print("Error sending email:", e)
-        status = 1     
+    response = sendEmailMessage(msg)   
     print(subject, message, from_email, recipient_list , userMessage)
-    return status 
+    return response
 
 def get_clinic_id_for_user(user):
-    if user.is_doctor:
-        print("Doctor")
+    if user.role == 'DOCTOR':
         doctor = Doctor.objects.get(user=user)
         clinic_id = DoctorClinic.objects.filter(doctor=doctor).values_list('clinic_id', flat=True)
-    elif user.is_patient or user.is_research_patient:
+    elif user.role == 'PATIENT' or user.role == 'RESEARCH_PATIENT':
         patient = Patient.objects.get(user=user)
         clinic_id = PatientClinic.objects.filter(patient=patient).values_list('clinic_id', flat=True)
-    elif user.is_clinic_manager:
+    elif user.role == 'CLINIC_MANAGER':
         clinic_manager = ClinicManager.objects.get(user=user)
         clinic_id = ManagerClinic.objects.filter(manager=clinic_manager).values_list('clinic_id', flat=True)
     else: # admin
@@ -104,22 +99,19 @@ def create_clinic_manager(email, first_name, last_name, phone_number , clinic):
             last_name=last_name,
             phone_number=phone_number,
             password=temp_password,
-            is_clinic_manager=True,
+            role='CLINIC_MANAGER',
     )
     else:
         user = User.objects.get(email=email)
-        if user.is_clinic_manager:
+        if user.role == 'CLINIC_MANAGER':
             return JsonResponse({
                 "error": "Clinic manager with this email already exists",
             }, status=status.HTTP_400_BAD_REQUEST)
-        if user.is_doctor and PatientDoctor.objects.filter(doctor__user=user).exists():
+        if user.role == 'DOCTOR' and PatientDoctor.objects.filter(doctor__user=user).exists():
             return JsonResponse({
                 "error": "Cannot create clinic manager, user is already a doctor with patients assigned"
             }, status=status.HTTP_400_BAD_REQUEST)
-        user.is_clinic_manager = True
-        user.is_doctor = False
-        user.is_patient = False
-        user.is_research_patient = False
+        user.role = 'CLINIC_MANAGER'
         user.save()
         
     
@@ -127,30 +119,15 @@ def create_clinic_manager(email, first_name, last_name, phone_number , clinic):
     manager_clinic = ManagerClinic.objects.create(manager=clinic_manager, clinic=clinic)
 
 
-    response_status = send_temporary_password_email(email, temp_password)
-    if response_status != 0:
+    response = send_temporary_password_email(email, temp_password)
+    if response.status_code != 200:
         return JsonResponse({
             "error": "Failed to send email",
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        
+
     return JsonResponse({
         "message": "Clinic manager created successfully",
     } , status=status.HTTP_201_CREATED)
-    
-def get_user_role(user):
-    """
-    Determine the role of the user and return it.
-    """
-    if user.is_clinic_manager:
-        return "Clinic Manager"
-    elif user.is_doctor:
-        return "Doctor"
-    elif user.is_patient:
-        return "Patient"
-    elif user.is_research_patient:
-        return "Research Patient"
-    else:
-        return "Admin"  
     
     
 def setup_totp(user):

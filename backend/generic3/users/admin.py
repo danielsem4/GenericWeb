@@ -7,13 +7,13 @@ class UserAdmin(BaseUserAdmin):
     add_form = CustomUserCreationForm
     fieldsets = (
         (None, {'fields': ('email', 'password',"first_name", "last_name", "phone_number")}),
-        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'is_clinic_manager', 'is_doctor', 'is_patient', 'is_research_patient')}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'role')}),
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
     )
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'first_name', 'last_name', 'phone_number', 'password1', 'password2' , 'is_clinic_manager', 'is_doctor', 'is_patient', 'is_research_patient' , 'is_active', 'is_staff', 'is_superuser'),
+            'fields': ('email', 'first_name', 'last_name', 'phone_number', 'password1', 'password2' , 'role', 'is_active', 'is_staff', 'is_superuser'),
         }),
     )
     search_fields = ('email',)

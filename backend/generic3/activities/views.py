@@ -9,6 +9,77 @@ from users.models import PatientDoctor, User, Patient
 from .models import Activity, ActivityReport, ClinicActivity, PatientActivity
 from clinics.models import Clinic
 
+############# admin activity management ##############
+
+@api_view(['GET'])
+def get_all_activities(request):
+    """
+    Get all activities.
+    """
+    if not request.user.is_authenticated or not request.user.is_staff:
+        return JsonResponse({"detail": "Permission denied"}, status=status.HTTP_403_FORBIDDEN)
+    activities = Activity.objects.all()
+    activity_list = [{"id": activity.id, "name": activity.name, "description": activity.description} for activity in activities]
+    return JsonResponse(activity_list, safe=False, status=status.HTTP_200_OK)
+
+@api_view(['POST'])
+def add_activity(request):
+    """
+    Add a new activity.
+    """
+    if not request.user.is_authenticated or not request.user.is_staff:
+        return JsonResponse({"detail": "Permission denied"}, status=status.HTTP_403_FORBIDDEN)
+    data = request.data
+    name = data.get('name')
+    description = data.get('description')
+    
+    if not name or not description:
+        return JsonResponse({"detail": "Name and description are required"}, status=status.HTTP_400_BAD_REQUEST)
+    
+    if Activity.objects.filter(name=name).exists():
+        return JsonResponse({"detail": "Activity with this name already exists"}, status=status.HTTP_400_BAD_REQUEST)
+    
+    activity = Activity.objects.create(
+        name=name,
+        description=description
+    )
+    return JsonResponse({"id": activity.id, "name": activity.name, "description": activity.description}, status=status.HTTP_201_CREATED)
+
+@api_view(['PUT'])
+def update_activity(request, activity_id):
+    """
+    Update an existing activity.
+    """
+    if not request.user.is_authenticated or not request.user.is_staff:
+        return JsonResponse({"detail": "Permission denied"}, status=status.HTTP_403_FORBIDDEN)
+    
+    try:
+        activity = Activity.objects.get(id=activity_id)
+    except Activity.DoesNotExist:
+        return JsonResponse({"detail": "Activity not found"}, status=status.HTTP_404_NOT_FOUND)
+
+    data = request.data
+    activity.name = data.get('name', activity.name)
+    activity.description = data.get('description', activity.description)
+    activity.save()
+
+    return JsonResponse({"id": activity.id, "name": activity.name, "description": activity.description}, status=status.HTTP_200_OK)
+
+@api_view(['DELETE'])
+def delete_activity(request, activity_id):
+    """
+    Delete an existing activity.
+    """
+    if not request.user.is_authenticated or not request.user.is_staff:
+        return JsonResponse({"detail": "Permission denied"}, status=status.HTTP_403_FORBIDDEN)
+    
+    try:
+        activity = Activity.objects.get(id=activity_id)
+        activity.delete()
+        return JsonResponse({"detail": "Activity deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
+    except Activity.DoesNotExist:
+        return JsonResponse({"detail": "Activity not found"}, status=status.HTTP_404_NOT_FOUND)
+
 ############ clinic activities management ############
 
 @api_view(['GET'])
@@ -90,7 +161,7 @@ def get_patient_activities(request, clinic_id, patient_id):
 
     try:
         user = User.objects.get(id=patient_id)
-        if not user.is_patient and not user.is_research_patient:
+        if user.role != 'PATIENT' and user.role != 'RESEARCH_PATIENT':
             return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
     except User.DoesNotExist:
         return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
@@ -128,7 +199,7 @@ def add_patient_activity(request, clinic_id, patient_id):
         return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
     try:
         user = User.objects.get(id=patient_id)
-        if not user.is_patient and not user.is_research_patient:
+        if user.role != 'PATIENT' and user.role != 'RESEARCH_PATIENT':
             return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
     except User.DoesNotExist:
         return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
@@ -184,7 +255,7 @@ def delete_patient_activity(request, clinic_id, patient_id, activity_id):
 
     try:
         user = User.objects.get(id=patient_id)
-        if not user.is_patient and not user.is_research_patient:
+        if user.role != 'PATIENT' and user.role != 'RESEARCH_PATIENT':
             return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
     except User.DoesNotExist:
         return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
@@ -210,6 +281,43 @@ def delete_patient_activity(request, clinic_id, patient_id, activity_id):
     except PatientActivity.DoesNotExist:
         return JsonResponse({"detail": "Activity not found for this patient in this clinic"}, status=status.HTTP_404_NOT_FOUND)
     
+@api_view(['GET'])
+def get_patient_activities_log(request, clinic_id, patient_id):
+    """
+    Get the activity log for a specific patient in a clinic.
+    """
+    try:
+        clinic = Clinic.objects.get(id=clinic_id)
+    except Clinic.DoesNotExist:
+        return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        user = User.objects.get(id=patient_id)
+        if user.role != 'PATIENT' and user.role != 'RESEARCH_PATIENT':
+            return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
+    except User.DoesNotExist:
+        return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        patient = Patient.objects.get(user=user)
+    except Patient.DoesNotExist:
+        return JsonResponse({"detail": "Patient not found"}, status=status.HTTP_404_NOT_FOUND)
+
+    activities_log = ActivityReport.objects.filter(clinic=clinic, patient=patient).order_by('-timestamp')
+
+    if not activities_log:
+        return JsonResponse({"detail": "No activity log found for this patient"}, status=status.HTTP_404_NOT_FOUND)
+ 
+    log_data = []
+    for log in activities_log:
+        log_data.append({
+            "activity_id": log.activity.id,
+            "activity_name": log.activity.name,
+            "activity_description": log.activity.description,
+            "timestamp": log.timestamp
+        })
+    return JsonResponse(log_data, safe=False, status=status.HTTP_200_OK)
+
 ############ patient side  ###########################################
 
 @api_view(['POST'])
@@ -231,7 +339,7 @@ def patient_activity_report(request):
         return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
     try:
         user = User.objects.get(id=patient_id)
-        if not user.is_patient and not user.is_research_patient:
+        if user.role != 'PATIENT' and user.role != 'RESEARCH_PATIENT':
             return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
     except User.DoesNotExist:
         return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)

@@ -2,15 +2,20 @@ from django.contrib.auth.models import AbstractUser
 from django.utils import timezone
 from django.db import models
 
+user_role = (
+    ('ADMIN', 'Admin'),
+    ('CLINIC_MANAGER', 'Clinic Manager'),
+    ('DOCTOR', 'Doctor'),
+    ('PATIENT', 'Patient'),
+    ('RESEARCH_PATIENT', 'Research Patient'),
+)
+
 class User(AbstractUser):
     email = models.EmailField(unique=True)
     first_name = models.CharField(max_length=30, blank=True)
     last_name = models.CharField(max_length=30, blank=True)
     phone_number = models.CharField(max_length=15, blank=True, null=True)
-    is_clinic_manager = models.BooleanField(default=False)
-    is_doctor = models.BooleanField(default=False)
-    is_patient = models.BooleanField(default=False)
-    is_research_patient = models.BooleanField(default=False)
+    role = models.CharField(max_length=30, choices=user_role, blank=True)
     
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']

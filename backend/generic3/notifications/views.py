@@ -32,7 +32,7 @@ def set_event_notification(request):
 
     try:
         user = User.objects.get(id=patient_id)
-        if not user.is_patient and not user.is_research_patient:
+        if user.role not in ['PATIENT', 'RESEARCH_PATIENT']:
             return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
     except User.DoesNotExist:
         return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)

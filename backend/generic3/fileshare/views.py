@@ -22,7 +22,7 @@ def get_shared_files(request , clinic_id, patient_id):
 
     try:
         user = User.objects.get(id=patient_id)
-        if not user.is_patient and not user.is_research_patient:
+        if user.role != 'PATIENT' and user.role != 'RESEARCH_PATIENT':
             return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
     except User.DoesNotExist:
         return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
@@ -57,7 +57,7 @@ def add_shared_files(request, clinic_id, patient_id):
 
     try:
         user = User.objects.get(id=patient_id)
-        if not user.is_patient and not user.is_research_patient:
+        if user.role != 'PATIENT' and user.role != 'RESEARCH_PATIENT':
             return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
     except User.DoesNotExist:
         return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
@@ -69,7 +69,7 @@ def add_shared_files(request, clinic_id, patient_id):
 
     doctor_id = request.data.get('doctor_id')
     user = User.objects.get(id=doctor_id)
-    if not user.is_doctor:
+    if user.role != 'DOCTOR':
         return JsonResponse({"detail": "User is not a doctor"}, status=status.HTTP_403_FORBIDDEN)
     try:
         doctor = Doctor.objects.get(user=user)
@@ -120,7 +120,7 @@ def delete_shared_files(request, clinic_id, patient_id, file_id):
 
     try:
         user = User.objects.get(id=patient_id)
-        if not user.is_patient and not user.is_research_patient:
+        if user.role != 'PATIENT' and user.role != 'RESEARCH_PATIENT':
             return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
     except User.DoesNotExist:
         return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)

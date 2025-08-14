@@ -1,5 +1,8 @@
 import boto3
 from botocore.exceptions import ClientError
+from django.http import JsonResponse
+from rest_framework import status
+
 
 
 """
@@ -10,7 +13,7 @@ Parameters: msg: A dictionary containing the following strings:
             'sender': a string identifying the sender,
             'message': message text
         }
-Returns: 0=success / 1=failure
+Returns: Response object
 """
 def sendSMSMessage(msg):
     n = len(msg)
@@ -38,11 +41,14 @@ def sendSMSMessage(msg):
             )
             print("message sent to phone: %s" % phone)
 
-            return 0
+            return JsonResponse(
+                data={"message": "Message sent successfully"}, status=200
+            )
         except ClientError as e:
             print("Message not sent: %s" % e)
-
-            return 1
+            return JsonResponse(
+                data={"message": "Message not sent"}, status=500
+            )
 
 
 """
@@ -58,7 +64,7 @@ Parameters: msg: A dictionary containing the following strings:
                 sendmail (internal method)
                 aws (send using AWS sns)
                 external (send using an external service - google mail, outlock, etc)
-Returns: 0=success / 1=failure
+Returns: Response object
 """
 
 def sendEmailMessage(msg):
@@ -103,12 +109,16 @@ def sendEmailMessage(msg):
             #ConfigurationSetName=CONFIGURATION_SET,
         )
         print("An email was sent to %s" % to_email)
-        return 0
+        return JsonResponse(
+            data={"message": "Email sent successfully"}, status=status.HTTP_200_OK
+        )
     # Display an error if something goes wrong.
     except ClientError as e:
         print(e.response['Error']['Message'])
-        return 1
-   
+        return JsonResponse(
+            data={"message": "Email not sent"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
 
 def send_email_with_attachment(to_email, from_email, subject, html_body, excel_bytes, file_name="report.xlsx"):
 

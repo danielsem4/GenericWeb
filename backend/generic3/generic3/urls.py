@@ -45,6 +45,7 @@ urlpatterns = [
     path('', include("activities.urls")),
     path('', include("notifications.urls")),
     path('', include("fileshare.urls")),
+    path('', include("questionnaires.urls")),
     path('', include(tf_urls)),
 
 ]
