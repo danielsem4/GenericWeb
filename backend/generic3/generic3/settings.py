@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 from corsheaders.defaults import default_headers
+import dj_database_url
+
 
 # Load environment variables from .env file
 load_dotenv(os.path.join(Path(__file__).resolve().parent.parent.parent, '.env'))
@@ -49,7 +51,6 @@ INSTALLED_APPS = [
     'django_filters',
     'crispy_forms',
     'channels',
-    'debug_toolbar',
     'django_otp',
     'django_otp.plugins.otp_totp',
     'django_otp.plugins.otp_static',
@@ -73,6 +74,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', # new
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -80,8 +82,11 @@ MIDDLEWARE = [
     'django_otp.middleware.OTPMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
+
+if DEBUG:
+    INSTALLED_APPS += ['debug_toolbar']
+    MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware']
 
 ROOT_URLCONF = 'generic3.urls'
 
@@ -107,12 +112,29 @@ WSGI_APPLICATION = 'generic3.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+#new
+if os.getenv("DATABASE_URL"):
+    DATABASES = {
+        "default": dj_database_url.parse(
+            os.getenv("DATABASE_URL"),
+            conn_max_age=600,
+            ssl_require=True
+        )
     }
-}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
+    
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
@@ -157,29 +179,37 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
+# new
+WHITENOISE_USE_FINDERS = True
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+#new
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', '').split(',') if os.getenv('CSRF_TRUSTED_ORIGINS') else []
 
 CORS_ALLOW_ALL_ORIGINS = False 
 CORS_ALLOW_CREDENTIALS = True  # Required for session cookies
+
+CORS_ALLOW_HEADERS = list(default_headers) + [ 'ngrok-skip-browser-warning', ]
+
+CORS_ALLOWED_ORIGINS = (
+    os.getenv("CORS_ALLOWED_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173").split(",")
+)
 
 # Cookies must be sent cross-domain
 CSRF_COOKIE_SAMESITE   = "None"
 CSRF_COOKIE_SECURE     = True
 SESSION_COOKIE_SAMESITE = "None"
 SESSION_COOKIE_SECURE   = True
-
-# CORS settings for frontend communication
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # Vite dev server
-    "http://127.0.0.1:5173",
-]
 
 ngrok_url = os.getenv("NGROK_URL", "")
 if ngrok_url:
@@ -194,26 +224,6 @@ CORS_ALLOW_METHODS = [
     'POST',
     'PUT',
 ]
-
-CORS_ALLOW_HEADERS = list(default_headers) + [ 'ngrok-skip-browser-warning', ]
-
-# CSRF_TRUSTED_ORIGINS = [
-#     "http://localhost:5173",
-#     "http://127.0.0.1:5173",
-# ]
-
-# # CSRF settings for session authentication
-# CSRF_COOKIE_SECURE = False  # Set to True in production with HTTPS
-# CSRF_COOKIE_HTTPONLY = False  # Allow JS access to CSRF token for forms
-# CSRF_COOKIE_SAMESITE = 'Lax'  # CSRF protection
-# CSRF_COOKIE_DOMAIN = None  # Allow cross-domain cookies
-
-# # Session cookie settings for web authentication
-# SESSION_COOKIE_SECURE = False  # Set to True in production with HTTPS
-# SESSION_COOKIE_HTTPONLY = True  # Prevent XSS attacks
-# SESSION_COOKIE_SAMESITE = 'Lax'  # CSRF protection
-# SESSION_COOKIE_AGE = 1209600  # 2 weeks
-# SESSION_COOKIE_DOMAIN = None  # Allow cross-domain cookies if needed
 
 # Django REST Framework settings
 REST_FRAMEWORK = {

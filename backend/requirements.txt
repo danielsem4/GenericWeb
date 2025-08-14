@@ -33,4 +33,8 @@ XlsxWriter #~=3.2
 python-dateutil
 django-cors-headers
 
-
+# Additional packages for server rendering
+gunicorn
+whitenoise
+dj-database-url
+psycopg2-binary
