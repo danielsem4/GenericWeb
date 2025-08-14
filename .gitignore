@@ -31,10 +31,10 @@ frontend/yarn-error.log*
 
 # Backend (Python/Django)
 backend/__pycache__/
-backend/*/migrations/*
-backend/**/migrations/*
-!backend/*/migrations/__init__.py
-!backend/**/migrations/__init__.py
+# backend/*/migrations/*
+# backend/**/migrations/*
+# !backend/*/migrations/__init__.py
+# !backend/**/migrations/__init__.py
 backend/*.py[cod]
 backend/*$py.class
 backend/*.so

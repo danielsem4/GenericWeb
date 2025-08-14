@@ -1,5 +1,6 @@
 ######################## general API calls ########################
 
+# POST https://genericweb.onrender.com/api/v1/auth/login/
 POST {{$dotenv NGROK_URL}}/api/v1/auth/login/
 Content-Type: application/json
 
@@ -8,10 +9,10 @@ Content-Type: application/json
 #     "password": "a123456!"
 # }
 
-{
-    "email": "doctor1@example.com",
-    "password": "a123456!"
-}
+# {
+#     "email": "doctor1@example.com",
+#     "password": "a123456!"
+# }
 
 # {
 #     "email": "ozeriyarin@gmail.com",
@@ -43,7 +44,6 @@ Authorization: Token 3439658e926edbe9c73c7b5b753371ce01a80139
 
 GET {{$dotenv NGROK_URL}}/api/v1/users/1/3/
 Content-Type: application/json
-Authorization: Token 5eb65ebc949c894ef65548360820548b553f5010
 
 ###
 
@@ -55,7 +55,7 @@ GET {{$dotenv NGROK_URL}}/api/v1/users/3/qr-code/
 
 ###
 
-POST {{$dotenv NGROK_URL}}/api/v1/users/1/add/
+POST https://genericweb.onrender.com/api/v1/users/1/add/
 Content-Type: application/json
 
 {

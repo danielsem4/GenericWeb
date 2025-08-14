@@ -38,17 +38,18 @@ def get_users(request, clinic_id, user_id):
             clinicpatients = PatientClinic.objects.filter(clinic_id=clinic_id).values_list('patient', flat=True)
             users = User.objects.filter(id__in=clinicpatients)
 
-    user_details = {}
+    user_details = []
     if not users:
         return Response({"detail": "No users found for this clinic or this role"}, status=status.HTTP_404_NOT_FOUND)
     for user in users:
-        user_details[user.id] = {
+        user_details.append({
+            'id': user.id,
             'email': user.email,
             'first_name': user.first_name,
             'last_name': user.last_name,
             'phone_number': user.phone_number,
             'role': user.role,
-        }
+        })
     if not user_details:
         return Response({"detail": "No users found for this clinic"}, status=status.HTTP_404_NOT_FOUND)
 
