@@ -31,7 +31,7 @@ const router = createBrowserRouter([
           { path: "users", element: <Users /> },
           { path: "user/:userId", element: <User /> },
           { path: "userDashboard", element: <UserDashboard /> },
-          { path: "medications", element: <Medications /> },
+          { path: "modules/medications", element: <Medications /> },
         ],
       },
     ],

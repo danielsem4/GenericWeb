@@ -1,86 +1,63 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
-import { PaginatedTable } from "@/components/table/PainationTable";
-import { sampleUsers } from "@/common/data/mocData";
-import type { IUser } from "@/common/types/Users";
 import { useUserStore } from "@/common/store/UserStore";
-import { useGetUsers } from "./hooks/useGetUsers";
+import { useUsers } from "./hooks/useGetUsers";
+import { UserTable } from "@/components/UserTable";
+import type { IUser } from "@/common/types/Users";
 
 function UsersPage() {
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
+  const { user } = useUserStore();
 
-  const { actions, user } = useUserStore();
-  const users = useGetUsers(user!!.clinicId.toString(), user!!.id);
-
-  const filteredUsers = sampleUsers.filter((user) =>
-    `${user.name} ${user.email}`.toLowerCase().includes(search.toLowerCase())
-  );
-
-  const getStatusBadge = (status: IUser["status"]) => {
-    const variant =
-      status === "Active"
-        ? "secondary"
-        : status === "Inactive"
-        ? "destructive"
-        : "outline";
+  if (!user) {
     return (
-      <Badge variant={variant} className="text-xs">
-        {status}
-      </Badge>
+      <div className="space-y-4 w-full">
+        <h1 className="text-2xl font-bold">Users</h1>
+        <div className="text-sm text-muted-foreground">Loading user…</div>
+      </div>
     );
-  };
+  }
+
+  // Call your hook with safe params
+  const usersQuery = useUsers(String(user.clinicId), user.id);
+
+  // Normalize to an array regardless of the server shape
+  const allUsers: IUser[] = Array.isArray(usersQuery?.data)
+    ? (usersQuery!.data as IUser[])
+    : Array.isArray((usersQuery as any)?.data?.results)
+    ? ((usersQuery as any).data.results as IUser[])
+    : [];
+
+  const normalizedSearch = search.trim().toLowerCase();
+  const filteredUsers = normalizedSearch
+    ? allUsers.filter((u) =>
+        `${u.first_name} ${u.last_name} ${u.email} ${u.phone_number}`
+          .toLowerCase()
+          .includes(normalizedSearch)
+      )
+    : allUsers;
+
+  const handleRowClick = (u: IUser) => navigate(`/user/${u.id}`);
 
   return (
     <div className="space-y-4 w-full">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold">Users</h1>
       </div>
+
       <Input
-        placeholder="Search users by name or email..."
+        placeholder="Search users by name, email, or phone..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         className="max-w-sm"
       />
 
-      <PaginatedTable<IUser>
-        title="User List"
-        description="Browse and manage your user accounts."
+      <UserTable
         data={filteredUsers}
-        onRowClick={(user) => navigate(`/user/${user.id}`)}
-        columns={[
-          {
-            key: "name",
-            header: "Name",
-          },
-          {
-            key: "email",
-            header: "Email",
-          },
-          {
-            key: "role",
-            header: "Role",
-          },
-          {
-            key: "status",
-            header: "Status",
-            render: (user) => getStatusBadge(user.status),
-          },
-          {
-            key: "department",
-            header: "Department",
-          },
-          {
-            key: "joinDate",
-            header: "Join Date",
-          },
-          {
-            key: "lastLogin",
-            header: "Last Login",
-          },
-        ]}
+        pageSizeOptions={[10, 20, 30]}
+        onRowClick={handleRowClick}
       />
     </div>
   );

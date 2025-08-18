@@ -2,7 +2,7 @@ import { Outlet } from "react-router";
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { SidebarProvider } from "../components/ui/sidebar";
-import AppSidebar from "../components/AppSidebar";
+import AppSidebar from "../components/sidebar/AppSidebar";
 
 /**
  * MainLayout component that wraps the application layout with a sidebar, navbar, and footer.
