@@ -41,7 +41,7 @@ export const doctorSidebarData: SidebarData = {
     },
     {
       name: "Patients",
-      url: "/patients",
+      url: "/users",
       icon: Users,
     },
     {
@@ -79,7 +79,7 @@ export const clinicManagerSidebarData: SidebarData = {
     },
     {
       name: "Doctors",
-      url: "/doctors",
+      url: "/users",
       icon: Stethoscope,
     },
   ],

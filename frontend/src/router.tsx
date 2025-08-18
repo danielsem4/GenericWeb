@@ -28,7 +28,7 @@ const router = createBrowserRouter([
             path: "settings",
             element: <SettingsPage />,
           },
-          { path: "patients", element: <Users /> },
+          { path: "users", element: <Users /> },
           { path: "user/:userId", element: <User /> },
           { path: "userDashboard", element: <UserDashboard /> },
           { path: "modules/medications", element: <Medications /> },

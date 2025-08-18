@@ -30,11 +30,15 @@ function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
   useEffect(() => {
     if (!user) return;
-    const base = user.isDoctor
-      ? doctorSidebarData
-      : user.isClinicManager
-      ? clinicManagerSidebarData
-      : adminSidebarData;
+
+    const role = user.role?.toUpperCase?.();
+
+    const base =
+      role === "DOCTOR"
+        ? doctorSidebarData
+        : role === "CLINIC_MANAGER"
+        ? clinicManagerSidebarData
+        : adminSidebarData;
 
     const userModuleItems =
       user.modules?.map((m) => ({
@@ -56,7 +60,7 @@ function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     });
 
     setSidebarItems({ ...base, navMain });
-  }, [user?.isDoctor, user?.isClinicManager, user?.modules]);
+  }, [user?.role, user?.modules]);
 
   const handleLogout = () => {
     actions.logout();

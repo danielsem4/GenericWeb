@@ -1,5 +1,5 @@
 export interface IAuthUser {
-  id: string;
+  id: number;
   password: string;
   lastLogin: string | null;
   isSuperuser: boolean;
@@ -11,10 +11,7 @@ export interface IAuthUser {
   firstName: string;
   lastName: string;
   phoneNumber: string;
-  isClinicManager: boolean;
-  isDoctor: boolean;
-  isPatient: boolean;
-  isResearchPatient: boolean;
+  role: string;
   groups: any[];
   userPermissions: any[];
   clinicId: number;
