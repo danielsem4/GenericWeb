@@ -19,3 +19,10 @@ export interface IUser1 {
   is_patient: boolean;
   is_research_patient: boolean;
 }
+
+export interface IUserModule {
+  moduleName: string;
+  module_id: number;
+  description: string;
+  status: "active" | "inactive";
+}
