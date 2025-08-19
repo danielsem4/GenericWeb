@@ -5,7 +5,8 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework import status
 from medications.models import ClinicMedicine
 from generic3.utils import create_clinic_manager
-from clinics.models import Clinic, ClinicModules, DoctorClinic, ManagerClinic, Modules, PatientClinic
+from clinics.models import Clinic, DoctorClinic, ManagerClinic, PatientClinic
+from modules.models import Modules, ClinicModules
 from django.db import transaction
 
 from users.models import ClinicManager, User

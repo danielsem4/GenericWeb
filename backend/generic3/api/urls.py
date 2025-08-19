@@ -8,6 +8,4 @@ urlpatterns = [
     path('api/v1/auth/login/', views.login, name='login'),
     path('api/v1/auth/refresh/', views.refresh_token, name='refresh_token'),
     path('api/v1/auth/logout/', views.logout, name='logout'),
-    path('api/v1/modules/add/', views.add_module, name='add_module'),
-    path('api/v1/modules/<int:module_id>/delete/', views.delete_module, name='delete_module'),
 ]

@@ -4,6 +4,7 @@ from django.contrib.auth.hashers import make_password
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.authentication import TokenAuthentication
+from modules.models import ClinicModules, PatientModules
 from generic3.utils import generate_temporary_password, send_temporary_password_email, setup_totp
 from users.models import Doctor, Patient, PatientDoctor, User, ClinicManager
 from clinics.models import Clinic , DoctorClinic, PatientClinic
@@ -167,6 +168,9 @@ def add_user(request, clinic_id):
         if doctor:
             PatientDoctor.objects.get_or_create(patient=patient, doctor=doctor, clinic=clinic)        
         PatientClinic.objects.get_or_create(patient=patient, clinic=clinic)
+        clinic_modules = ClinicModules.objects.filter(clinic=clinic)
+        for module in clinic_modules:
+            PatientModules.objects.get_or_create(patient=patient, clinic=clinic, module=module)
     else:
         return Response({"detail": "User role is not supported"}, status=status.HTTP_400_BAD_REQUEST)
 

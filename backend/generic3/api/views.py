@@ -11,7 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 import logging
 from rest_framework_simplejwt.tokens import RefreshToken
-from clinics.models import Clinic, ClinicModules, Modules
+from clinics.models import Clinic
 from generic3.utils import get_clinic_id_for_user
 from users.models import User
 from users.serializers import UserSerializer
@@ -107,8 +107,8 @@ def login(request):
 
     data = serializer.data
     user_data = {
-        'clinicId': clinic_id if clinic_id else None,
-        'clinicName': clinic_data['name'] if clinic_data else None,
+        'clinicId': clinic_id if clinic_id else 0,
+        'clinicName': clinic_data['name'] if clinic_data else "GenericWeb",
         'clinic_image': clinic_image,
         'modules': [{'name': module[0], 'id': module[1]} for module in modules] if modules else [],
         'status': 'Success',
@@ -116,7 +116,7 @@ def login(request):
     }
     data.update(user_data)
 
-    print(f"User {user.email} logged in successfully with clinic {clinic_data['name'] if clinic_data else 'N/A'}")
+    print(f"User {user.email} logged in successfully with clinic {user_data['clinicName']}")
     
     response =  Response({"user": data}) 
     
@@ -184,50 +184,3 @@ def logout(request):
     else:
         return JsonResponse({'message': 'User was not logged in'}, status=400)
 
-@api_view(['POST'])
-def add_module(request):
-    """
-    Add a module to the clinic
-    """
-    if not request.user.is_authenticated:
-        return JsonResponse({'detail': 'Authentication credentials were not provided.'}, status=401)
-    if not request.user.is_staff:
-        return JsonResponse({'detail': 'You do not have permission to add modules.'}, status=403)
-    
-    module_name = request.data.get('module_name')
-    if not module_name:
-        return JsonResponse({'detail': 'Module name is required.'}, status=400)
-    
-    try:
-        module, created = Modules.objects.get_or_create(module_name=module_name)
-        if created:
-            return JsonResponse({'detail': f'Module "{module_name}" added successfully.'}, status=201)
-        else:
-            return JsonResponse({'detail': f'Module "{module_name}" already exists.'}, status=200)
-
-    except Exception as e:
-        logger.error(f"Error adding module: {e}")
-        return JsonResponse({'detail': 'An error occurred while adding the module.'}, status=500)
-    
-@api_view(['DELETE'])
-def delete_module(request, module_id):
-    """
-    Delete a module from the clinic
-    """
-    if not request.user.is_authenticated:
-        return JsonResponse({'detail': 'Authentication credentials were not provided.'}, status=401)
-    if not request.user.is_staff:
-        return JsonResponse({'detail': 'You do not have permission to delete modules.'}, status=403)
-
-    try:
-        module = Modules.objects.get(id=module_id)
-        # Check if the module is associated with any clinics
-        if ClinicModules.objects.filter(module=module).exists():
-            return JsonResponse({'detail': 'Module cannot be deleted as it is associated with clinics.'}, status=400)
-        module.delete()
-        return JsonResponse({'detail': f'Module "{module.module_name}" deleted successfully.'}, status=204)
-    except Modules.DoesNotExist:
-        return JsonResponse({'detail': 'Module not found.'}, status=404)
-    except Exception as e:
-        logger.error(f"Error deleting module: {e}")
-        return JsonResponse({'detail': 'An error occurred while deleting the module.'}, status=500)

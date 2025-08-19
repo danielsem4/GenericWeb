@@ -14,10 +14,10 @@ Content-Type: application/json
 #     "password": "a123456!"
 # }
 
-# {
-#     "email": "ozeriyarin@gmail.com",
-#     "password": "a123456!"
-# }
+{
+    "email": "ozeriyarin@gmail.com",
+    "password": "a123456!"
+}
 
 ###
 
@@ -51,7 +51,7 @@ GET {{$dotenv NGROK_URL}}/api/v1/users/3/
 
 ###
 
-GET {{$dotenv NGROK_URL}}/api/v1/users/3/qr-code/
+GET {{$dotenv NGROK_URL}}/api/v1/users/1/qr-code/
 
 ###
 

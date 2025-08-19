@@ -31,16 +31,3 @@ class PatientClinic(models.Model):
     def __str__(self):
         return str("%s-%s" % (self.patient, self.clinic))
 
-class Modules(models.Model):
-    module_name = models.CharField(max_length=150, blank=True)
-    def __str__(self):
-        return str(self.module_name) 
-
-
-class ClinicModules(models.Model):
-    clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE)
-    module = models.ForeignKey(Modules, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return str("{}-{}".format(self.clinic,self.module))
-       
