@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     # admin modules management
+    path('api/v1/modules/', views.modules, name='modules'),
     path('api/v1/modules/add/', views.add_module, name='add_module'),
     path('api/v1/modules/<int:module_id>/update/', views.update_module, name='update_module'),
     path('api/v1/modules/<int:module_id>/delete/', views.delete_module, name='delete_module'),

@@ -8,6 +8,17 @@ from clinics.models import Clinic
 
 logger = logging.getLogger(__name__)
 
+@api_view(['GET'])
+def modules(request):
+    """
+    Get a list of all modules.
+    """
+    if not request.user.is_authenticated:
+        return JsonResponse({'detail': 'Authentication credentials were not provided.'}, status=401)
+
+    modules = Modules.objects.all()
+    module_list = [{'id': module.id, 'name': module.module_name, 'description': module.module_description} for module in modules]
+    return JsonResponse(module_list, safe=False)
 
 @api_view(['POST'])
 def add_module(request):

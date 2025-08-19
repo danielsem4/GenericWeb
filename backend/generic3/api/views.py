@@ -11,6 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 import logging
 from rest_framework_simplejwt.tokens import RefreshToken
+from modules.models import ClinicModules, Modules
 from clinics.models import Clinic
 from generic3.utils import get_clinic_id_for_user
 from users.models import User
