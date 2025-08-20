@@ -7,10 +7,13 @@ import {
   Phone,
   BadgeInfo,
   IdCard,
+  Boxes,
   UserSquare2,
 } from "lucide-react";
 import FieldCard from "@/components/FieldCard";
-import { useParams, useSearchParams } from "react-router";
+import { useParams } from "react-router";
+import ModuleCard from "@/components/ModuleCard";
+import { getModuleIconByName } from "@/common/util/utils";
 
 /**
  *
@@ -41,7 +44,12 @@ function PatientDashboard() {
 
   if (!selectedUser) return <p className="p-4">No user found.</p>;
 
-  console.log("selectedUser", selectedUser);
+  const activeModules = selectedUser.patient_modules!!.filter(
+    (module) => module.active
+  );
+  const inactiveModules = selectedUser.patient_modules!!.filter(
+    (module) => !module.active
+  );
 
   const fields = [
     {
@@ -69,11 +77,16 @@ function PatientDashboard() {
       description: selectedUser.role,
       icon: BadgeInfo,
     },
+    {
+      title: "ID",
+      description: patientId.toString(),
+      icon: IdCard,
+    },
   ];
 
   return (
     <div className="flex flex-1 flex-col space-y-6 items-center">
-      <Card className="rounded-2xl p-6 max-w-6xl">
+      <Card className="rounded-2xl p-6 max-w-8xl">
         <CardHeader className="flex items-center space-x-2 p-2">
           <CircleUser className="h-10 w-10 text-blue-500" aria-hidden="true" />
           <span className="text-2xl font-semibold">Patient Information</span>
@@ -91,6 +104,57 @@ function PatientDashboard() {
           </div>
         </CardContent>
       </Card>
+      <div className="flex flex-1 justify-around gap-6">
+        <Card className="rounded-2xl p-6 max-w-6xl">
+          <CardHeader className="flex items-center space-x-2 p-2">
+            <Boxes className="h-10 w-10 text-blue-500" aria-hidden="true" />
+            <span className="text-2xl font-semibold">Avaliable modules</span>
+          </CardHeader>
+          <CardContent>
+            <div
+              className={`grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-${
+                inactiveModules.length === 2 ? inactiveModules.length : 3
+              } gap-6`}
+            >
+              {inactiveModules.map((module) => (
+                <ModuleCard
+                  key={module.id}
+                  icon={getModuleIconByName(module.name)}
+                  title={module.name}
+                  description={module.description}
+                  isActive={module.active}
+                />
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+        <Card className="rounded-2xl p-6 max-w-6xl">
+          <CardHeader className="flex items-center space-x-2 p-2">
+            <Boxes className="h-10 w-10 text-blue-500" aria-hidden="true" />
+            <span className="text-2xl font-semibold">Modules in use</span>
+          </CardHeader>
+          <CardContent>
+            <div
+              className={`grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-${
+                activeModules.length === 2 ? activeModules.length : 3
+              } gap-6`}
+            >
+              {activeModules.map((module) => {
+                console.log("module", module);
+                return (
+                  <ModuleCard
+                    key={module.id}
+                    icon={getModuleIconByName(module.name)}
+                    title={module.name}
+                    description={module.description}
+                    isActive={module.active}
+                  />
+                );
+              })}
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

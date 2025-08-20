@@ -9,8 +9,8 @@ export interface IUser {
 }
 
 export interface IUserModule {
-  module_name: string;
-  module_id: number;
-  module_description: string;
-  is_active: "active" | "inactive";
+  name: string;
+  id: number;
+  description: string;
+  active: boolean;
 }
