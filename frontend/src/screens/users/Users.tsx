@@ -21,7 +21,7 @@ function UsersPage() {
   }
 
   // Call your hook with safe params
-  const usersQuery = useUsers(String(user.clinicId), user.id);
+  const usersQuery = useUsers(String(user.clinicId), user.id.toString());
 
   // Normalize to an array regardless of the server shape
   const allUsers: IUser[] = Array.isArray(usersQuery?.data)
@@ -39,7 +39,7 @@ function UsersPage() {
       )
     : allUsers;
 
-  const handleRowClick = (u: IUser) => navigate(`/user/${u.id}`);
+  const handleRowClick = (u: IUser) => navigate(`/patients/${u.id}/dashboard`);
 
   return (
     <div className="space-y-4 w-full">

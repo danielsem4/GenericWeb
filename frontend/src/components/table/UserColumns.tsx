@@ -15,7 +15,9 @@ export const userColumns: ColumnDef<IUser>[] = [
       const user = row.original;
       return (
         <div className="flex flex-col">
-          <div className="font-medium">{user.name}</div>
+          <div className="font-medium">
+            {user.first_name} {user.last_name}
+          </div>
           <div className="text-sm text-muted-foreground">{user.email}</div>
         </div>
       );

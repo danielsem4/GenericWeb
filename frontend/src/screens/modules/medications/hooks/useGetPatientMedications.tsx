@@ -14,8 +14,13 @@ export interface Medication {
   dosage: string | null;
 }
 
-async function fetchMedications(): Promise<Medication[]> {
-  const url = `${import.meta.env.VITE_API_URL_DEV}medications/patient/1/5/`;
+async function fetchMedications(
+  patientId: string,
+  doctorId: string
+): Promise<Medication[]> {
+  const url = `${
+    import.meta.env.VITE_API_URL_DEV
+  }medications/patient/${patientId}/${doctorId}/`;
 
   console.log("Fetching medications from API (Axios)...", url);
 
@@ -27,14 +32,19 @@ async function fetchMedications(): Promise<Medication[]> {
     withCredentials: true,
   });
 
-  console.log("Fetched medications data:", data);
-
   return data;
 }
 
-export function useMedications() {
+export function useMedications(
+  patientId: string = "1",
+  doctorId: string = "5",
+  enabled: boolean = true
+) {
   return useQuery<Medication[], Error>({
-    queryKey: ["medications"],
-    queryFn: fetchMedications,
+    queryKey: ["medications", patientId, doctorId],
+    queryFn: () => fetchMedications(patientId, doctorId),
+    enabled,
+    refetchOnWindowFocus: false,
+    retry: false,
   });
 }

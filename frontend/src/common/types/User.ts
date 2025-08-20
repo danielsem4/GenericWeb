@@ -1,3 +1,5 @@
+import type { IModule } from "./Modules";
+
 export interface IAuthUser {
   id: number;
   password: string;
@@ -22,7 +24,3 @@ export interface IAuthUser {
   serverUrl: string;
 }
 
-export interface IModule {
-  id: number;
-  name: string;
-}

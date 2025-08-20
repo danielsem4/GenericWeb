@@ -2,38 +2,41 @@ import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-/**
- * InfoCard – accepts props to render a title + icon on the first row and a body
- * text + arrow icon on the second row. Uses shadcn/ui Card.
- */
-
 interface InfoCardProps {
   title: string;
   value: string | number;
   Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  iconColor?: string;
   onClick?: () => void;
 }
 
-function InfoCard({ title, value, Icon, onClick }: InfoCardProps) {
+function InfoCard({
+  title,
+  value,
+  Icon,
+  iconColor = "text-blue-500",
+  onClick,
+}: InfoCardProps) {
   return (
     <Card
       role={onClick ? "button" : undefined}
       tabIndex={onClick ? 0 : undefined}
       onClick={onClick}
       onKeyDown={(e) => e.key === "Enter" && onClick?.()}
-      className={cn(
-        "relative flex cursor-pointer select-none flex-col justify-between gap-4 rounded-lg border bg-primary p-5 text-primary-foreground shadow transition-all duration-150 ease-out",
-        "hover:shadow-lg active:scale-[.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
-      )}
+      className="cursor-pointer hover:shadow-xl hover:scale-[1.02] active:scale-[.98] transition-all duration-200 ease-out"
     >
       <CardHeader className="flex items-center justify-between p-0">
-        <span className="text-lg font-medium leading-tight">{title}</span>
-        <Icon className="h-6 w-6 opacity-80" />
+        <span className="text-lg font-semibold">{title}</span>
+        <div
+          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-md border ${iconColor} transition-colors group-hover:opacity-90`}
+        >
+          <Icon className="h-5 w-5" aria-hidden="true" />
+        </div>
       </CardHeader>
 
-      <CardContent className="flex items-center justify-between p-0 text-3xl font-semibold">
+      <CardContent className="flex items-center justify-between p-0 text-4xl font-bold">
         {value}
-        <ArrowRight className="h-5 w-5 flex-shrink-0 opacity-70" />
+        <ArrowRight className="h-6 w-6 flex-shrink-0 text-muted-foreground" />
       </CardContent>
     </Card>
   );
