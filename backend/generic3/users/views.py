@@ -57,7 +57,7 @@ def get_users(request, clinic_id, user_id):
     return Response(user_details, status=status.HTTP_200_OK)
 
 @api_view(['GET'])
-def get_user_details(request, user_id):
+def get_user_details(request, clinic_id, user_id):
     """
     Get details of a specific user.
     """
@@ -65,7 +65,7 @@ def get_user_details(request, user_id):
         user = User.objects.get(id=user_id)
     except User.DoesNotExist:
         return Response({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
-
+    
     user_details = {
         'email': user.email,
         'first_name': user.first_name,
@@ -73,6 +73,18 @@ def get_user_details(request, user_id):
         'phone_number': user.phone_number,
         'role': user.role,
     }
+    
+    if user.role == 'PATIENT' or user.role == 'RESEARCH_PATIENT':
+        patient_modules = PatientModules.objects.filter(patient__user=user , clinic__id=clinic_id).values(
+            'module__id','module__module_name', 'module__module_description' , 'is_active'
+        )
+        patient_modules_list = [{
+            'id': module['module__id'],
+            'name': module['module__module_name'],
+            'description': module['module__module_description'],
+            'active': module['is_active']
+        } for module in patient_modules]
+        user_details['patient_modules'] = patient_modules_list
 
     return Response(user_details, status=status.HTTP_200_OK)
 

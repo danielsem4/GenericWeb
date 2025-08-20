@@ -6948,3 +6948,630 @@ C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3
 Watching for file changes with StatReloader
 C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\modules\views.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"POST /api/v1/auth/login/ HTTP/1.1" 200 614
+"POST /api/v1/auth/login/ HTTP/1.1" 200 614
+"GET /api/v1/users/3/ HTTP/1.1" 200 120
+"OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+"POST /api/v1/auth/login/ HTTP/1.1" 200 614
+"OPTIONS /api/v1/users/0/0/ HTTP/1.1" 200 0
+Not Found: /api/v1/users/0/0/
+"GET /api/v1/users/0/0/ HTTP/1.1" 404 27
+"OPTIONS /api/v1/users/1/3/ HTTP/1.1" 200 0
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/users/3/ HTTP/1.1" 200 120
+"GET /api/v1/users/5/ HTTP/1.1" 200 132
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /api/v1/users/1/5/
+"GET /api/v1/users/1/5/ HTTP/1.1" 404 56
+"POST /api/v1/auth/login/ HTTP/1.1" 200 614
+Not Found: /api/v1/users/1/5/
+"GET /api/v1/users/1/5/ HTTP/1.1" 404 56
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/users/1/user/5/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1799, in transform
+    return self.try_transform(wrapped, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1309, in try_transform
+    raise FieldError(
+django.core.exceptions.FieldError: Unsupported lookup 'name' for BigAutoField or join on the field not permitted.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\views.py", line 78, in get_user_details
+    patient_modules = PatientModules.objects.filter(patient__user=user , clinic__id=clinic_id).values(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1313, in values
+    clone = self._values(*fields, **expressions)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\query.py", line 1308, in _values
+    clone.query.set_values(fields)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 2413, in set_values
+    self.add_fields(field_names, True)
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 2123, in add_fields
+    cols.append(join_info.transform_function(target, final_alias))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1803, in transform
+    raise last_field_exception
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1776, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 1677, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'name' into field. Choices are: clinicmodules, id, module_description, module_name, patientmodules
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 500 173397
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 153
+"GET /admin HTTP/1.1" 301 0
+"GET /admin/ HTTP/1.1" 200 32774
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 25050
+"GET /admin/modules/patientmodules/ HTTP/1.1" 200 27738
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/patientmodules/add/ HTTP/1.1" 200 33467
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/modules/ HTTP/1.1" 200 27677
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/clinicmodules/ HTTP/1.1" 200 27730
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/modules/ HTTP/1.1" 200 27677
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/modules/add/ HTTP/1.1" 200 29120
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/modules/modules/add/ HTTP/1.1" 302 0
+"GET /admin/modules/modules/ HTTP/1.1" 200 29036
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/modules/add/ HTTP/1.1" 200 29119
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/modules/modules/add/ HTTP/1.1" 302 0
+"GET /admin/modules/modules/add/ HTTP/1.1" 200 29363
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/modules/modules/add/ HTTP/1.1" 302 0
+"GET /admin/modules/modules/add/ HTTP/1.1" 200 29361
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/modules/modules/add/ HTTP/1.1" 302 0
+"GET /admin/modules/modules/add/ HTTP/1.1" 200 29356
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/modules/modules/add/ HTTP/1.1" 302 0
+"GET /admin/modules/modules/add/ HTTP/1.1" 200 29360
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/modules/ HTTP/1.1" 200 29681
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/modules/add/ HTTP/1.1" 200 29120
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/modules/modules/add/ HTTP/1.1" 302 0
+"GET /admin/modules/modules/add/ HTTP/1.1" 200 29353
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/modules/modules/add/ HTTP/1.1" 302 0
+"GET /admin/modules/modules/add/ HTTP/1.1" 200 29364
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/modules/ HTTP/1.1" 200 30103
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /admin/modules/modules/7/change/ HTTP/1.1" 200 29382
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"POST /admin/modules/modules/7/change/ HTTP/1.1" 302 0
+"GET /admin/modules/modules/add/ HTTP/1.1" 200 29365
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/modules/ HTTP/1.1" 200 30103
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/modules/6/change/ HTTP/1.1" 200 29342
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/modules/modules/6/change/ HTTP/1.1" 302 0
+"GET /admin/modules/modules/ HTTP/1.1" 200 30304
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/modules/5/change/ HTTP/1.1" 200 29365
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/modules/modules/5/change/ HTTP/1.1" 302 0
+"GET /admin/modules/modules/ HTTP/1.1" 200 30310
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/modules/4/change/ HTTP/1.1" 200 29350
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/modules/modules/4/change/ HTTP/1.1" 302 0
+"GET /admin/modules/modules/ HTTP/1.1" 200 30306
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/modules/3/change/ HTTP/1.1" 200 29370
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/modules/modules/3/change/ HTTP/1.1" 302 0
+"GET /admin/modules/modules/ HTTP/1.1" 200 30311
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/modules/1/change/ HTTP/1.1" 200 29366
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/modules/modules/1/change/ HTTP/1.1" 302 0
+"GET /admin/modules/modules/ HTTP/1.1" 200 30310
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/modules/2/change/ HTTP/1.1" 200 29382
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/modules/modules/2/change/ HTTP/1.1" 302 0
+"GET /admin/modules/modules/ HTTP/1.1" 200 30314
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/clinicmodules/ HTTP/1.1" 200 27730
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/clinicmodules/add/ HTTP/1.1" 200 31952
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"POST /admin/modules/clinicmodules/add/ HTTP/1.1" 302 0
+"GET /admin/modules/clinicmodules/add/ HTTP/1.1" 200 32220
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/modules/clinicmodules/add/ HTTP/1.1" 302 0
+"GET /admin/modules/clinicmodules/add/ HTTP/1.1" 200 32224
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/modules/clinicmodules/add/ HTTP/1.1" 302 0
+"GET /admin/modules/clinicmodules/add/ HTTP/1.1" 200 32221
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/modules/clinicmodules/add/ HTTP/1.1" 302 0
+"GET /admin/modules/clinicmodules/add/ HTTP/1.1" 200 32216
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"POST /admin/modules/clinicmodules/add/ HTTP/1.1" 302 0
+"GET /admin/modules/clinicmodules/ HTTP/1.1" 200 30045
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /admin/modules/patientmodules/ HTTP/1.1" 200 27738
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/patientmodules/add/ HTTP/1.1" 200 33753
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/modules/patientmodules/add/ HTTP/1.1" 302 0
+"GET /admin/modules/patientmodules/add/ HTTP/1.1" 200 34037
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/modules/patientmodules/add/ HTTP/1.1" 302 0
+"GET /admin/modules/patientmodules/add/ HTTP/1.1" 200 34038
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/modules/patientmodules/add/ HTTP/1.1" 302 0
+"GET /admin/modules/patientmodules/ HTTP/1.1" 200 29668
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 579
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 558
+"GET /api/v1/users/1/user/3/ HTTP/1.1" 200 120
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/users/1/user/3/ HTTP/1.1" 200 120
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 558
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"OPTIONS /api/v1/users/1/user/1/ HTTP/1.1" 200 0
+"GET /api/v1/users/1/user/1/ HTTP/1.1" 200 98
+"GET /api/v1/users/1/user/1/ HTTP/1.1" 200 98
+"GET /api/v1/users/1/user/1/ HTTP/1.1" 200 98
+"OPTIONS /api/v1/users/5/user/5/ HTTP/1.1" 200 0
+"GET /api/v1/users/1/user/1/ HTTP/1.1" 200 98
+"GET /api/v1/users/5/user/5/ HTTP/1.1" 200 153
+"GET /api/v1/users/5/user/5/ HTTP/1.1" 200 153
+"OPTIONS /api/v1/users/1/user/5/ HTTP/1.1" 200 0
+"GET /api/v1/users/5/user/5/ HTTP/1.1" 200 153
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 558
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 558
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 558
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 558
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 558
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 558
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 558
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 558
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 558
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 558
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 459
+"GET /admin/modules/patientmodules/3/change/ HTTP/1.1" 200 34054
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/modules/patientmodules/3/change/ HTTP/1.1" 302 0
+"GET /admin/modules/patientmodules/ HTTP/1.1" 200 29670
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 460
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 460
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 460
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 460
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 460
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\modules\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\modules\views.py changed, reloading.
+Watching for file changes with StatReloader
+Unauthorized: /api/v1/modules/
+"GET /api/v1/modules/ HTTP/1.1" 401 58
+"POST /api/v1/auth/login/ HTTP/1.1" 200 606
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\modules\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/v1/modules/ HTTP/1.1" 200 630
+"POST /api/v1/modules/add/ HTTP/1.1" 201 55
+"GET /api/v1/modules/ HTTP/1.1" 200 708
+"PUT /api/v1/modules/8/update/ HTTP/1.1" 200 61
+"GET /api/v1/modules/ HTTP/1.1" 200 720
+"DELETE /api/v1/modules/8/delete/ HTTP/1.1" 204 61
+"GET /api/v1/modules/ HTTP/1.1" 200 630
+"GET /admin/modules/clinicmodules/ HTTP/1.1" 200 29819
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/clinicmodules/4/change/ HTTP/1.1" 200 32191
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/clinicmodules/ HTTP/1.1" 200 29820
+Forbidden: /api/v1/clinics/1/modules/4/delete/
+"DELETE /api/v1/clinics/1/modules/4/delete/ HTTP/1.1" 403 66
+"POST /api/v1/auth/login/ HTTP/1.1" 200 770
+Forbidden: /api/v1/clinics/1/modules/4/add/
+"POST /api/v1/clinics/1/modules/4/add/ HTTP/1.1" 403 63
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\modules\views.py changed, reloading.
+Watching for file changes with StatReloader
+Forbidden: /api/v1/clinics/1/modules/4/add/
+"POST /api/v1/clinics/1/modules/4/add/ HTTP/1.1" 403 63
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\modules\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/clinics/1/modules/4/add/ HTTP/1.1" 201 47
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\modules\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/modules/clinicmodules/ HTTP/1.1" 200 30042
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Forbidden: /api/v1/clinics/1/modules/4/delete/
+"DELETE /api/v1/clinics/1/modules/4/delete/ HTTP/1.1" 403 66
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\modules\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/modules/clinicmodules/ HTTP/1.1" 200 30042
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Internal Server Error: /api/v1/clinics/1/modules/4/delete/
+"DELETE /api/v1/clinics/1/modules/4/delete/ HTTP/1.1" 500 65
+"POST /admin/modules/clinicmodules/ HTTP/1.1" 200 27810
+"GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+"POST /admin/modules/clinicmodules/ HTTP/1.1" 302 0
+"GET /admin/modules/clinicmodules/ HTTP/1.1" 200 29963
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"DELETE /api/v1/clinics/1/modules/4/delete/ HTTP/1.1" 204 49
+"GET /admin/modules/clinicmodules/ HTTP/1.1" 200 29596
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /api/v1/clinics/1/modules/4/add/ HTTP/1.1" 201 47
+"GET /admin/modules/clinicmodules/ HTTP/1.1" 200 29819
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/clinicmodules/7/change/ HTTP/1.1" 200 32190
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/clinicmodules/ HTTP/1.1" 200 29819
+Not Found: /api/v1/patients/5/modules/4/add/
+"POST /api/v1/patients/5/modules/4/add/ HTTP/1.1" 404 25149
+"GET /admin/modules/clinicmodules/7/change/ HTTP/1.1" 200 32189
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/clinicmodules/ HTTP/1.1" 200 29819
+"GET /admin/modules/patientmodules/ HTTP/1.1" 200 29423
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/modules/ HTTP/1.1" 200 30103
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/modules/4/change/ HTTP/1.1" 200 29379
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/modules/ HTTP/1.1" 200 30103
+"POST /api/v1/auth/login/ HTTP/1.1" 200 759
+Not Found: /api/v1/patients/5/modules/4/add/
+"POST /api/v1/patients/5/modules/4/add/ HTTP/1.1" 404 25149
+Forbidden: /api/v1/clinics/1/patients/5/modules/4/add/
+"POST /api/v1/clinics/1/patients/5/modules/4/add/ HTTP/1.1" 403 64
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\modules\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\modules\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/clinics/1/patients/5/modules/4/add/
+"POST /api/v1/clinics/1/patients/5/modules/4/add/ HTTP/1.1" 500 64
+Internal Server Error: /api/v1/clinics/1/patients/5/modules/4/add/
+"POST /api/v1/clinics/1/patients/5/modules/4/add/ HTTP/1.1" 500 64
+Internal Server Error: /api/v1/clinics/1/patients/5/modules/4/add/
+"POST /api/v1/clinics/1/patients/5/modules/4/add/ HTTP/1.1" 500 64
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\modules\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\modules\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/clinics/1/patients/5/modules/4/add/ HTTP/1.1" 201 48
+"GET /admin/modules/patientmodules/ HTTP/1.1" 200 29659
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"DELETE /api/v1/clinics/1/patients/5/modules/4/delete/ HTTP/1.1" 204 50
+"GET /admin/modules/patientmodules/ HTTP/1.1" 200 29423
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Forbidden: /api/v1/clinics/1/modules/4/toggle/
+"POST /api/v1/clinics/1/modules/4/toggle/ HTTP/1.1" 403 66
+Not Found: /api/v1/patients/5/modules/3/toggle/
+"POST /api/v1/patients/5/modules/3/toggle/ HTTP/1.1" 404 25161
+"POST /api/v1/clinics/1/patients/5/modules/3/toggle/ HTTP/1.1" 200 64
+"GET /admin/modules/patientmodules/3/change/ HTTP/1.1" 200 34046
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /api/v1/clinics/1/patients/5/modules/3/toggle/ HTTP/1.1" 200 64
+"GET /admin/modules/patientmodules/3/change/ HTTP/1.1" 200 34046
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/patientmodules/3/change/ HTTP/1.1" 200 34046
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /admin/modules/patientmodules/3/change/ HTTP/1.1" 302 0
+"GET /admin/modules/patientmodules/ HTTP/1.1" 200 29670
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/modules/patientmodules/3/change/ HTTP/1.1" 200 34054
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /api/v1/clinics/1/patients/5/modules/3/toggle/ HTTP/1.1" 200 64
+"GET /admin/modules/patientmodules/3/change/ HTTP/1.1" 200 34054
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\modules\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/clinics/1/patients/5/modules/3/toggle/ HTTP/1.1" 200 64
+"GET /admin/modules/patientmodules/3/change/ HTTP/1.1" 200 34054
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"POST /api/v1/clinics/1/patients/5/modules/3/toggle/ HTTP/1.1" 200 64
+"GET /admin/modules/patientmodules/3/change/ HTTP/1.1" 200 34054
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Unauthorized: /api/v1/users/1/user/5/
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 401 58
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\modules\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\modules\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/clinics/1/patients/5/modules/3/toggle/
+"POST /api/v1/clinics/1/patients/5/modules/3/toggle/ HTTP/1.1" 500 80
+Internal Server Error: /api/v1/clinics/1/patients/5/modules/3/toggle/
+"POST /api/v1/clinics/1/patients/5/modules/3/toggle/ HTTP/1.1" 500 80
+"POST /api/v1/auth/login/ HTTP/1.1" 200 759
+Not Found: /api/v1/users/0/0/
+"GET /api/v1/users/0/0/ HTTP/1.1" 404 27
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"OPTIONS /api/v1/medications/patient/3/1/ HTTP/1.1" 200 0
+Internal Server Error: /api/v1/clinics/1/patients/5/modules/3/toggle/
+"POST /api/v1/clinics/1/patients/5/modules/3/toggle/ HTTP/1.1" 500 80
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 480
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\modules\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/clinics/1/patients/5/modules/3/toggle/
+"POST /api/v1/clinics/1/patients/5/modules/3/toggle/ HTTP/1.1" 500 80
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\modules\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/clinics/1/patients/5/modules/3/toggle/ HTTP/1.1" 200 64
+"GET /admin/modules/patientmodules/3/change/ HTTP/1.1" 200 34054
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 480
+"POST /api/v1/clinics/1/patients/5/modules/3/toggle/ HTTP/1.1" 200 64
+"GET /admin/modules/patientmodules/3/change/ HTTP/1.1" 200 34054
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /admin/modules/patientmodules/ HTTP/1.1" 200 29423
+"GET /admin/modules/patientmodules/2/change/ HTTP/1.1" 200 34037
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"POST /api/v1/clinics/1/patients/5/modules/2/toggle/ HTTP/1.1" 200 64
+"GET /admin/modules/patientmodules/2/change/ HTTP/1.1" 200 34037
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 482
+"POST /api/v1/clinics/1/patients/5/modules/3/toggle/ HTTP/1.1" 200 64
+"GET /admin/modules/patientmodules/2/change/ HTTP/1.1" 200 34045
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Forbidden: /api/v1/clinics/1/modules/4/toggle/
+"POST /api/v1/clinics/1/modules/4/toggle/ HTTP/1.1" 403 66
+"POST /api/v1/auth/login/ HTTP/1.1" 200 770
+"POST /api/v1/clinics/1/modules/4/toggle/ HTTP/1.1" 200 63
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"OPTIONS /api/v1/users/1/user/null/ HTTP/1.1" 200 0
+Not Found: /api/v1/users/1/user/null/
+"GET /api/v1/users/1/user/null/ HTTP/1.1" 404 25120
+Not Found: /api/v1/users/1/user/null/
+"GET /api/v1/users/1/user/null/ HTTP/1.1" 404 25120
+"GET /api/v1/users/1/user/1/ HTTP/1.1" 200 98
+"OPTIONS /api/v1/users/1/user// HTTP/1.1" 200 0
+"GET /api/v1/users/1/user/1/ HTTP/1.1" 200 98
+Not Found: /api/v1/users/1/user//
+"GET /api/v1/users/1/user// HTTP/1.1" 404 25104
+Not Found: /api/v1/users/1/user//
+"GET /api/v1/users/1/user// HTTP/1.1" 404 25104
+Not Found: /api/v1/users/1/user//
+"GET /api/v1/users/1/user// HTTP/1.1" 404 25104
+Not Found: /api/v1/users/1/user//
+"GET /api/v1/users/1/user// HTTP/1.1" 404 25104
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+"OPTIONS /api/v1/users/1/user/6/ HTTP/1.1" 200 0
+"GET /api/v1/users/1/user/6/ HTTP/1.1" 200 153
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+"OPTIONS /api/v1/users/1/user/7/ HTTP/1.1" 200 0
+"GET /api/v1/users/1/user/7/ HTTP/1.1" 200 153
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+"OPTIONS /api/v1/users/1/3/ HTTP/1.1" 200 0
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+"OPTIONS /api/v1/medications/patient/1/5/ HTTP/1.1" 200 0
+"GET /api/v1/medications/patient/1/5/ HTTP/1.1" 200 1010
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+Unauthorized: /api/v1/medications/patient/3/1/
+Unauthorized: /api/v1/users/1/3/
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 401 58
+"GET /api/v1/users/1/3/ HTTP/1.1" 401 58
+Unauthorized: /api/v1/users/1/3/
+Unauthorized: /api/v1/medications/patient/3/1/
+"GET /api/v1/users/1/3/ HTTP/1.1" 401 58
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 401 58
+"OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+"POST /api/v1/auth/login/ HTTP/1.1" 200 759
+"OPTIONS /api/v1/users/0/0/ HTTP/1.1" 200 0
+Not Found: /api/v1/users/0/0/
+"GET /api/v1/users/0/0/ HTTP/1.1" 404 27
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+"OPTIONS /api/v1/users/1/user/5/ HTTP/1.1" 200 0
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/3/ HTTP/1.1" 200 562
+Forbidden: /api/v1/medications/patient/3/1/
+"GET /api/v1/medications/patient/3/1/ HTTP/1.1" 403 35
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481
+"GET /api/v1/users/1/user/5/ HTTP/1.1" 200 481

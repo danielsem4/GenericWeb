@@ -105,7 +105,7 @@ def add_clinic_module(request, clinic_id , module_id):
     '''
     if not request.user.is_authenticated:
         return JsonResponse({'detail': 'Authentication credentials were not provided.'}, status=401)
-    if not request.user.is_staff or not request.user.role == 'CLINIC_MANAGER':
+    if not request.user.is_staff and not request.user.role == 'CLINIC_MANAGER':
         return JsonResponse({'detail': 'You do not have permission to add clinic modules.'}, status=403)
 
     try:
@@ -128,7 +128,7 @@ def delete_clinic_module(request, clinic_id, module_id):
     '''
     if not request.user.is_authenticated:
         return JsonResponse({'detail': 'Authentication credentials were not provided.'}, status=401)
-    if not request.user.is_staff or not request.user.role == 'CLINIC_MANAGER':
+    if not request.user.is_staff and not request.user.role == 'CLINIC_MANAGER':
         return JsonResponse({'detail': 'You do not have permission to delete clinic modules.'}, status=403)
 
     try:
@@ -154,11 +154,11 @@ def add_patient_module(request, clinic_id, patient_id, module_id):
     '''
     if not request.user.is_authenticated:
         return JsonResponse({'detail': 'Authentication credentials were not provided.'}, status=401)
-    if not request.user.is_staff or not request.user.role == 'DOCTOR':
+    if not request.user.is_staff and not request.user.role == 'DOCTOR':
         return JsonResponse({'detail': 'You do not have permission to add patient modules.'}, status=403)
 
     try:
-        patient = Patient.objects.get(id=patient_id)
+        patient = Patient.objects.get(user__id=patient_id)
         clinic = Clinic.objects.get(id=clinic_id)
         module = Modules.objects.get(id=module_id)
         if not ClinicModules.objects.filter(clinic=clinic, module=module).exists():
@@ -184,11 +184,11 @@ def delete_patient_module(request, clinic_id, patient_id, module_id):
     '''
     if not request.user.is_authenticated:
         return JsonResponse({'detail': 'Authentication credentials were not provided.'}, status=401)
-    if not request.user.is_staff or not request.user.role == 'DOCTOR':
+    if not request.user.is_staff and not request.user.role == 'DOCTOR':
         return JsonResponse({'detail': 'You do not have permission to delete patient modules.'}, status=403)
 
     try:
-        patient = Patient.objects.get(id=patient_id)
+        patient = Patient.objects.get(user__id=patient_id)
         clinic = Clinic.objects.get(id=clinic_id)
         module = Modules.objects.get(id=module_id)
         if not ClinicModules.objects.filter(clinic=clinic, module=module).exists():
@@ -213,7 +213,7 @@ def toggle_clinic_module_active(request, clinic_id, module_id):
     '''
     if not request.user.is_authenticated:
         return JsonResponse({'detail': 'Authentication credentials were not provided.'}, status=401)
-    if not request.user.is_staff:
+    if not request.user.is_staff and not request.user.role == 'CLINIC_MANAGER':
         return JsonResponse({'detail': 'You do not have permission to toggle clinic modules.'}, status=403)
 
     try:
@@ -241,11 +241,11 @@ def toggle_patient_module_active(request, clinic_id, patient_id, module_id):
     '''
     if not request.user.is_authenticated:
         return JsonResponse({'detail': 'Authentication credentials were not provided.'}, status=401)
-    if not request.user.is_staff or not request.user.role == 'DOCTOR':
+    if not request.user.is_staff and not request.user.role == 'DOCTOR':
         return JsonResponse({'detail': 'You do not have permission to toggle patient modules.'}, status=403)
 
     try:
-        patient = Patient.objects.get(id=patient_id)
+        patient = Patient.objects.get(user__id=patient_id)
         clinic = Clinic.objects.get(id=clinic_id)
         module = Modules.objects.get(id=module_id)
         if not PatientModules.objects.filter(patient=patient, clinic=clinic, module=module).exists():

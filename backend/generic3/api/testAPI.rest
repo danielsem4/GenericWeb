@@ -4,20 +4,20 @@
 POST {{$dotenv NGROK_URL}}/api/v1/auth/login/
 Content-Type: application/json
 
-# {
-#     "email": "clinicManager1@example.com",
-#     "password": "a123456!"
-# }
+{
+    "email": "clinicManager1@example.com",
+    "password": "a123456!"
+}
 
 # {
 #     "email": "doctor1@example.com",
 #     "password": "a123456!"
 # }
 
-{
-    "email": "ozeriyarin@gmail.com",
-    "password": "a123456!"
-}
+# {
+#     "email": "ozeriyarin@gmail.com",
+#     "password": "a123456!"
+# }
 
 ###
 
@@ -26,19 +26,56 @@ Content-Type: application/json
 
 ########################### modules API calls ###########################
 
+GET {{$dotenv NGROK_URL}}/api/v1/modules/
+
+###
+
 POST {{$dotenv NGROK_URL}}/api/v1/modules/add/
 Content-Type: application/json
-Authorization: Token 3439658e926edbe9c73c7b5b753371ce01a80139
 
 {
-    "module_name": "New Module"
+    "module_name": "New Module",
+    "module_description": "Description for new module"
 }
 
 ###
 
-DELETE {{$dotenv NGROK_URL}}/api/v1/modules/9/delete/
+PUT {{$dotenv NGROK_URL}}/api/v1/modules/8/update/
 Content-Type: application/json
-Authorization: Token 3439658e926edbe9c73c7b5b753371ce01a80139
+
+{
+    "module_name": "Updated Module",
+    "module_description": "Updated description for the module"
+}
+
+###
+
+DELETE {{$dotenv NGROK_URL}}/api/v1/modules/8/delete/
+Content-Type: application/json
+
+###
+
+POST {{$dotenv NGROK_URL}}/api/v1/clinics/1/modules/4/add/
+
+###
+
+DELETE {{$dotenv NGROK_URL}}/api/v1/clinics/1/modules/4/delete/
+
+###
+
+POST {{$dotenv NGROK_URL}}/api/v1/clinics/1/patients/5/modules/4/add/
+
+###
+
+DELETE {{$dotenv NGROK_URL}}/api/v1/clinics/1/patients/5/modules/4/delete/
+
+###
+
+POST {{$dotenv NGROK_URL}}/api/v1/clinics/1/modules/4/toggle/
+
+###
+
+POST {{$dotenv NGROK_URL}}/api/v1/clinics/1/patients/5/modules/3/toggle/
 
 ############################ users api calls ############################
 
@@ -47,7 +84,7 @@ Content-Type: application/json
 
 ###
 
-GET {{$dotenv NGROK_URL}}/api/v1/users/3/
+GET {{$dotenv NGROK_URL}}/api/v1/users/1/user/5/
 
 ###
 
