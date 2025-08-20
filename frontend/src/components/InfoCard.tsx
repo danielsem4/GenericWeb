@@ -23,16 +23,15 @@ function InfoCard({
       tabIndex={onClick ? 0 : undefined}
       onClick={onClick}
       onKeyDown={(e) => e.key === "Enter" && onClick?.()}
-      className={cn(
-        "relative flex cursor-pointer select-none flex-col justify-between gap-6 rounded-2xl border border-white/20",
-        "bg-white/30 dark:bg-black/50 backdrop-blur-md p-6 shadow-md",
-        "hover:shadow-xl hover:scale-[1.02] active:scale-[.98]",
-        "transition-all duration-200 ease-out"
-      )}
+      className="cursor-pointer hover:shadow-xl hover:scale-[1.02] active:scale-[.98] transition-all duration-200 ease-out"
     >
       <CardHeader className="flex items-center justify-between p-0">
         <span className="text-lg font-semibold">{title}</span>
-        <Icon className={cn("h-8 w-8", iconColor)} />
+        <div
+          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-md border ${iconColor} transition-colors group-hover:opacity-90`}
+        >
+          <Icon className="h-5 w-5" aria-hidden="true" />
+        </div>
       </CardHeader>
 
       <CardContent className="flex items-center justify-between p-0 text-4xl font-bold">

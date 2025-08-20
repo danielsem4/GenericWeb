@@ -6,10 +6,10 @@ import Home from "./screens/home/Home";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SettingsPage from "./screens/settings/Settings";
 import Users from "./screens/users/Users";
-import User from "./screens/users/User";
-import UserDashboard from "./screens/users/UserDashboard";
+
 import Medications from "./screens/modules/medications/Medications";
-import ModulesPage from "./screens/modules/Modules";
+import PatientDashboard from "./screens/patients/PatientDashboard";
+// import ModulesPage from "./screens/modules/Modules";
 
 const router = createBrowserRouter([
   {
@@ -30,10 +30,11 @@ const router = createBrowserRouter([
           },
           { path: "users", element: <Users /> },
           { path: "patients", element: <Users /> },
-          { path: "user/:userId", element: <User /> },
-          { path: "userDashboard", element: <UserDashboard /> },
           { path: "modules/medications", element: <Medications /> },
-          { path: "modules", element: <ModulesPage /> },
+          {
+            path: "patients/:patientId/dashboard",
+            element: <PatientDashboard />,
+          },
         ],
       },
     ],

@@ -1,8 +1,11 @@
 import * as React from "react";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { useNavigate } from "react-router-dom";
+import { useUserStore } from "@/common/store/UserStore";
 
 const Navbar: React.FC = () => {
+  const { user: authUser } = useUserStore();
+
   const navigate = useNavigate();
 
   const handleLogoClick = () => {
@@ -19,9 +22,9 @@ const Navbar: React.FC = () => {
         <div className="flex flex-1 justify-center">
           <span
             onClick={handleLogoClick}
-            className="cursor-pointer select-none text-base font-semibold text-foreground hover:text-primary"
+            className="cursor-pointer select-none text-2xl font-bold text-foreground hover:text-primary"
           >
-            Psychiatric
+            {authUser?.clinicName ?? "Generic Hit"}
           </span>
         </div>
 
