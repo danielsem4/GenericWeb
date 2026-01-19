@@ -9098,3 +9098,4 @@ Bad Request: /api/v1/clinics/
 "DELETE /api/v1/clinics/9/ HTTP/1.1" 204 42
 Not Found: /api/v1/clinics/9/
 "GET /api/v1/clinics/9/ HTTP/1.1" 404 29
+"GET /api/v1/clinics/ HTTP/1.1" 200 1137
