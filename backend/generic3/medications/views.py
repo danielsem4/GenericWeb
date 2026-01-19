@@ -1,470 +1,903 @@
-from django.shortcuts import render
 from django.http import JsonResponse
-from rest_framework.decorators import api_view , authentication_classes
-from rest_framework.authentication import TokenAuthentication
+from django.utils import timezone
+from rest_framework.decorators import api_view
 from rest_framework import status
-from generic3.auth import CookieJWTAuthentication
 from clinics.models import Clinic
-from users.models import PatientDoctor, User, Patient
-from medications.models import MedicationReport, Medicines, PatientMedicine , ClinicMedicine
+from users.models import Doctor, PatientDoctor, User, Patient
+from medications.models import MedicationReport, MedicationsBundle, Medicines, PatientMedicationsBundle, PatientMedicine , ClinicMedicine
 from generic3.utils import format_timestamp
 
-########### admin medication management ##############################################
 
-@api_view(['GET'])
-def get_all_medications(request):
+############################# MEDICATIONS CRUD #######################################
+
+@api_view(['GET', 'POST'])
+def medications_list(request):
     """
-    Get all medications.
+    Handle GET and POST requests for medications.
+    GET: List all medications base on user role.
+    POST: Create a new medication base on user role.
     """
-    if not request.user.is_authenticated or not request.user.is_staff:
-        return JsonResponse({"detail": "Permission denied"}, status=status.HTTP_403_FORBIDDEN)
+    user = request.user
+    if not user.is_authenticated:
+        return JsonResponse({"detail": "Authentication credentials were not provided."}, status=status.HTTP_401_UNAUTHORIZED)
     
-    medications = Medicines.objects.all()
-    medications_data = []
-    for med in medications:
-        medications_data.append({
-            'id': med.id,
-            'medForm': med.medForm,
-            'medName': med.medName,
-            'medUnitOfMeasurement': med.medUnitOfMeasurement
-        })
-    return JsonResponse(medications_data, safe=False, status=status.HTTP_200_OK)
+    clinic_id = request.GET.get('clinic_id', None)
 
-@api_view(['POST'])
-def add_medication(request):
-    """
-    Add a new medication.
-    """
-    if not request.user.is_authenticated or not request.user.is_staff:
-        return JsonResponse({"detail": "Permission denied"}, status=status.HTTP_403_FORBIDDEN)
+    if request.method == 'GET':
+        if clinic_id:
+            try:
+                clinic = Clinic.objects.get(id=clinic_id)
+            except Clinic.DoesNotExist:
+                return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
+            if user.role == 'DOCTOR':
+                doctor = Doctor.objects.filter(user=user).first()
+                patient_id = request.GET.get('patient_id', None)                    
+                if not doctor:
+                    return JsonResponse({"detail": "Doctor profile not found"}, status=status.HTTP_404_NOT_FOUND)
+                
+                # show patient medications if patient_id is provided
+                if patient_id:
+                    try:
+                        patient_user = User.objects.get(id=patient_id)
+                        if patient_user.role != 'PATIENT' and patient_user.role != 'RESEARCH_PATIENT':
+                            return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
+                    except User.DoesNotExist:
+                        return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
+                    try:
+                        patient = Patient.objects.get(user=patient_user)
+                    except Patient.DoesNotExist:
+                        return JsonResponse({"detail": "Patient not found"}, status=status.HTTP_404_NOT_FOUND)
+                    
+                    patient_medications = PatientMedicine.objects.filter(clinic=clinic, patient=patient, doctor=doctor).select_related('medicine')
+                    medication_list = [
+                        {
+                            "id": medication.medicine.id,
+                            "name": medication.medicine.medName,
+                            "form": medication.medicine.medForm,
+                            "unit_of_measurement": medication.medicine.medUnitOfMeasurement
+                        } for medication in patient_medications
+                    ]
+                    return JsonResponse(medication_list, safe=False, status=status.HTTP_200_OK)
+                
+            # show all clinic medications for the doctor or clinic manager
+            clinic_medications = ClinicMedicine.objects.filter(clinic=clinic).select_related('medicine')
+            medication_list = [{"id": cm.medicine.id, "name": cm.medicine.medName, "form": cm.medicine.medForm, "unit_of_measurement": cm.medicine.medUnitOfMeasurement} for cm in clinic_medications]
+            return JsonResponse(medication_list, safe=False, status=status.HTTP_200_OK)
+            
+        # admin view all medications across all clinics
+        medications = Medicines.objects.all()
+        medication_list = [{"id": medication.id, "name": medication.medName, "form": medication.medForm, "unit_of_measurement": medication.medUnitOfMeasurement} for medication in medications]
+        return JsonResponse(medication_list, safe=False, status=status.HTTP_200_OK)
     
-    data = request.data
-    med_id = data.get('id')
-    if Medicines.objects.filter(id=med_id).exists():
-        return JsonResponse({"detail": "Medication with this ID already exists"}, status=status.HTTP_400_BAD_REQUEST)
-    med_form = data.get('medForm')
-    med_name = data.get('medName')
-    if Medicines.objects.filter(medName=med_name).exists():
-        return JsonResponse({"detail": "Medication with this name already exists"}, status=status.HTTP_400_BAD_REQUEST)
-    med_unit_of_measurement = data.get('medUnitOfMeasurement')
+    elif request.method == 'POST':            
+        
+        data = request.data
+        clinic_id = data.get('clinic_id', None)
+        patient_id = data.get('patient_id', None)
+        medication_name = data.get('medication_name')
+        medication_form = data.get('medication_form')
+        medication_unit = data.get('medication_unit')
+                
+        if not medication_name or not medication_form or not medication_unit:
+            return JsonResponse({"detail": "Medication name, form, and unit are required"}, status=status.HTTP_400_BAD_REQUEST)
+        
+        if user.is_staff:
+            if Medicines.objects.filter(medName=medication_name , medForm=medication_form, medUnitOfMeasurement=medication_unit).exists():
+                return JsonResponse({"detail": "Medication with this detail already exists"}, status=status.HTTP_400_BAD_REQUEST)
+        
+            medication = Medicines.objects.create(
+                medName=medication_name,
+                medForm=medication_form,
+                medUnitOfMeasurement=medication_unit
+            )
+        elif user.role == 'CLINIC_MANAGER':
+            clinic = Clinic.objects.filter(id=clinic_id).first()
+            if not clinic:
+                return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
+            
+            medication = Medicines.objects.get(
+                medName=medication_name,
+                medForm=medication_form,
+                medUnitOfMeasurement=medication_unit
+            )
+            ClinicMedicine.objects.create(
+                medicine=medication,
+                clinic=clinic
+            )
+        
+        elif user.role == 'DOCTOR':
+            # assign medication to patient
+            doctor = Doctor.objects.filter(user=user).first()
+            if not doctor:
+                return JsonResponse({"detail": "Doctor profile not found"}, status=status.HTTP_404_NOT_FOUND)
+            clinic = Clinic.objects.filter(id=clinic_id).first()
+            if not clinic:
+                return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
+            
+            medication = Medicines.objects.get(
+                medName=medication_name,
+                medForm=medication_form,
+                medUnitOfMeasurement=medication_unit
+            )
+            clinic_medications = ClinicMedicine.objects.filter(
+                clinic=clinic
+            ).select_related('medicine')
+            
+            if not clinic_medications.filter(medicine=medication).exists():
+                return JsonResponse({"detail": "Medication not found in this clinic"}, status=status.HTTP_404_NOT_FOUND)
+            
+            patient_user = User.objects.filter(id=patient_id).first()
+            if not patient_user or (patient_user.role != 'PATIENT' and patient_user.role != 'RESEARCH_PATIENT'):
+                return JsonResponse({"detail": "Patient user not found"}, status=status.HTTP_404_NOT_FOUND)
+            
+            patient = Patient.objects.filter(user=patient_user).first()
+            if not patient:
+                return JsonResponse({"detail": "Patient profile not found"}, status=status.HTTP_404_NOT_FOUND)
+            
+            PatientMedicine.objects.create(
+                medicine=medication,
+                patient=patient,
+                doctor=doctor,
+                clinic=clinic
+            )
+        
+        return JsonResponse({"id": medication.id, "name": medication.medName, "form": medication.medForm, "unit": medication.medUnitOfMeasurement}, status=status.HTTP_201_CREATED)
 
-    if not med_id or not med_form or not med_name or not med_unit_of_measurement:
-        return JsonResponse({"detail": "Missing required fields"}, status=status.HTTP_400_BAD_REQUEST)
-
-    Medicines.objects.create(
-        id=med_id,
-        medForm=med_form,
-        medName=med_name,
-        medUnitOfMeasurement=med_unit_of_measurement
-    )
-
-    return JsonResponse({"detail": "Medication added successfully"}, status=status.HTTP_201_CREATED)
-
-@api_view(['PUT'])
-def update_medication(request, medication_id):
+@api_view(['GET', 'PUT', 'DELETE'])
+def medication_detail(request, id):
     """
-    Update an existing medication.
+    Handle GET, PUT, DELETE requests for a specific medication.
+    GET: Retrieve medication details base on user role.
+    PUT: Update medication details base on user role.
+    DELETE: Delete the medication base on user role.
     """
-    if not request.user.is_authenticated or not request.user.is_staff:
-        return JsonResponse({"detail": "Permission denied"}, status=status.HTTP_403_FORBIDDEN)
-    
+    user = request.user
+    if not user.is_authenticated:
+        return JsonResponse({"detail": "Authentication credentials were not provided."}, status=status.HTTP_401_UNAUTHORIZED)
+
     try:
-        medication = Medicines.objects.get(id=medication_id)
+        medication = Medicines.objects.get(id=id)
     except Medicines.DoesNotExist:
         return JsonResponse({"detail": "Medication not found"}, status=status.HTTP_404_NOT_FOUND)
 
-    data = request.data
-    med_form = data.get('medForm')
-    med_name = data.get('medName')
-    med_unit_of_measurement = data.get('medUnitOfMeasurement')
+    clinic_id = request.GET.get('clinic_id', None)
+    try:
+        clinic = Clinic.objects.get(id=clinic_id) if clinic_id else None
+    except Clinic.DoesNotExist:
+        return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
+        
+    patient_id = request.GET.get('patient_id', None)
+    patient = None
+    
+    # Only retrieve patient if patient_id is provided
+    if patient_id:
+        try:
+            patient_user = User.objects.get(id=patient_id)
+            if patient_user.role != 'PATIENT' and patient_user.role != 'RESEARCH_PATIENT':
+                return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
+        except User.DoesNotExist:
+            return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
+        
+        try:
+            patient = Patient.objects.get(user=patient_user)
+        except Patient.DoesNotExist:
+            return JsonResponse({"detail": "Patient not found"}, status=status.HTTP_404_NOT_FOUND)
 
-    if not med_form or not med_name or not med_unit_of_measurement:
-        return JsonResponse({"detail": "Missing required fields"}, status=status.HTTP_400_BAD_REQUEST)
+    if request.method == 'GET':
+        if user.is_staff:
+            # Admin: view base medication (no clinic/patient context needed)
+            return JsonResponse({"id": medication.id, "name": medication.medName, "form": medication.medForm, "unit": medication.medUnitOfMeasurement}, status=status.HTTP_200_OK)
+        
+        elif user.role == 'CLINIC_MANAGER':
+            # Clinic Manager: view clinic activity (requires clinic_id)
+            if not clinic:
+                return JsonResponse({"detail": "Clinic ID is required"}, status=status.HTTP_400_BAD_REQUEST)
+            
+            try:
+                clinic_medication = ClinicMedicine.objects.get(medicine=medication, clinic=clinic)
+                return JsonResponse({"id": clinic_medication.medicine.id, "name": clinic_medication.medicine.medName, "form": clinic_medication.medicine.medForm, "unit": clinic_medication.medicine.medUnitOfMeasurement}, status=status.HTTP_200_OK)
+            except ClinicMedicine.DoesNotExist:
+                return JsonResponse({"detail": "Medication not found in this clinic"}, status=status.HTTP_404_NOT_FOUND)
+        
+        else:
+            # Doctor/Patient: view patient activity (requires clinic_id and patient_id)
+            if not clinic or not patient:
+                return JsonResponse({"detail": "Clinic ID and Patient ID are required"}, status=status.HTTP_400_BAD_REQUEST)
+            
+            try:
+                patient_medication = PatientMedicine.objects.get(medicine=medication, clinic=clinic, patient=patient)
+                data = {
+                    "id": medication.id,
+                    "name": medication.medName,
+                    "form": medication.medForm,
+                    "unit": medication.medUnitOfMeasurement,
+                    "doctor": patient_medication.doctor.user.id,
+                    "frequency": patient_medication.frequency,
+                    "frequency_data": patient_medication.frequency_data,
+                    "start_date": format_timestamp(patient_medication.start_date),
+                    "end_date": format_timestamp(patient_medication.end_date),
+                    "dosage": patient_medication.dosage
+                }
+                return JsonResponse(data, status=status.HTTP_200_OK)
+            except PatientMedicine.DoesNotExist:
+                return JsonResponse({"detail": "Medication not found for this patient in this clinic"}, status=status.HTTP_404_NOT_FOUND)      
+        
+    elif request.method == 'PUT':
+        data = request.data
+        
+        if user.is_staff and not clinic_id and not patient_id:
+            # Admin: update base medication (no context params)
+            medication.medName = data.get('name', medication.medName)
+            medication.medForm = data.get('form', medication.medForm)
+            medication.medUnitOfMeasurement = data.get('unit', medication.medUnitOfMeasurement)
+            medication.save()
+            return JsonResponse({"id": medication.id, "name": medication.medName, "form": medication.medForm, "unit": medication.medUnitOfMeasurement}, status=status.HTTP_200_OK)
+        
+        elif user.role == 'DOCTOR' and clinic_id and patient_id:
+            # Doctor: create or update patient medication assignment
+            if not clinic or not patient:
+                return JsonResponse({"detail": "Clinic ID and Patient ID are required"}, status=status.HTTP_400_BAD_REQUEST)
+            
+            doctor = Doctor.objects.filter(user=user).first()
+            if not doctor:
+                return JsonResponse({"detail": "Doctor profile not found"}, status=status.HTTP_404_NOT_FOUND)
+            
+            # Verify medication is available in this clinic
+            if not ClinicMedicine.objects.filter(clinic=clinic, medicine=medication).exists():
+                return JsonResponse({"detail": "Medication not found in this clinic"}, status=status.HTTP_404_NOT_FOUND)
+            
+            # Get or create patient medication
+            patient_medication, created = PatientMedicine.objects.get_or_create(
+                medicine=medication,
+                patient=patient,
+                clinic=clinic,
+                defaults={'doctor': doctor}
+            )
+            
+            # Update patient medication details
+            patient_medication.frequency = data.get('frequency', patient_medication.frequency)
+            patient_medication.frequency_data = data.get('frequency_data', patient_medication.frequency_data)
+            patient_medication.start_date = data.get('start_date', patient_medication.start_date)
+            patient_medication.end_date = data.get('end_date', patient_medication.end_date)
+            patient_medication.save()
+            
+            status_code = status.HTTP_201_CREATED if created else status.HTTP_200_OK
+            message = "Medication assigned to patient" if created else "Patient medication updated"
+            
+            return JsonResponse({
+                "detail": message,
+                "medication_id": medication.id,
+                "medication_name": medication.medName,
+                "frequency": patient_medication.frequency,
+                "frequency_data": patient_medication.frequency_data,
+                "start_date": format_timestamp(patient_medication.start_date),
+                "end_date": format_timestamp(patient_medication.end_date),
+                "dosage": patient_medication.dosage
+            }, status=status_code)
+        
+        else:
+            return JsonResponse({"detail": "Invalid request. Admins can update medications, doctors can assign medications to patients."}, status=status.HTTP_403_FORBIDDEN)
+    
+    elif request.method == 'DELETE':
+        if user.is_staff:
+            # Admin: delete base medication
+            medication.delete()
+            return JsonResponse({"detail": "Medication deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
+        
+        elif user.role == 'CLINIC_MANAGER':
+            # Clinic Manager: remove medication from clinic (requires clinic_id)
+            if not clinic:
+                return JsonResponse({"detail": "Clinic ID is required"}, status=status.HTTP_400_BAD_REQUEST)
+            
+            try:
+                clinic_medication = ClinicMedicine.objects.get(medicine=medication, clinic=clinic)
+                clinic_medication.delete()
+                return JsonResponse({"detail": "Medication removed from clinic successfully"}, status=status.HTTP_204_NO_CONTENT)
+            except ClinicMedicine.DoesNotExist:
+                return JsonResponse({"detail": "Medication not found in this clinic"}, status=status.HTTP_404_NOT_FOUND)
+        
+        else:
+            # Doctor: remove medication from patient (requires clinic_id and patient_id)
+            if not clinic or not patient:
+                return JsonResponse({"detail": "Clinic ID and Patient ID are required"}, status=status.HTTP_400_BAD_REQUEST)
+            
+            try:
+                patient_medication = PatientMedicine.objects.get(medicine=medication, clinic=clinic, patient=patient)
+                patient_medication.delete()
+                return JsonResponse({"detail": "Medication removed from patient successfully"}, status=status.HTTP_204_NO_CONTENT)
+            except PatientMedicine.DoesNotExist:
+                return JsonResponse({"detail": "Medication not found for this patient in this clinic"}, status=status.HTTP_404_NOT_FOUND)
 
-    medication.medForm = med_form
-    medication.medName = med_name
-    medication.medUnitOfMeasurement = med_unit_of_measurement
-    medication.save()
+################################ MEDICATIONS BUNDLES CRUD #######################################
 
-    return JsonResponse({"detail": "Medication updated successfully"}, status=status.HTTP_200_OK)
-
-@api_view(['DELETE'])
-def delete_medication(request, medication_id):
+@api_view(['GET', 'POST'])
+def medications_bundles_list(request):
     """
-    Delete a medication.
+    Handle GET and POST requests for medication bundles.
+    GET: List all medication bundles based on user role.
+    POST: Create a new medication bundle based on user role.
     """
-    if not request.user.is_authenticated or not request.user.is_staff:
+    user = request.user
+    if not user.is_authenticated:
+        return JsonResponse({"detail": "Authentication credentials were not provided."}, status=status.HTTP_401_UNAUTHORIZED)
+    
+    clinic_id = request.GET.get('clinic_id', None)
+
+    if request.method == 'GET':
+        patient_id = request.GET.get('patient_id', None)
+        
+        if clinic_id:
+            try:
+                clinic = Clinic.objects.get(id=clinic_id)
+            except Clinic.DoesNotExist:
+                return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
+            
+            # If patient_id is provided, show patient's assigned bundles
+            if patient_id:
+                try:
+                    patient_user = User.objects.get(id=patient_id)
+                    if patient_user.role not in ['PATIENT', 'RESEARCH_PATIENT']:
+                        return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
+                except User.DoesNotExist:
+                    return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
+                
+                try:
+                    patient = Patient.objects.get(user=patient_user)
+                except Patient.DoesNotExist:
+                    return JsonResponse({"detail": "Patient not found"}, status=status.HTTP_404_NOT_FOUND)
+                
+                # Doctor viewing patient's bundles
+                if user.role == 'DOCTOR':
+                    doctor = Doctor.objects.filter(user=user).first()
+                    if not doctor:
+                        return JsonResponse({"detail": "Doctor profile not found"}, status=status.HTTP_404_NOT_FOUND)
+                    
+                    # Verify doctor has access to this patient
+                    if not PatientDoctor.objects.filter(doctor=doctor, patient=patient, clinic=clinic).exists():
+                        return JsonResponse({"detail": "Access denied. Patient not assigned to this doctor."}, status=status.HTTP_403_FORBIDDEN)
+                
+                # Patient viewing their own bundles
+                elif user.role in ['PATIENT', 'RESEARCH_PATIENT']:
+                    patient_profile = Patient.objects.filter(user=user).first()
+                    if not patient_profile or patient_profile.id != patient.id:
+                        return JsonResponse({"detail": "Access denied. You can only view your own bundles."}, status=status.HTTP_403_FORBIDDEN)
+                
+                # Get patient's assigned bundles
+                patient_bundles = PatientMedicationsBundle.objects.filter(
+                    patient=patient,
+                    bundle__clinic=clinic
+                ).select_related('bundle', 'doctor').prefetch_related('bundled_medicines')
+                
+                bundle_list = [
+                    {
+                        "id": pb.bundle.id,
+                        "bundle_name": pb.bundle.bundle_name,
+                        "doctor_id": pb.doctor.user.id,
+                        "doctor_name": pb.doctor.user.get_full_name(),
+                        "medications": [
+                            {
+                                "id": medication.id,
+                                "name": medication.medName,
+                                "form": medication.medForm,
+                                "unit_of_measurement": medication.medUnitOfMeasurement
+                            } for medication in pb.bundle.medicines.all()
+                        ]
+                    } for pb in patient_bundles
+                ]
+                return JsonResponse(bundle_list, safe=False, status=status.HTTP_200_OK)
+            
+            # Get all bundles for specific clinic (no patient_id)
+            bundles = MedicationsBundle.objects.filter(clinic=clinic).prefetch_related('medicines')
+            bundle_list = [
+                {
+                    "id": bundle.id,
+                    "bundle_name": bundle.bundle_name,
+                    "medications": [
+                        {
+                            "id": medication.id,
+                            "name": medication.medName,
+                            "form": medication.medForm,
+                            "unit_of_measurement": medication.medUnitOfMeasurement
+                        } for medication in bundle.medicines.all()
+                    ]
+                } for bundle in bundles
+            ]
+            return JsonResponse(bundle_list, safe=False, status=status.HTTP_200_OK)
+        
+        # Admin view all bundles across all clinics
+        if user.is_staff:
+            bundles = MedicationsBundle.objects.all().prefetch_related('medicines', 'clinic')
+            bundle_list = [
+                {
+                    "id": bundle.id,
+                    "bundle_name": bundle.bundle_name,
+                    "clinic_id": bundle.clinic.id,
+                    "clinic_name": bundle.clinic.clinic_name,
+                    "medications": [
+                        {
+                            "id": medication.id,
+                            "name": medication.medName,
+                            "form": medication.medForm,
+                            "unit_of_measurement": medication.medUnitOfMeasurement
+                        } for medication in bundle.medicines.all()
+                    ]
+                } for bundle in bundles
+            ]
+            return JsonResponse(bundle_list, safe=False, status=status.HTTP_200_OK)
+        
+        return JsonResponse({"detail": "Clinic ID is required"}, status=status.HTTP_400_BAD_REQUEST)
+    
+    elif request.method == 'POST':
+        data = request.data
+        bundle_name = data.get('bundle_name')
+        medication_ids = data.get('medication_ids', [])
+        
+        if not bundle_name:
+            return JsonResponse({"detail": "Bundle name is required"}, status=status.HTTP_400_BAD_REQUEST)
+        
+        if not medication_ids or not isinstance(medication_ids, list):
+            return JsonResponse({"detail": "Medication IDs list is required"}, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Clinic Manager or Admin can create bundles
+        if user.role == 'CLINIC_MANAGER' or user.is_staff:
+            if not clinic_id:
+                return JsonResponse({"detail": "Clinic ID is required"}, status=status.HTTP_400_BAD_REQUEST)
+            
+            try:
+                clinic = Clinic.objects.get(id=clinic_id)
+            except Clinic.DoesNotExist:
+                return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
+            
+            # Check if bundle name already exists for this clinic
+            if MedicationsBundle.objects.filter(bundle_name=bundle_name, clinic=clinic).exists():
+                return JsonResponse({"detail": "Bundle with this name already exists in this clinic"}, status=status.HTTP_400_BAD_REQUEST)
+            
+            # Verify all medications exist and belong to the clinic
+            medications = Medicines.objects.filter(id__in=medication_ids)
+            if medications.count() != len(medication_ids):
+                return JsonResponse({"detail": "Some medications not found"}, status=status.HTTP_404_NOT_FOUND)
+            
+            # Verify medications are available in this clinic
+            for medication in medications:
+                if not ClinicMedicine.objects.filter(clinic=clinic, medicine=medication).exists():
+                    return JsonResponse({"detail": f"Medication '{medication.medName}' not available in this clinic"}, status=status.HTTP_404_NOT_FOUND)
+            
+            # Create bundle
+            bundle = MedicationsBundle.objects.create(
+                bundle_name=bundle_name,
+                clinic=clinic
+            )
+            bundle.medicines.set(medications)
+            
+            return JsonResponse({
+                "id": bundle.id,
+                "bundle_name": bundle.bundle_name,
+                "medications": [{"id": m.id, "name": m.medName} for m in medications]
+            }, status=status.HTTP_201_CREATED)
+        
+        return JsonResponse({"detail": "Permission denied"}, status=status.HTTP_403_FORBIDDEN)
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def medications_bundle_detail(request, id):
+    """
+    Handle GET, PUT, DELETE requests for a specific medication bundle.
+    GET: Retrieve medication bundle details based on user role.
+    PUT: Update medication bundle details based on user role.
+    DELETE: Delete the medication bundle based on user role.
+    """
+    user = request.user
+    if not user.is_authenticated:
+        return JsonResponse({"detail": "Authentication credentials were not provided."}, status=status.HTTP_401_UNAUTHORIZED)
+
+    try:
+        bundle = MedicationsBundle.objects.prefetch_related('medicines').get(id=id)
+    except MedicationsBundle.DoesNotExist:
+        return JsonResponse({"detail": "Bundle not found"}, status=status.HTTP_404_NOT_FOUND)
+
+    clinic_id = request.GET.get('clinic_id', None)
+    patient_id = request.GET.get('patient_id', None)
+    
+    if request.method == 'GET':
+        if user.is_staff:
+            # Admin: view any bundle
+            return JsonResponse({
+                "id": bundle.id,
+                "bundle_name": bundle.bundle_name,
+                "clinic_id": bundle.clinic.id,
+                "clinic_name": bundle.clinic.clinic_name,
+                "medications": [
+                    {
+                        "id": medication.id,
+                        "name": medication.medName,
+                        "form": medication.medForm,
+                        "unit_of_measurement": medication.medUnitOfMeasurement
+                    } for medication in bundle.medicines.all()
+                ]
+            }, status=status.HTTP_200_OK)
+        
+        elif user.role == 'CLINIC_MANAGER':
+            # Clinic Manager: view bundle in their clinic
+            if not clinic_id:
+                return JsonResponse({"detail": "Clinic ID is required"}, status=status.HTTP_400_BAD_REQUEST)
+            
+            try:
+                clinic = Clinic.objects.get(id=clinic_id)
+            except Clinic.DoesNotExist:
+                return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
+            
+            if bundle.clinic.id != clinic.id:
+                return JsonResponse({"detail": "Bundle not found in this clinic"}, status=status.HTTP_404_NOT_FOUND)
+            
+            return JsonResponse({
+                "id": bundle.id,
+                "bundle_name": bundle.bundle_name,
+                "medications": [
+                    {
+                        "id": medication.id,
+                        "name": medication.medName,
+                        "form": medication.medForm,
+                        "unit_of_measurement": medication.medUnitOfMeasurement
+                    } for medication in bundle.medicines.all()
+                ]
+            }, status=status.HTTP_200_OK)
+        
+        elif user.role == 'DOCTOR':
+            # Doctor: view bundle details (can view clinic bundles)
+            if not clinic_id:
+                return JsonResponse({"detail": "Clinic ID is required"}, status=status.HTTP_400_BAD_REQUEST)
+            
+            try:
+                clinic = Clinic.objects.get(id=clinic_id)
+            except Clinic.DoesNotExist:
+                return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
+            
+            if bundle.clinic.id != clinic.id:
+                return JsonResponse({"detail": "Bundle not found in this clinic"}, status=status.HTTP_404_NOT_FOUND)
+            
+            return JsonResponse({
+                "id": bundle.id,
+                "bundle_name": bundle.bundle_name,
+                "medications": [
+                    {
+                        "id": medication.id,
+                        "name": medication.medName,
+                        "form": medication.medForm,
+                        "unit_of_measurement": medication.medUnitOfMeasurement
+                    } for medication in bundle.medicines.all()
+                ]
+            }, status=status.HTTP_200_OK)
+        
         return JsonResponse({"detail": "Permission denied"}, status=status.HTTP_403_FORBIDDEN)
     
-    try:
-        medication = Medicines.objects.get(id=medication_id)
-    except Medicines.DoesNotExist:
-        return JsonResponse({"detail": "Medication not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    medication.delete()
-    return JsonResponse({"detail": "Medication deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
-
-########## clinic medications management ##############################################
-
-@api_view(['GET'])
-def get_clinic_medications(request, clinic_id):
-    """
-    Get medications for a specific clinic.
-    """
-    try:
-        clinic = Clinic.objects.get(id=clinic_id)
-    except Clinic.DoesNotExist:
-        return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    clinic_medications = ClinicMedicine.objects.filter(clinic=clinic).select_related('medicine')
+    elif request.method == 'PUT':
+        data = request.data
+        
+        if user.is_staff or user.role == 'CLINIC_MANAGER':
+            # Admin or Clinic Manager: update bundle
+            if user.role == 'CLINIC_MANAGER':
+                if not clinic_id:
+                    return JsonResponse({"detail": "Clinic ID is required"}, status=status.HTTP_400_BAD_REQUEST)
+                
+                try:
+                    clinic = Clinic.objects.get(id=clinic_id)
+                except Clinic.DoesNotExist:
+                    return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
+                
+                if bundle.clinic.id != clinic.id:
+                    return JsonResponse({"detail": "Bundle not found in this clinic"}, status=status.HTTP_404_NOT_FOUND)
+            
+            bundle.bundle_name = data.get('bundle_name', bundle.bundle_name)
+            
+            # Update medications if provided
+            medication_ids = data.get('medication_ids')
+            if medication_ids is not None:
+                if not isinstance(medication_ids, list):
+                    return JsonResponse({"detail": "Medication IDs must be a list"}, status=status.HTTP_400_BAD_REQUEST)
+                
+                medications = Medicines.objects.filter(id__in=medication_ids)
+                if medications.count() != len(medication_ids):
+                    return JsonResponse({"detail": "Some medications not found"}, status=status.HTTP_404_NOT_FOUND)
+                
+                # Verify medications are available in the clinic
+                for medication in medications:
+                    if not ClinicMedicine.objects.filter(clinic=bundle.clinic, medication=medication).exists():
+                        return JsonResponse({"detail": f"Medication '{medication.medName}' not available in this clinic"}, status=status.HTTP_404_NOT_FOUND)
+                
+                bundle.medications.set(medications)
+            
+            bundle.save()
+            
+            return JsonResponse({
+                "id": bundle.id,
+                "bundle_name": bundle.bundle_name,
+                "medications": [
+                    {
+                        "id": medication.id,
+                        "name": medication.medName,
+                        "form": medication.medForm,
+                        "unit_of_measurement": medication.medUnitOfMeasurement
+                    } for medication in bundle.medications.all()
+                ]
+            }, status=status.HTTP_200_OK)
+        
+        elif user.role == 'DOCTOR' and clinic_id and patient_id:
+            # Doctor: assign bundle to patient
+            try:
+                clinic = Clinic.objects.get(id=clinic_id)
+            except Clinic.DoesNotExist:
+                return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
+            
+            if bundle.clinic.id != clinic.id:
+                return JsonResponse({"detail": "Bundle not found in this clinic"}, status=status.HTTP_404_NOT_FOUND)
+            
+            try:
+                patient_user = User.objects.get(id=patient_id)
+                if patient_user.role not in ['PATIENT', 'RESEARCH_PATIENT']:
+                    return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
+            except User.DoesNotExist:
+                return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
+            
+            try:
+                patient = Patient.objects.get(user=patient_user)
+            except Patient.DoesNotExist:
+                return JsonResponse({"detail": "Patient not found"}, status=status.HTTP_404_NOT_FOUND)
+            
+            doctor = Doctor.objects.filter(user=user).first()
+            if not doctor:
+                return JsonResponse({"detail": "Doctor profile not found"}, status=status.HTTP_404_NOT_FOUND)
+            
+            # Create or get patient bundle assignment
+            patient_bundle, created = PatientMedicationsBundle.objects.get_or_create(
+                patient=patient,
+                bundle=bundle,
+                doctor=doctor
+            )
+            
+            message = "Bundle assigned to patient" if created else "Patient already has this bundle"
+            status_code = status.HTTP_201_CREATED if created else status.HTTP_200_OK
+            
+            return JsonResponse({
+                "detail": message,
+                "bundle_id": bundle.id,
+                "bundle_name": bundle.bundle_name
+            }, status=status_code)
+        
+        return JsonResponse({"detail": "Invalid request. Admins/Clinic Managers can update bundles, doctors can assign bundles to patients."}, status=status.HTTP_403_FORBIDDEN)
     
-    if not clinic_medications:
-        return JsonResponse({"detail": "No medications found for this clinic"}, status=status.HTTP_404_NOT_FOUND)
+    elif request.method == 'DELETE':
+        if user.is_staff:
+            # Admin: delete any bundle
+            bundle.delete()
+            return JsonResponse({"detail": "Bundle deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
+        
+        elif user.role == 'CLINIC_MANAGER':
+            # Clinic Manager: delete bundle from their clinic
+            if not clinic_id:
+                return JsonResponse({"detail": "Clinic ID is required"}, status=status.HTTP_400_BAD_REQUEST)
+            
+            try:
+                clinic = Clinic.objects.get(id=clinic_id)
+            except Clinic.DoesNotExist:
+                return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
+            
+            if bundle.clinic.id != clinic.id:
+                return JsonResponse({"detail": "Bundle not found in this clinic"}, status=status.HTTP_404_NOT_FOUND)
+            
+            bundle.delete()
+            return JsonResponse({"detail": "Bundle deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
+        
+        elif user.role == 'DOCTOR' and clinic_id and patient_id:
+            # Doctor: remove bundle from patient
+            try:
+                clinic = Clinic.objects.get(id=clinic_id)
+            except Clinic.DoesNotExist:
+                return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
+            
+            try:
+                patient_user = User.objects.get(id=patient_id)
+                if patient_user.role not in ['PATIENT', 'RESEARCH_PATIENT']:
+                    return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
+            except User.DoesNotExist:
+                return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
+            
+            try:
+                patient = Patient.objects.get(user=patient_user)
+            except Patient.DoesNotExist:
+                return JsonResponse({"detail": "Patient not found"}, status=status.HTTP_404_NOT_FOUND)
+            
+            try:
+                patient_bundle = PatientMedicationsBundle.objects.get(patient=patient, bundle=bundle)
+                patient_bundle.delete()
+                return JsonResponse({"detail": "Bundle removed from patient successfully"}, status=status.HTTP_204_NO_CONTENT)
+            except PatientMedicationsBundle.DoesNotExist:
+                return JsonResponse({"detail": "Bundle not assigned to this patient"}, status=status.HTTP_404_NOT_FOUND)
+        
+        return JsonResponse({"detail": "Permission denied"}, status=status.HTTP_403_FORBIDDEN)
 
-    medications_data = []
-    for cm in clinic_medications:
-        medication = cm.medicine
-        medications_data.append({
-            'id': medication.id,
-            'medForm': medication.medForm,
-            'medName': medication.medName,
-            'medUnitOfMeasurement': medication.medUnitOfMeasurement
-        })
+################################# PATIENT ACTIVITY LOG #######################################
 
-    return JsonResponse(medications_data, safe=False, status=status.HTTP_200_OK)
-
-@api_view(['POST'])
-def add_clinic_medication(request, clinic_id):
+@api_view(['GET', 'POST'])
+def medication_reports(request):
     """
-    Add a medication to a specific clinic.
+    Handle GET and POST requests for medication reports.
+    GET: List all medication reports based on user role.
+    POST: Create a new medication report (typically called by patients).
     """
-    try:
-        clinic = Clinic.objects.get(id=clinic_id)
-    except Clinic.DoesNotExist:
-        return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    data = request.data
-    med_id = data.get('med_id')
-
-    if not med_id:
-        return JsonResponse({"detail": "Missing medication ID"}, status=status.HTTP_400_BAD_REQUEST)
-
-    medication = Medicines.objects.get(id=med_id)
-    if not medication:
-        return JsonResponse({"detail": "Medication not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    ClinicMedicine.objects.get_or_create(clinic=clinic, medicine=medication)
-
-    return JsonResponse({"detail": "Medication added successfully"}, status=status.HTTP_201_CREATED)
-
-
-@api_view(['DELETE'])
-def delete_clinic_medication(request, clinic_id, medication_id):
-    """
-    Delete a medication from a specific clinic.
-    """
-    try:
-        clinic = Clinic.objects.get(id=clinic_id)
-    except Clinic.DoesNotExist:
-        return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    try:
-        medication = Medicines.objects.get(id=medication_id)
-    except Medicines.DoesNotExist:
-        return JsonResponse({"detail": "Medication not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    if not ClinicMedicine.objects.filter(clinic=clinic, medicine=medication).exists():
-        return JsonResponse({"detail": "Medication not found in this clinic"}, status=status.HTTP_404_NOT_FOUND)
-    ClinicMedicine.objects.filter(clinic=clinic, medicine=medication).delete()
-
-    return JsonResponse({"detail": "Medication deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
-
-############ patient medications management ###########################################
-
-@api_view(['GET'])
-@authentication_classes([CookieJWTAuthentication ])
-def get_patient_medications(request, clinic_id, patient_id):
-    """
-    Get all medications for a specific patient in a clinic.
-    """
-    try:
-        clinic = Clinic.objects.get(id=clinic_id)
-    except Clinic.DoesNotExist:
-        return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    try:
-        user = User.objects.get(id=patient_id)
-        if user.role not in ['PATIENT', 'RESEARCH_PATIENT']:
-            return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
-    except User.DoesNotExist:
-        return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
-    try:
-        patient = Patient.objects.get(user=user)
-    except Patient.DoesNotExist:
-        return JsonResponse({"detail": "Patient not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    patient_medications = PatientMedicine.objects.filter(patient=patient, clinic=clinic)
-
-    if not patient_medications:
-        return JsonResponse({"detail": "No medications found for this patient in this clinic"}, status=status.HTTP_404_NOT_FOUND)
-
-    medications_data = []
-    for pm in patient_medications:
-        medication = pm.medicine
-        medications_data.append({
-            'id': medication.id,
-            'medForm': medication.medForm,
-            'medName': medication.medName,
-            'medUnitOfMeasurement': medication.medUnitOfMeasurement,
-            'doctor': pm.doctor.user.email if pm.doctor else None,
-            'frequency': pm.frequency,
-            'frequency_data': pm.frequency_data,
-            'start_date': pm.start_date.isoformat() if pm.start_date else None,
-            'end_date': pm.end_date.isoformat() if pm.end_date else None,
-            'dosage': pm.dosage if pm.dosage else None
-        })
-
-    return JsonResponse(medications_data, safe=False, status=status.HTTP_200_OK)
-
-@api_view(['POST'])
-def add_patient_medication(request, clinic_id, patient_id):
-    """
-    Add a medication for a specific patient in a clinic.
-    """
-    try:
-        clinic = Clinic.objects.get(id=clinic_id)
-    except Clinic.DoesNotExist:
-        return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    try:
-        user = User.objects.get(id=patient_id)
-        if user.role not in ['PATIENT', 'RESEARCH_PATIENT']:
-            return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
-    except User.DoesNotExist:
-        return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    try:
-        patient = Patient.objects.get(user=user)
-    except Patient.DoesNotExist:
-        return JsonResponse({"detail": "Patient not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    data = request.data
-    med_id = data.get('med_id')
-    frequency = data.get('frequency')
-    frequency_data = data.get('frequency_data')
-    start_date = data.get('start_date')
-    end_date = data.get('end_date')
-    dosage = data.get('dosage')
-
-    if not med_id or not frequency or not frequency_data:
-        return JsonResponse({"detail": "Missing required fields"}, status=status.HTTP_400_BAD_REQUEST)
-
-    medication = Medicines.objects.get(id=med_id)
-    if not medication:
-        return JsonResponse({"detail": "Medication not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    if not ClinicMedicine.objects.filter(clinic=clinic, medicine=medication).exists():
-        return JsonResponse({"detail": "Medication not available in this clinic"}, status=status.HTTP_404_NOT_FOUND)
+    user = request.user
+    if not user.is_authenticated:
+        return JsonResponse({"detail": "Authentication credentials were not provided."}, status=status.HTTP_401_UNAUTHORIZED)
     
-    if PatientMedicine.objects.filter(patient=patient, clinic=clinic, medicine=medication).exists():
-        return JsonResponse({"detail": "Medication already assigned to this patient in this clinic"}, status=status.HTTP_400_BAD_REQUEST)
-
-    patient_doctor = PatientDoctor.objects.filter(patient=patient, clinic=clinic).first()
-    if not patient_doctor:
-        return JsonResponse({"detail": "Patient is not assigned to a doctor in this clinic"}, status=status.HTTP_403_FORBIDDEN)
-    
-    PatientMedicine.objects.create(
-        patient=patient,
-        clinic=clinic,
-        doctor=patient_doctor.doctor,
-        medicine=medication,
-        frequency=frequency,
-        frequency_data=frequency_data,
-        start_date=start_date,
-        end_date=end_date,
-        dosage=dosage
-    )
-
-    return JsonResponse({"detail": "Medication added successfully"}, status=status.HTTP_201_CREATED)
-
-
-@api_view(['PUT'])
-def update_patient_medication(request, clinic_id, patient_id):
-    """
-    Update a medication for a specific patient in a clinic.
-    """
+    clinic_id = request.GET.get('clinic_id', None)
     try:
-        clinic = Clinic.objects.get(id=clinic_id)
+        clinic = Clinic.objects.get(id=clinic_id) if clinic_id else None
     except Clinic.DoesNotExist:
         return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    try:
-        user = User.objects.get(id=patient_id)
-        if user.role not in ['PATIENT', 'RESEARCH_PATIENT']:
-            return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
-    except User.DoesNotExist:
-        return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    try:
-        patient = Patient.objects.get(user=user)
-    except Patient.DoesNotExist:
-        return JsonResponse({"detail": "Patient not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    data = request.data
-    med_id = data.get('med_id')
-    frequency = data.get('frequency')
-    frequency_data = data.get('frequency_data')
-    start_date = data.get('start_date')
-    end_date = data.get('end_date')
-    dosage = data.get('dosage')
-
-    if not med_id or not frequency or not frequency_data:
-        return JsonResponse({"detail": "Missing required fields"}, status=status.HTTP_400_BAD_REQUEST)
-
-    medication = Medicines.objects.get(id=med_id)
-    if not medication:
-        return JsonResponse({"detail": "Medication not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    if not ClinicMedicine.objects.filter(clinic=clinic, medicine=medication).exists():
-        return JsonResponse({"detail": "Medication not available in this clinic"}, status=status.HTTP_404_NOT_FOUND)
-
-    patient_medication = PatientMedicine.objects.filter(patient=patient, clinic=clinic, medicine=medication).first()
+        
+    patient_id = request.GET.get('patient_id', None)
+    patient = None
     
-    if not patient_medication:
-        return JsonResponse({"detail": "Medication not assigned to this patient in this clinic"}, status=status.HTTP_404_NOT_FOUND)
-
-    patient_medication.frequency = frequency
-    patient_medication.frequency_data = frequency_data
-    patient_medication.start_date = start_date
-    patient_medication.end_date = end_date
-    patient_medication.dosage = dosage
-    patient_medication.save()
-
-    return JsonResponse({"detail": "Medication updated successfully"}, status=status.HTTP_200_OK)
-
-@api_view(['DELETE'])
-def delete_patient_medication(request, clinic_id, patient_id , medication_id):
-    """
-    Delete a medication for a specific patient in a clinic.
-    """
-    try:
-        clinic = Clinic.objects.get(id=clinic_id)
-    except Clinic.DoesNotExist:
-        return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    try:
-        user = User.objects.get(id=patient_id)
-        if user.role not in ['PATIENT', 'RESEARCH_PATIENT']:
-            return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
-    except User.DoesNotExist:
-        return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    try:
-        patient = Patient.objects.get(user=user)
-    except Patient.DoesNotExist:
-        return JsonResponse({"detail": "Patient not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    if not medication_id:
-        return JsonResponse({"detail": "Missing medication ID"}, status=status.HTTP_400_BAD_REQUEST)
-
-    medication = Medicines.objects.get(id=medication_id)
-    if not medication:
-        return JsonResponse({"detail": "Medication not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    patient_medication = PatientMedicine.objects.filter(patient=patient, clinic=clinic, medicine=medication).first()
+    # Only retrieve patient if patient_id is provided
+    if patient_id:
+        try:
+            patient_user = User.objects.get(id=patient_id)
+            if patient_user.role != 'PATIENT' and patient_user.role != 'RESEARCH_PATIENT':
+                return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
+        except User.DoesNotExist:
+            return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
+        
+        try:
+            patient = Patient.objects.get(user=patient_user)
+        except Patient.DoesNotExist:
+            return JsonResponse({"detail": "Patient not found"}, status=status.HTTP_404_NOT_FOUND)
+        
+    if request.method == 'GET':
+        if user.is_staff:
+            # Admin: view all reports
+            reports = MedicationReport.objects.all().select_related('medication', 'patient', 'clinic')
+            report_list = [
+                {
+                    "id": report.id,
+                    "medication": {
+                        "id": report.medication.id,
+                        "name": report.medication.medName,
+                        "form": report.medication.medForm,
+                        "unit": report.medication.medUnitOfMeasurement
+                    },
+                    "patient": {
+                        "user_id": report.patient.user.id,
+                        "name": report.patient.user.get_full_name()
+                    },
+                    "clinic": {
+                        "id": report.clinic.id,
+                        "name": report.clinic.clinic_name
+                    },
+                    "timestamp": format_timestamp(report.timestamp)
+                } for report in reports
+            ]
+            
+        elif user.role == 'CLINIC_MANAGER':
+            # Clinic Manager: view reports for their clinic
+            if not clinic:
+                return JsonResponse({"detail": "Clinic ID is required"}, status=status.HTTP_400_BAD_REQUEST)
+            reports = MedicationReport.objects.filter(clinic=clinic).select_related('medication', 'patient', 'clinic')
+            report_list = [
+                {
+                    "id": report.id,
+                    "medication": {
+                        "id": report.medication.id,
+                        "name": report.medication.medName,
+                        "form": report.medication.medForm,
+                        "unit": report.medication.medUnitOfMeasurement
+                    },
+                    "patient": {
+                        "id": report.patient.id,
+                        "user_id": report.patient.user.id,
+                        "name": report.patient.user.get_full_name()
+                    },
+                    "timestamp": format_timestamp(report.timestamp)
+                } for report in reports
+            ]
+            
+        elif user.role == 'DOCTOR':
+            # Doctor: view reports for their patients
+            if not clinic or not patient:
+                return JsonResponse({"detail": "Clinic ID and Patient ID are required"}, status=status.HTTP_400_BAD_REQUEST)
+            
+            # Verify doctor has access to this patient
+            doctor = Doctor.objects.filter(user=user).first()
+            if not doctor:
+                return JsonResponse({"detail": "Doctor profile not found"}, status=status.HTTP_404_NOT_FOUND)
+            
+            if not PatientDoctor.objects.filter(doctor=doctor, patient=patient, clinic=clinic).exists():
+                return JsonResponse({"detail": "Access denied. Patient not assigned to this doctor."}, status=status.HTTP_403_FORBIDDEN)
+            
+            reports = MedicationReport.objects.filter(clinic=clinic, patient=patient).select_related('medication')
+            report_list = [
+                {
+                    "id": report.id,
+                    "medication": {
+                        "id": report.medication.id,
+                        "name": report.medication.medName,
+                        "form": report.medication.medForm,
+                        "unit": report.medication.medUnitOfMeasurement
+                    },
+                    "timestamp": format_timestamp(report.timestamp)
+                } for report in reports
+            ]
+            
+        else:  # PATIENT or RESEARCH_PATIENT
+            # Patient: view their own reports
+            if not clinic or not patient:
+                return JsonResponse({"detail": "Clinic ID and Patient ID are required"}, status=status.HTTP_400_BAD_REQUEST)
+            
+            # Verify patient can only access their own reports
+            patient_profile = Patient.objects.filter(user=user).first()
+            if not patient_profile or patient_profile.id != patient.id:
+                return JsonResponse({"detail": "Access denied. You can only view your own reports."}, status=status.HTTP_403_FORBIDDEN)
+            
+            reports = MedicationReport.objects.filter(clinic=clinic, patient=patient).select_related('medication')
+            report_list = [
+                {
+                    "id": report.id,
+                    "medication": {
+                        "id": report.medication.id,
+                        "name": report.medication.medName,
+                        "form": report.medication.medForm,
+                        "unit": report.medication.medUnitOfMeasurement
+                    },
+                    "timestamp": format_timestamp(report.timestamp)
+                } for report in reports
+            ]
+            
+        return JsonResponse(report_list, safe=False, status=status.HTTP_200_OK)
     
-    if not patient_medication:
-        return JsonResponse({"detail": "Medication not assigned to this patient in this clinic"}, status=status.HTTP_404_NOT_FOUND)
+    elif request.method == 'POST':
+        # POST uses query params for context, request body for actual data
+        data = request.data
+        medication_id = data.get('medication_id')
+        timestamp_str = data.get('timestamp', None)
+        
+        if not clinic_id or not patient_id:
+            return JsonResponse({"detail": "Clinic ID and Patient ID are required in query params"}, status=status.HTTP_400_BAD_REQUEST)
+        
+        if not medication_id:
+            return JsonResponse({"detail": "Medication ID is required"}, status=status.HTTP_400_BAD_REQUEST)
 
-    patient_medication.delete()
-
-    return JsonResponse({"detail": "Medication deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
-
-@api_view(['GET'])
-def get_patient_medications_log(request, clinic_id, patient_id):
-    """
-    Get medication log for a specific patient in a clinic.
-    """
-    try:
-        clinic = Clinic.objects.get(id=clinic_id)
-    except Clinic.DoesNotExist:
-        return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    try:
-        user = User.objects.get(id=patient_id)
-        if user.role not in ['PATIENT', 'RESEARCH_PATIENT']:
-            return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
-    except User.DoesNotExist:
-        return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    try:
-        patient = Patient.objects.get(user=user)
-    except Patient.DoesNotExist:
-        return JsonResponse({"detail": "Patient not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    medication_log = MedicationReport.objects.filter(patient=patient, clinic=clinic).order_by('-timestamp')
-
-    if not medication_log:
-        return JsonResponse({"detail": "No medication log found for this patient in this clinic"}, status=status.HTTP_404_NOT_FOUND)
-
-    log_data = []
-    for log in medication_log:
-        log_data.append({
-            'medication_id': log.medication.id,
-            'medication_name': log.medication.medName,
-            'medication_form': log.medication.medForm,
-            'medication_unit_of_measurement': log.medication.medUnitOfMeasurement,
-            'timestamp': log.timestamp
-        })
-
-    return JsonResponse(log_data, safe=False, status=status.HTTP_200_OK)
-############ patient side  ###########################################
-
-@api_view(['POST'])
-def patient_medication_report(request):
-    """
-    Generate a medication report for a patient.
-    """
-    clinic_id = request.data.get('clinic_id')
-    patient_id = request.data.get('patient_id')
-    medication_id = request.data.get('medication_id')
-    timestamp = request.data.get('timestamp' , None)
-    if not clinic_id or not patient_id or not medication_id:
-        return JsonResponse({"detail": "Missing required fields"}, status=status.HTTP_400_BAD_REQUEST)
-    try:
-        clinic = Clinic.objects.get(id=clinic_id)
-    except Clinic.DoesNotExist:
-        return JsonResponse({"detail": "Clinic not found"}, status=status.HTTP_404_NOT_FOUND)
-    try:
-        user = User.objects.get(id=patient_id)
-        if user.role not in ['PATIENT', 'RESEARCH_PATIENT']:
-            return JsonResponse({"detail": "User is not a patient"}, status=status.HTTP_403_FORBIDDEN)
-    except User.DoesNotExist:
-        return JsonResponse({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
-    try:
-        patient = Patient.objects.get(user=user)
-    except Patient.DoesNotExist:
-        return JsonResponse({"detail": "Patient not found"}, status=status.HTTP_404_NOT_FOUND)
-    try:
-        medication = Medicines.objects.get(id=medication_id)
-    except Medicines.DoesNotExist:
-        return JsonResponse({"detail": "Medication not found"}, status=status.HTTP_404_NOT_FOUND)
-    try:
-        timestamp = format_timestamp(timestamp)
-    except ValueError:
-        return JsonResponse({"detail": "Invalid timestamp format"}, status=status.HTTP_400_BAD_REQUEST)
-    
-    if not PatientMedicine.objects.filter(patient=patient, clinic=clinic, medicine=medication).exists():
-        return JsonResponse({"detail": "Medication not assigned to this patient in this clinic"}, status=status.HTTP_404_NOT_FOUND)
-    
-    MedicationReport.objects.create(
-        clinic=clinic,
-        patient=patient,
-        medication=medication,
-        timestamp=timestamp
-    )
-    
-    # notification logic will be implemented here in the future
-
-    return JsonResponse({"detail": "Medication report generated successfully"}, status=status.HTTP_201_CREATED)
-
+        # Validate clinic and patient were already retrieved above
+        if not clinic or not patient:
+            return JsonResponse({"detail": "Invalid clinic or patient"}, status=status.HTTP_404_NOT_FOUND)
+        
+        # Verify the patient creating the report is the actual patient
+        if user.role in ['PATIENT', 'RESEARCH_PATIENT']:
+            patient_profile = Patient.objects.filter(user=user).first()
+            if not patient_profile or patient_profile.id != patient.id:
+                return JsonResponse({"detail": "You can only create reports for yourself"}, status=status.HTTP_403_FORBIDDEN)
+        
+        try:
+            medication = Medicines.objects.get(id=medication_id)
+        except Medicines.DoesNotExist:
+            return JsonResponse({"detail": "Medication not found"}, status=status.HTTP_404_NOT_FOUND)
+        
+        # Verify patient has this medication assigned
+        if not PatientMedicine.objects.filter(clinic=clinic, patient=patient, medication=medication).exists():
+            return JsonResponse({"detail": "Medication not assigned to this patient"}, status=status.HTTP_404_NOT_FOUND)
+        
+        # Handle timestamp
+        if timestamp_str:
+            try:
+                timestamp = format_timestamp(timestamp_str)
+            except (ValueError, TypeError):
+                return JsonResponse({"detail": "Invalid timestamp format"}, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            timestamp = timezone.now()
+        
+        MedicationReport.objects.create(
+            clinic=clinic,
+            patient=patient,
+            medication=medication,
+            timestamp=timestamp
+        )
+        
+        # notification logic will be implemented here in the future
+        
+        return JsonResponse({"detail": "Medication report created successfully"}, status=status.HTTP_201_CREATED)

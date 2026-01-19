@@ -38,7 +38,7 @@ admin.site.__class__ = CustomAdminSiteOTPRequired
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include("api.urls")),
+    path('', include("authentication.urls")),
     path('', include("modules.urls")),
     path('', include("users.urls")),
     path('', include("clinics.urls")),

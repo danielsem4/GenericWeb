@@ -12,7 +12,6 @@ class CookieJWTAuthentication(JWTAuthentication):
             return None            # no cookie -> let other authenticators run
 
         try:
-            print(f"Authenticating with cookie token: {raw_token}")
             validated_token = self.get_validated_token(raw_token)
         except Exception:           # invalid / expired token
             print("Invalid or expired access token")

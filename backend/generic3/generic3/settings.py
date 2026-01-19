@@ -34,8 +34,6 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-qvgkr+$ditgy1nin0(u0p4=@(1
 DEBUG = os.getenv('DEBUG', 'True').lower() == 'true'
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1,0.0.0.0').split(',')
-
-
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -61,7 +59,8 @@ INSTALLED_APPS = [
     'django_extensions',
     
     # Local apps 
-    'api', 
+    # 'api', 
+    'authentication',
     'modules',
     'users',
     'clinics',

@@ -1,7 +1,9 @@
 from datetime import datetime
+from random import random
 from django.http import HttpResponse, JsonResponse
 from django.utils import timezone
 from django_otp.plugins.otp_totp.models import TOTPDevice
+from django.core.cache import cache
 import qrcode
 from io import BytesIO
 from urllib.parse import quote
@@ -10,7 +12,7 @@ import secrets
 from rest_framework import status
 from users.models import Doctor , ClinicManager, Patient, PatientDoctor, User , sentMessages
 from clinics.models import DoctorClinic, ManagerClinic, PatientClinic
-from generic3.messages import sendEmailMessage
+from generic3.messages import sendEmailMessage, sendSMSMessage
 
 def generate_temporary_password(length=12):
     characters = string.ascii_letters + string.digits #+ string.punctuation
@@ -128,15 +130,14 @@ def create_clinic_manager(email, first_name, last_name, phone_number , clinic):
     return JsonResponse({
         "message": "Clinic manager created successfully",
     } , status=status.HTTP_201_CREATED)
-    
-    
+        
 def setup_totp(user):
     try:
         device = TOTPDevice.objects.get(user=user)
     except TOTPDevice.DoesNotExist:
         device = TOTPDevice.objects.create(user=user)
     
-    issuer = "Generic2"
+    issuer = "Generic3"
     label = f"{issuer}:{user.email}"  # Label shown in the app
     otp_uri2 = device.config_url
     if otp_uri2 is None:
@@ -150,3 +151,101 @@ def setup_totp(user):
     img.save(buffer)
     
     return HttpResponse(buffer.getvalue(), content_type="image/png")
+
+def send2FA_code(user, send_method, code_type="login", timeout=300, custom_message=None):
+    """
+    Generic 2FA code sender
+    
+    Args:
+        user: User object
+        send_method: 'email' or 'sms'
+        code_type: Type of 2FA (e.g., 'login', 'password_reset', 'account_verification')
+        timeout: Code expiration in seconds (default 5 minutes)
+        custom_message: Optional custom message template
+    """
+    import random
+    
+    # Generate a 6-digit code
+    code = f"{random.randint(100000, 999999)}"
+    
+    # Store in cache with unique key based on code_type
+    cache_key = f"2fa_code_{code_type}_{user.id}"
+    cache.set(cache_key, code, timeout=timeout)
+    
+    # Default messages based on code_type
+    if custom_message:
+        subject, message = custom_message['subject'], custom_message['message'].format(code=code, timeout_minutes=timeout//60)
+    else:
+        message_templates = {
+            'login': {
+                'subject': 'Your Login 2FA Code',
+                'message': f'Your login verification code is: {code}. This code expires in {timeout//60} minutes.'
+            },
+            'password_reset': {
+                'subject': 'Password Reset Verification',
+                'message': f'Your password reset code is: {code}. This code expires in {timeout//60} minutes.'
+            },
+            'account_verification': {
+                'subject': 'Account Verification Code',
+                'message': f'Your account verification code is: {code}. This code expires in {timeout//60} minutes.'
+            }
+        }
+        
+        template = message_templates.get(code_type, message_templates['login'])
+        subject, message = template['subject'], template['message']
+    
+    from_email = 'admin@hitheal.org.il'
+    
+    if send_method == 'email':
+        try:
+            response = sendEmailMessage({
+                'to_email': user.email,
+                'from_email': from_email,
+                'subject': subject,
+                'message': message
+            })
+            if response.get('status') == 200:
+                return JsonResponse({'message': 'Email sent successfully'}, status=200)
+            else:
+                return JsonResponse({'error': 'Failed to send email'}, status=500)
+        except Exception as e:
+            print(f"Error sending email: {e}")
+            return JsonResponse({'error': 'Failed to send email'}, status=500)
+
+    elif send_method == 'sms':
+        payload = {
+            'phone': user.phone_number,
+            'sender': "HITHEAL", 
+            'message': message
+        }
+        try:
+            response = sendSMSMessage(payload)
+            if response.get('status') == 200:
+                return JsonResponse({'message': 'SMS sent successfully'}, status=200)
+            else:
+                return JsonResponse({'error': 'Failed to send SMS'}, status=500)
+        except Exception as e:
+            print(f"Error sending SMS: {e}")
+            return JsonResponse({'error': 'Failed to send SMS'}, status=500)
+    
+    else:
+        return JsonResponse({'error': 'Invalid send method'}, status=400)
+
+def verify_code(user, code, code_type="login"):
+    """
+    Generic 2FA code verifier
+    
+    Args:
+        user: User object
+        code: The code to verify
+        code_type: Type of 2FA (must match the one used in send2FA_code)
+    """
+    cache_key = f"2fa_code_{code_type}_{user.id}"
+    cached_code = cache.get(cache_key)
+    
+    if cached_code and cached_code == code:
+        # Code is valid, remove it from cache (one-time use)
+        cache.delete(cache_key)
+        return True
+    
+    return False

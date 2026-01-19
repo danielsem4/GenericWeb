@@ -2,21 +2,15 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    # admin modules management
-    path('api/v1/modules/', views.modules, name='modules'),
-    path('api/v1/modules/add/', views.add_module, name='add_module'),
-    path('api/v1/modules/<int:module_id>/update/', views.update_module, name='update_module'),
-    path('api/v1/modules/<int:module_id>/delete/', views.delete_module, name='delete_module'),
+    # Module CRUD
+    path('api/v1/modules/', views.module_list_create, name='module-list-create'),
+    path('api/v1/modules/<int:module_id>/', views.module_detail, name='module-detail'),
     
-    # clinic modules management
-    path('api/v1/clinics/<int:clinic_id>/modules/<int:module_id>/add/', views.add_clinic_module, name='add_clinic_module'),
-    path('api/v1/clinics/<int:clinic_id>/modules/<int:module_id>/delete/', views.delete_clinic_module, name='delete_clinic_module'),
+    # Clinic Modules (Nested Resource)
+    path('api/v1/clinics/<int:clinic_id>/modules/', views.clinic_module_list_create, name='clinic-module-list'),
+    path('api/v1/clinics/<int:clinic_id>/modules/<int:module_id>/', views.clinic_module_detail, name='clinic-module-detail'),
 
-    # patient modules management
-    path('api/v1/clinics/<int:clinic_id>/patients/<int:patient_id>/modules/<int:module_id>/add/', views.add_patient_module, name='add_patient_module'),
-    path('api/v1/clinics/<int:clinic_id>/patients/<int:patient_id>/modules/<int:module_id>/delete/', views.delete_patient_module, name='delete_patient_module'),
-
-    path('api/v1/clinics/<int:clinic_id>/modules/<int:module_id>/toggle/', views.toggle_clinic_module_active, name='toggle_clinic_module_active'),
-    path('api/v1/clinics/<int:clinic_id>/patients/<int:patient_id>/modules/<int:module_id>/toggle/', views.toggle_patient_module_active, name='toggle_patient_module_active'),
-
+    # Patient Modules (Nested Resource)
+    path('api/v1/clinics/<int:clinic_id>/patients/<int:patient_id>/modules/', views.patient_module_list_create, name='patient-module-list'),
+    path('api/v1/clinics/<int:clinic_id>/patients/<int:patient_id>/modules/<int:module_id>/', views.patient_module_detail, name='patient-module-detail'),
 ]

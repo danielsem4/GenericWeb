@@ -142,6 +142,7 @@ def add_user(request, clinic_id):
     else:
         # User doesn't exist, create new user
         if clinic.is_research_clinic and user.role == 'DOCTOR':
+            print("NOT SOPPUSED TO BE HERE!")
             role = 'RESEARCH_PATIENT'
             password = request.data.get('password', None)
             confirm_password = request.data.get('confirm_password', None)
@@ -151,7 +152,7 @@ def add_user(request, clinic_id):
         else:
             passw = generate_temporary_password()
             response = send_temporary_password_email(email, passw, clinic.clinic_url)
-            if response.status != 200:
+            if response["status"] != 200:
                 return response
 
         if user.role == 'CLINIC_MANAGER':
@@ -182,7 +183,7 @@ def add_user(request, clinic_id):
         PatientClinic.objects.get_or_create(patient=patient, clinic=clinic)
         clinic_modules = ClinicModules.objects.filter(clinic=clinic)
         for module in clinic_modules:
-            PatientModules.objects.get_or_create(patient=patient, clinic=clinic, module=module)
+            PatientModules.objects.get_or_create(patient=patient, clinic=clinic, module=module.module)
     else:
         return Response({"detail": "User role is not supported"}, status=status.HTTP_400_BAD_REQUEST)
 
