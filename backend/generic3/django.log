@@ -9058,3 +9058,43 @@ Bad Request: /api/v1/auth/login/
 "PATCH /api/v1/clinics/1/patients/5/modules/3/ HTTP/1.1" 200 67
 "PATCH /api/v1/clinics/1/patients/5/modules/3/ HTTP/1.1" 200 66
 "DELETE /api/v1/clinics/1/patients/5/modules/4/ HTTP/1.1" 204 0
+Watching for file changes with StatReloader
+"POST /api/v1/auth/login/ HTTP/1.1" 200 1093
+"GET /api/v1/clinics/ HTTP/1.1" 200 1137
+Internal Server Error: /api/v1/clinics/
+"POST /api/v1/clinics/ HTTP/1.1" 500 44
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\utils.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/clinics/
+"POST /api/v1/clinics/ HTTP/1.1" 500 44
+Internal Server Error: /api/v1/clinics/
+"POST /api/v1/clinics/ HTTP/1.1" 500 44
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\utils.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/clinics/
+"POST /api/v1/clinics/ HTTP/1.1" 500 44
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\clinics\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/clinics/
+"POST /api/v1/clinics/ HTTP/1.1" 500 44
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\utils.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\utils.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\OneDrive\Desktop\computer_science\work\GenericWeb\backend\generic3\generic3\utils.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/clinics/
+"POST /api/v1/clinics/ HTTP/1.1" 500 44
+"POST /api/v1/clinics/ HTTP/1.1" 201 42
+"GET /api/v1/clinics/1/ HTTP/1.1" 200 429
+Bad Request: /api/v1/clinics/
+"POST /api/v1/clinics/ HTTP/1.1" 400 56
+"GET /api/v1/clinics/ HTTP/1.1" 200 1560
+"GET /api/v1/clinics/9/ HTTP/1.1" 200 421
+"PUT /api/v1/clinics/9/ HTTP/1.1" 200 42
+"GET /api/v1/clinics/9/ HTTP/1.1" 200 355
+"PUT /api/v1/clinics/9/ HTTP/1.1" 200 42
+"GET /api/v1/clinics/9/ HTTP/1.1" 200 432
+"DELETE /api/v1/clinics/9/ HTTP/1.1" 204 42
+Not Found: /api/v1/clinics/9/
+"GET /api/v1/clinics/9/ HTTP/1.1" 404 29

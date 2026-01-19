@@ -10,15 +10,15 @@ Content-Type: application/json
 #     "password": "a123456!"
 # }
 
-{
-    "email": "doctor1@example.com",
-    "password": "a123456!"
-}
-
 # {
-# "email": "ozeriyarin@gmail.com",
-# "password": "a123456!"
+#     "email": "doctor1@example.com",
+#     "password": "a123456!"
 # }
+
+{
+"email": "ozeriyarin@gmail.com",
+"password": "a123456!"
+}
 
 ###
 
@@ -161,7 +161,7 @@ Content-Type: application/json
     DELETE http://localhost:8000/api/v1/clinics/1/patients/5/modules/4/
 
     ###
-    
+
 ############################ users api calls ############################
 
     GET {{$dotenv NGROK_URL}}/api/v1/users/1/3/
@@ -210,46 +210,68 @@ Content-Type: application/json
 
 ############################ clinics api calls ############################
 
-    GET http://localhost:8000/api/v1/clinics/
+# ============ CLINIC CRUD ============
 
-    ###
+# List all clinics (GET) - Staff only
+GET http://localhost:8000/api/v1/clinics/
+Content-Type: application/json
 
-    GET {{$dotenv NGROK_URL}}/api/v1/clinics/1/
+###
 
-    ### 
+# Create a new clinic (POST) - Staff only
+POST http://localhost:8000/api/v1/clinics/
+Content-Type: application/json
 
-    POST {{$dotenv NGROK_URL}}/api/v1/clinics/add/
-    Content-Type: application/json
+{
+    "clinic_name": "Test Clinic",
+    "clinic_url": "https://testclinic.com",
+    "clinic_image_url": "https://example.com/logo.jpg",
+    "clinic_type": "Research",
+    "manager_first_name": "Jane",
+    "manager_last_name": "Smith",
+    "manager_email": "jane.smith@example.com",
+    "manager_phone_number": "7654329876",
+    "selected_modules": [1, 2, 3, 4, 5]
+}
 
-    {
-        "clinic_name": "clinictest",
-        "clinic_url": "https://clinictest.com",
-        "manager_first_name": "clinicManagertest1",
-        "manager_last_name": "example",
-        "manager_email": "clinicManagertest1@example.com",
-        "manager_phone_number": "0502345673",
-        "clinic_type": "Research",
-        "clinic_image_url": "",
-        "selected_modules": [1, 2, 3,4,5]
-    }
+###
 
-    ###
+# Get specific clinic details (GET) - Any authenticated user
+GET http://localhost:8000/api/v1/clinics/9/
+Content-Type: application/json
 
-    PUT {{$dotenv NGROK_URL}}/api/v1/clinics/3/update/
-    Content-Type: application/json
+###
 
-    {
-        "clinic_name": "clinic3",
-        "clinic_url": "https://clinic3.com",
-        "clinic_type": "Research",
-        "clinic_image_url": "",
-        "selected_modules": [1, 2, 3, 4, 5]
-    }
+# Update a clinic (PUT) - Staff or Clinic Manager
+PUT http://localhost:8000/api/v1/clinics/9/
+Content-Type: application/json
 
-    ###
+{
+    "clinic_name": "Updated Clinic Name",
+    "clinic_url": "https://updatedclinic.com",
+    "clinic_type": "Default",
+    "clinic_image_url": "https://example.com/newlogo.jpg",
+    "selected_modules": [1, 2, 3]
+}
 
-    DELETE {{$dotenv NGROK_URL}}/api/v1/clinics/7/delete/
-    Content-Type: application/json
+###
+
+# Partially update a clinic (PUT with partial fields) - Staff or Clinic Manager
+PUT http://localhost:8000/api/v1/clinics/9/
+Content-Type: application/json
+
+{
+    "clinic_type": "Research",
+    "selected_modules": [1, 2, 3, 4, 5]
+}
+
+###
+
+# Delete a clinic (DELETE) - Staff only
+DELETE http://localhost:8000/api/v1/clinics/9/
+Content-Type: application/json
+
+###
 
 
 ############################ medications CRUD api calls ############################

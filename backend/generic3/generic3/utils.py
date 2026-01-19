@@ -88,6 +88,7 @@ def create_clinic_manager(email, first_name, last_name, phone_number , clinic):
     Create a ClinicManager instance and return it.
     """
     if User.objects.filter(phone_number=phone_number).exists():
+        print("User with this phone number already exists")
         return JsonResponse({
             "error": "user with this phone number already exists",
         }, status=status.HTTP_400_BAD_REQUEST)
@@ -106,12 +107,19 @@ def create_clinic_manager(email, first_name, last_name, phone_number , clinic):
     else:
         user = User.objects.get(email=email)
         if user.role == 'CLINIC_MANAGER':
+            print("Clinic manager with this email already exists")
             return JsonResponse({
                 "error": "Clinic manager with this email already exists",
             }, status=status.HTTP_400_BAD_REQUEST)
-        if user.role == 'DOCTOR' and PatientDoctor.objects.filter(doctor__user=user).exists():
+        elif user.role == 'DOCTOR' and PatientDoctor.objects.filter(doctor__user=user).exists():
+            print("User is already a doctor with patients assigned")
             return JsonResponse({
                 "error": "Cannot create clinic manager, user is already a doctor with patients assigned"
+            }, status=status.HTTP_400_BAD_REQUEST)
+        elif user.role == 'PATIENT' or user.role == 'RESEARCH_PATIENT':
+            print("User is already a patient")
+            return JsonResponse({
+                "error": "Cannot create clinic manager, user is already a patient"
             }, status=status.HTTP_400_BAD_REQUEST)
         user.role = 'CLINIC_MANAGER'
         user.save()
@@ -123,6 +131,7 @@ def create_clinic_manager(email, first_name, last_name, phone_number , clinic):
 
     response = send_temporary_password_email(email, temp_password)
     if response.status_code != 200:
+        print("Failed to send email")
         return JsonResponse({
             "error": "Failed to send email",
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
