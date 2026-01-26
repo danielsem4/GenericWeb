@@ -21,7 +21,6 @@ def sendSMSMessage(msg):
         phone = msg['phone']
         sender = msg['sender']
         message = msg['message']
-        email = msg['email']
         print("An SMS message from sender %s will be sent to phone: %s with message: %s" % (sender, phone, message))
         try:
         #     print('keys:',settings.AWS_ACCESS_KEY_ID,settings.AWS_SECRET_ACCESS_KEY)

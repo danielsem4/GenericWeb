@@ -10,8 +10,9 @@ from urllib.parse import quote
 import string
 import secrets
 from rest_framework import status
-from users.models import Doctor , ClinicManager, Patient, PatientDoctor, User , sentMessages
-from clinics.models import DoctorClinic, ManagerClinic, PatientClinic
+from users.models import Doctor , ClinicManager, Patient, PatientDoctor, User
+from authentication.models import sentMessages
+from clinics.models import Clinic, DoctorClinic, ManagerClinic, PatientClinic
 from generic3.messages import sendEmailMessage, sendSMSMessage
 
 def generate_temporary_password(length=12):
@@ -35,23 +36,41 @@ def send_temporary_password_email(email, temporary_password , clinic_url='https:
         registered = False,
     )
     userMessage.save()
-    msg = {'to_email':email,'from_email':"admin@hitheal.org.il",'subject':subject,'message':message , 'CHARSET':'UTF-8'}
+    msg = {'to_email':email,'from_email':"admin@hitheal.org.il",'subject':subject,'message':message, 'CHARSET':'UTF-8'}
     response = sendEmailMessage(msg)   
     print(subject, message, from_email, recipient_list , userMessage)
     return response
 
-def get_clinic_id_for_user(user):
+def get_clinic_id_for_user(user , site=None):
+    '''
+    Get the clinic ID associated with the user based on their role and the provided site URL.
+    Args:
+        user: User object
+        site: The site URL to match with clinic_url
+    Returns: 
+        clinic_id if found, else None
+    '''
     if user.role == 'DOCTOR':
         doctor = Doctor.objects.get(user=user)
-        clinic_id = DoctorClinic.objects.filter(doctor=doctor).values_list('clinic_id', flat=True)
+        clinics_id = DoctorClinic.objects.filter(doctor=doctor).values_list('clinic_id', flat=True)
     elif user.role == 'PATIENT' or user.role == 'RESEARCH_PATIENT':
         patient = Patient.objects.get(user=user)
-        clinic_id = PatientClinic.objects.filter(patient=patient).values_list('clinic_id', flat=True)
+        clinics_id = PatientClinic.objects.filter(patient=patient).values_list('clinic_id', flat=True)
     elif user.role == 'CLINIC_MANAGER':
         clinic_manager = ClinicManager.objects.get(user=user)
-        clinic_id = ManagerClinic.objects.filter(manager=clinic_manager).values_list('clinic_id', flat=True)
+        clinics_id = ManagerClinic.objects.filter(manager=clinic_manager).values_list('clinic_id', flat=True)
     else: # admin
-        clinic_id = [0]
+        clinics_id = [0]
+        
+    # Handle multiple clinics case
+    if len(clinics_id) > 1:
+        user_clinics_urls = Clinic.objects.filter(id__in=clinics_id).values_list('clinic_url', flat=True)
+        if site not in user_clinics_urls:
+            return None
+        # If site matches one of the clinics, find the corresponding clinic_id
+        clinic_id = Clinic.objects.filter(clinic_url=site, id__in=clinics_id).first().id
+    else:
+        clinic_id = clinics_id[0]
     return clinic_id
 
 def format_timestamp(timestamp):
@@ -211,9 +230,10 @@ def send2FA_code(user, send_method, code_type="login", timeout=300, custom_messa
                 'to_email': user.email,
                 'from_email': from_email,
                 'subject': subject,
-                'message': message
+                'message': message,
+                'CHARSET': 'UTF-8'
             })
-            if response.get('status') == 200:
+            if response.status_code == 200:
                 return JsonResponse({'message': 'Email sent successfully'}, status=200)
             else:
                 return JsonResponse({'error': 'Failed to send email'}, status=500)
@@ -229,7 +249,7 @@ def send2FA_code(user, send_method, code_type="login", timeout=300, custom_messa
         }
         try:
             response = sendSMSMessage(payload)
-            if response.get('status') == 200:
+            if response.status_code == 200:
                 return JsonResponse({'message': 'SMS sent successfully'}, status=200)
             else:
                 return JsonResponse({'error': 'Failed to send SMS'}, status=500)

@@ -1,8 +1,9 @@
-######################## general API calls ########################
+######################## Authentication API calls ########################
 
-#### POST https://genericweb.onrender.com/api/v1/auth/login/
+# ============ SESSION MANAGEMENT ============
 
-POST http://localhost:8000/api/v1/auth/login/
+# Create session (Login)
+POST http://localhost:8000/api/v1/auth/sessions/
 Content-Type: application/json
 
 # {
@@ -10,19 +11,112 @@ Content-Type: application/json
 #     "password": "a123456!"
 # }
 
+{
+    "email": "doctor1@example.com",
+    "password": "a123456!"
+}
+
 # {
-#     "email": "doctor1@example.com",
-#     "password": "a123456!"
+#     "email": "ozeriyarin@gmail.com",
+#     "password": "NewSecure123!"
 # }
 
+
+###
+
+# Destroy session (Logout)
+DELETE http://localhost:8000/api/v1/auth/sessions/
+Content-Type: application/json
+
+###
+
+# ============ TOKEN MANAGEMENT ============
+
+# Refresh access token
+# IMPORTANT: After logging in via /api/v1/auth/sessions/, copy the 'refresh' cookie from the response
+# Look for 'Set-Cookie: refresh=xxxxx' in the response headers
+# Then paste it in the Cookie header below
+POST http://localhost:8000/api/v1/auth/tokens/refresh/
+Content-Type: application/json
+Cookie: refresh=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2OTA3MjI0NiwiaWF0IjoxNzY4OTg1ODQ2LCJqdGkiOiI0ODg1YjhkNGQ5ODU0YTExOWQwNGFhM2E2ZDA5NWRjMSIsInVzZXJfaWQiOiIxIn0.cgSoTMNM4p2CI5DiEzVCXF93D7tTy5H58X2dQVYF0BQ
+
+
+
+###
+
+# ============ TWO-FACTOR AUTHENTICATION ============
+
+# Request 2FA code via email
+POST http://localhost:8000/api/v1/auth/2fa/
+Content-Type: application/json
+
 {
-"email": "ozeriyarin@gmail.com",
-"password": "a123456!"
+    "email": "ozeriyarin@gmail.com",
+    "password": "a123456!",
+    "send_method": "email"
 }
 
 ###
 
-POST http://localhost:8000/api/v1/auth/logout/
+# Request 2FA code via SMS
+POST http://localhost:8000/api/v1/auth/2fa/
+Content-Type: application/json
+
+{
+    "email": "ozeriyarin@gmail.com",
+    "password": "a123456!",
+    "send_method": "sms"
+}
+
+###
+
+# Verify 2FA code for login
+# IMPORTANT: After calling the 2FA request above, copy the 'sessionid' cookie from the response
+# In VS Code REST Client: Look for 'Set-Cookie: sessionid=xxxxx' in the response headers
+# Then paste it in the Cookie header below
+POST http://localhost:8000/api/v1/auth/2fa/verify/
+Content-Type: application/json
+Cookie: sessionid=ospfrebrfd6yxn0vhg6h76j8ly8nrpj4
+
+{
+    "code": "938525",
+    "code_type": "login"
+}
+
+###
+
+# Verify 2FA code for signup
+POST http://localhost:8000/api/v1/auth/2fa/verify/
+Content-Type: application/json
+
+{
+    "code": "123456",
+    "code_type": "signup"
+}
+
+###
+
+# ============ PASSWORD MANAGEMENT ============
+
+# Change password (requires authentication - user must be logged in)
+# Get the access token from the login response cookies and add it here:
+# Cookie: access=<your_access_token_here>
+PUT http://localhost:8000/api/v1/auth/password/
+Content-Type: application/json
+Cookie: access=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY4OTg5ODU5LCJpYXQiOjE3Njg5ODYyNTksImp0aSI6ImM3NmUwMjRiMjMyMjQ5ZmNiYTY3NzM3NjZlNjc3MjE5IiwidXNlcl9pZCI6IjEifQ.rDX1HBF8eh4SJnhA-9gjaQ_2f9j7vrBgzdRXAFTo_14
+
+{
+    "old_password": "a123456!",     
+    "new_password": "NewSecure123!",
+    "confirm_new_password": "NewSecure123!"
+}
+
+###
+
+# ============ TOTP/QR CODE ============
+
+# Get QR code for TOTP setup
+GET http://localhost:8000/api/v1/auth/users/1/qr-code/
 Content-Type: application/json
 
 ###
@@ -164,114 +258,180 @@ Content-Type: application/json
 
 ############################ users api calls ############################
 
-    GET {{$dotenv NGROK_URL}}/api/v1/users/1/3/
-    Content-Type: application/json
+# ============ USER CRUD ============
 
-    ###
+# List all users (GET) - Staff only (paginated)
+GET http://localhost:8000/api/v1/users/
+Content-Type: application/json
 
-    GET {{$dotenv NGROK_URL}}/api/v1/users/1/user/5/
+###
 
-    ###
+# List users filtered by role (GET)
+GET http://localhost:8000/api/v1/users/?role=DOCTOR
+Content-Type: application/json
 
-    GET {{$dotenv NGROK_URL}}/api/v1/users/1/qr-code/
+###
 
-    ###
+# List users with pagination (GET)
+GET http://localhost:8000/api/v1/users/?role=RESEARCH_PATIENT&page=1&page_size=10
+Content-Type: application/json
 
-    POST https://genericweb.onrender.com/api/v1/users/1/add/
-    Content-Type: application/json
+###
 
-    {
-        "email": "patient4@example.com",
-        "first_name": "patient4",
-        "last_name": "example",
-        "phone_number": "0534567893",
-        "password": "a123456!",
-        "confirm_password": "a123456!"
-    }
+# Create a new user/patient (POST) - Doctor/Clinic Manager
+POST http://localhost:8000/api/v1/users/
+Content-Type: application/json
 
-    ###
+{
+    "email": "newpatient2@example.com",
+    "first_name": "New",
+    "last_name": "Patient",
+    "phone_number": "5551234568"
+}
 
-    PUT {{$dotenv NGROK_URL}}/api/v1/users/3/update/
-    Content-Type: application/json
+###
 
-    {
-        "email": "doctor1@example.com",
-        "first_name": "doctor1",
-        "last_name": "example",
-        "phone_number": "1234567890"
-    }
+# Create a research patient with password (POST) - Doctor in research clinic
+POST http://localhost:8000/api/v1/users/
+Content-Type: application/json
 
-    ###
+{
+    "email": "researchpatient@example.com",
+    "first_name": "Research",
+    "last_name": "Patient",
+    "phone_number": "5559876543",
+    "password": "a123456!",
+    "confirm_password": "a123456!"
+}
 
-    DELETE {{$dotenv NGROK_URL}}/api/v1/users/1/3/remove/
-    Content-Type: application/json
+###
 
-    ###
+# ============ CURRENT USER ============
+
+# Get current authenticated user's profile (GET)
+GET http://localhost:8000/api/v1/users/me/
+Content-Type: application/json
+
+###
+
+# ============ USER DETAILS ============
+
+# Get specific user details (GET)
+GET http://localhost:8000/api/v1/users/5/
+Content-Type: application/json
+
+###
+
+# Full update user (PUT) - All fields required
+PUT http://localhost:8000/api/v1/users/5/
+Content-Type: application/json
+
+{
+    "email": "updated@example.com",
+    "first_name": "Updated",
+    "last_name": "Name",
+    "phone_number": "5551112222"
+}
+
+###
+
+# Partial update user (PATCH) - Only send fields to change
+PATCH http://localhost:8000/api/v1/users/5/
+Content-Type: application/json
+
+{
+    "phone_number": "5553334444"
+}
+
+###
+
+# Partial update user - name only (PATCH)
+PATCH http://localhost:8000/api/v1/users/5/
+Content-Type: application/json
+
+{
+    "first_name": "NewFirst",
+    "last_name": "NewLast"
+}
+
+###
+
+# Delete user permanently (DELETE) - Admin only
+DELETE http://localhost:8000/api/v1/users/12/
+Content-Type: application/json
+
+###
+
+# Remove user from clinic (DELETE) - Clinic Manager/Doctor
+DELETE http://localhost:8000/api/v1/users/12/
+Content-Type: application/json
+
+###
 
 ############################ clinics api calls ############################
 
-# ============ CLINIC CRUD ============
+    # ============ CLINIC CRUD ============
 
-# List all clinics (GET) - Staff only
-GET http://localhost:8000/api/v1/clinics/
-Content-Type: application/json
+    # List all clinics (GET) - Staff only
+    GET http://localhost:8000/api/v1/clinics/
+    Content-Type: application/json
 
-###
+    ###
 
-# Create a new clinic (POST) - Staff only
-POST http://localhost:8000/api/v1/clinics/
-Content-Type: application/json
+    # Create a new clinic (POST) - Staff only
+    POST http://localhost:8000/api/v1/clinics/
+    Content-Type: application/json
 
-{
-    "clinic_name": "Test Clinic",
-    "clinic_url": "https://testclinic.com",
-    "clinic_image_url": "https://example.com/logo.jpg",
-    "clinic_type": "Research",
-    "manager_first_name": "Jane",
-    "manager_last_name": "Smith",
-    "manager_email": "jane.smith@example.com",
-    "manager_phone_number": "7654329876",
-    "selected_modules": [1, 2, 3, 4, 5]
-}
+    {
+        "clinic_name": "Test Clinic",
+        "clinic_url": "https://testclinic.com",
+        "clinic_image_url": "https://example.com/logo.jpg",
+        "clinic_type": "Research",
+        "manager_first_name": "Jane",
+        "manager_last_name": "Smith",
+        "manager_email": "jane.smith@example.com",
+        "manager_phone_number": "7654329876",
+        "selected_modules": [1, 2, 3, 4, 5]
+    }
 
-###
+    ###
 
-# Get specific clinic details (GET) - Any authenticated user
-GET http://localhost:8000/api/v1/clinics/9/
-Content-Type: application/json
+    # Get specific clinic details (GET) - Any authenticated user
+    GET http://localhost:8000/api/v1/clinics/9/
+    Content-Type: application/json
 
-###
+    ###
 
-# Update a clinic (PUT) - Staff or Clinic Manager
-PUT http://localhost:8000/api/v1/clinics/9/
-Content-Type: application/json
+    # Update a clinic (PUT) - Staff or Clinic Manager
+    PUT http://localhost:8000/api/v1/clinics/9/
+    Content-Type: application/json
 
-{
-    "clinic_name": "Updated Clinic Name",
-    "clinic_url": "https://updatedclinic.com",
-    "clinic_type": "Default",
-    "clinic_image_url": "https://example.com/newlogo.jpg",
-    "selected_modules": [1, 2, 3]
-}
+    {
+        "clinic_name": "Updated Clinic Name",
+        "clinic_url": "https://updatedclinic.com",
+        "clinic_type": "Default",
+        "clinic_image_url": "https://example.com/newlogo.jpg",
+        "selected_modules": [1, 2, 3]
+    }
 
-###
+    ###
 
-# Partially update a clinic (PUT with partial fields) - Staff or Clinic Manager
-PUT http://localhost:8000/api/v1/clinics/9/
-Content-Type: application/json
+    # Partially update a clinic (PUT with partial fields) - Staff or Clinic Manager
+    PUT http://localhost:8000/api/v1/clinics/9/
+    Content-Type: application/json
 
-{
-    "clinic_type": "Research",
-    "selected_modules": [1, 2, 3, 4, 5]
-}
+    {
+        "clinic_type": "Research",
+        "selected_modules": [1, 2, 3, 4, 5]
+    }
 
-###
+    ###
 
-# Delete a clinic (DELETE) - Staff only
-DELETE http://localhost:8000/api/v1/clinics/9/
-Content-Type: application/json
+    # Delete a clinic (DELETE) - Staff only
+    DELETE http://localhost:8000/api/v1/clinics/9/
+    Content-Type: application/json
 
-###
+    ###
 
 
 ############################ medications CRUD api calls ############################
@@ -414,7 +574,7 @@ Content-Type: application/json
 
     ###
 
-############################ medication bundles API calls ############################
+    ############################ medication bundles API calls ############################
 
     # Admin: Get all bundles across all clinics
     GET http://localhost:8000/api/v1/medications/bundles/
@@ -494,7 +654,7 @@ Content-Type: application/json
 
     ###
 
-############################ medication reports API calls ############################
+    ############################ medication reports API calls ############################
 
     # Admin: Get all medication reports (no params needed)
     GET http://localhost:8000/api/v1/medication-reports/
@@ -634,7 +794,7 @@ Content-Type: application/json
 
 
 
-############################ activity bundles API calls ############################
+    ############################ activity bundles API calls ############################
 
     # Admin: Get all bundles across all clinics
     GET http://localhost:8000/api/v1/activities/bundles/
@@ -715,7 +875,7 @@ Content-Type: application/json
     ###
 
 
-############################ activity reports API calls ############################
+    ############################ activity reports API calls ############################
 
     # Admin: Get all activity reports (no params needed)
     GET http://localhost:8000/api/v1/activity-reports/
@@ -781,19 +941,101 @@ Content-Type: application/json
 
 ############################ fileshare api calls ############################
 
-    GET {{$dotenv NGROK_URL}}/api/v1/fileshare/files/1/5/
+# ============ FILE SHARE - LIST & UPLOAD ============
 
-    ###
+# Admin/Staff: View all files in the system
+GET http://localhost:8000/api/v1/fileshare/
+Content-Type: application/json
 
-    POST {{$dotenv NGROK_URL}}/api/v1/fileshare/files/1/5/add/
-    Content-Type: application/json
+###
 
-    {
-        "doctor_id": 1,
-        "file": "file_content"
-    }
+# Clinic Manager: View files for their clinic
+GET http://localhost:8000/api/v1/fileshare/?clinic_id=1
+Content-Type: application/json
 
-    ###
+###
 
-    DELETE {{$dotenv NGROK_URL}}/api/v1/fileshare/files/1/5/delete/1/
-    Content-Type: application/json
+# Doctor: View files for specific patient
+GET http://localhost:8000/api/v1/fileshare/?clinic_id=1&patient_id=5
+Content-Type: application/json
+
+###
+
+# Patient: View their own files (no params needed)
+GET http://localhost:8000/api/v1/fileshare/
+Content-Type: application/json
+
+###
+
+# Doctor: Upload files for a patient
+POST http://localhost:8000/api/v1/fileshare/
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="clinic_id"
+
+1
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="patient_id"
+
+5
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="files"; filename="medical_report.pdf"
+Content-Type: application/pdf
+
+< ./path/to/medical_report.pdf
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="files"; filename="xray_image.jpg"
+Content-Type: image/jpeg
+
+< ./path/to/xray_image.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+
+# Patient: Upload their own files
+POST http://localhost:8000/api/v1/fileshare/
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="clinic_id"
+
+1
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="patient_id"
+
+5
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="files"; filename="lab_results.pdf"
+Content-Type: application/pdf
+
+< ./path/to/lab_results.pdf
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+
+# ============ FILE SHARE - VIEW & DELETE ============
+
+# View specific file (get base64 content)
+GET http://localhost:8000/api/v1/fileshare/1/
+Content-Type: application/json
+
+###
+
+# Doctor: Delete file they uploaded
+DELETE http://localhost:8000/api/v1/fileshare/1/
+Content-Type: application/json
+
+###
+
+# Patient: Delete their own file
+DELETE http://localhost:8000/api/v1/fileshare/2/
+Content-Type: application/json
+
+###
+
+# Admin: Delete any file
+DELETE http://localhost:8000/api/v1/fileshare/3/
+Content-Type: application/json
+
+###
